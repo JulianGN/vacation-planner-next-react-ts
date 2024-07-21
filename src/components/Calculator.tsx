@@ -1,37 +1,26 @@
 "use client";
-import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-import useHolidays from "@/application/hooks/useHolidays";
+import React from "react";
+import { useRouter } from "next/navigation";
+import { Calendar } from "primereact/calendar";
+import { Button } from "primereact/button";
+import CalculatorHeader from "./CalculatorHeader";
+import CalculatorForm from "./CalculatorForm";
 
-const HolidayCalculator: React.FC = () => {
-  const [holidays, setHolidays] = useState("");
-  const { calculateBestDaysOff } = useHolidays();
-  // const navigate = useNavigate();
+const Calculator = () => {
+  const router = useRouter();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const bestDaysOff = await calculateBestDaysOff(
-      holidays.split("\n").map((date) => date.trim())
-    );
-    sessionStorage.setItem("bestDaysOff", JSON.stringify(bestDaysOff));
-    // navigate("/results");
+  const handleCalculate = () => {
+    if (typeof window !== "undefined") {
+      router.push("/sobre");
+    }
   };
 
   return (
-    <div>
-      <h1>Encontrar os melhores períodos</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Dividir em quantos períodos:
-          <input
-            value={holidays}
-            onChange={(e) => setHolidays(e.target.value)}
-          />
-        </label>
-        <button type="submit">Quero férias</button>
-      </form>
-    </div>
+    <section>
+      <CalculatorHeader />
+      <CalculatorForm />
+    </section>
   );
 };
 
-export default HolidayCalculator;
+export default Calculator;
