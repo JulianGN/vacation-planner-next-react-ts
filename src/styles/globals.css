@@ -1,11 +1,14 @@
-.flex {
-  display: flex;
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@import "primeicons/primeicons.css";
+@import "primereact/resources/primereact.min.css";
+@import "primereact/resources/themes/soho-light/theme.css";
+
+@layer tailwind-base {
+  @tailwind base;
 }
 
-.justify-between {
-  justify-content: space-between;
-}
-
-.items-center {
-  align-items: center;
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
 }

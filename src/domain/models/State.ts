@@ -3,7 +3,6 @@ export interface City {
 }
 
 export interface State {
-  sigla: string;
   nome: string;
   cidades: string[];
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
-import "primereact/resources/themes/soho-light/theme.css";
-// primereact/resources/themes/tailwind-light/theme.css
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
+import { PrimeReactProvider } from "primereact/api";
+
 import "@/styles/globals.css";
 
 import MainHeader from "@/components/MainHeader";
@@ -23,10 +21,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <title>{String(metadata.title)}</title>
         <meta name="description" content={String(metadata.description)} />
       </head>
-      <body>
-        <MainHeader />
-        {children}
-      </body>
+      <PrimeReactProvider>
+        <body>
+          <MainHeader />
+          {children}
+        </body>
+      </PrimeReactProvider>
     </html>
   );
 };

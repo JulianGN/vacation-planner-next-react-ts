@@ -26,7 +26,7 @@ const MainHeader = () => {
   };
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex">
       <h1>Planejador de férias</h1>;
       <Button
         icon="pi pi-align-right"
