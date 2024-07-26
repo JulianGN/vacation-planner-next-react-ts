@@ -5,8 +5,11 @@ import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 import { InputNumber } from "primereact/inputnumber";
 import { Checkbox } from "primereact/checkbox";
+import { Calendar } from "primereact/calendar";
 import { CalculatorService } from "@/domain/services/CalculatorService";
 import { State } from "@/domain/models/State";
+import { translateWorkDay, WorkDay } from "@/domain/models/WorkDay";
+import { Nullable } from "primereact/ts-helpers";
 
 const calculatorService = new CalculatorService();
 const states = calculatorService.getStates();
@@ -19,6 +22,7 @@ const CalculatorForm = () => {
   const [daysSplit, setDaysSplit] = useState(1);
   const [daysExtra, setDaysExtra] = useState(0);
   const [fullPeriod, setFullPeriod] = useState(true);
+  const [period, setPeriod] = useState<Nullable<(Date | null)[]>>(null);
   const [workDays, setWorkDays] = useState({
     monday: true,
     tuesday: true,
@@ -35,19 +39,10 @@ const CalculatorForm = () => {
     }
   };
 
-  const handleWorkDayChange = (day: string) => {
-    type WorkDay =
-      | "monday"
-      | "tuesday"
-      | "wednesday"
-      | "thursday"
-      | "friday"
-      | "saturday"
-      | "sunday";
-
-    setWorkDays((prevWorkDays: WorkDay) => ({
-      ...prevWorkDays,
-      [day]: !prevWorkDays[day],
+  const handleWorkDayChange = (day: WorkDay) => {
+    setWorkDays(() => ({
+      ...workDays,
+      [day]: !workDays[day],
     }));
   };
 
@@ -76,7 +71,7 @@ const CalculatorForm = () => {
           disabled={!selectedState}
         />
       </div>
-      <div className="grid grid-cols-3">
+      <div className="">
         <InputNumber
           value={daysVacation}
           onValueChange={(e) => setDaysVacation(e.value || 0)}
@@ -116,106 +111,30 @@ const CalculatorForm = () => {
             Buscar todos os feriados 12 meses a partir de hoje
           </label>
         </div>
+        <div>
+          <Calendar
+            value={period}
+            onChange={(e) => setPeriod(e.value)}
+            selectionMode="range"
+            readOnlyInput
+            hideOnRangeSelection
+          />
+        </div>
       </div>
       <div className="flex flex-wrap justify-content-center gap-3">
-        <div className="flex align-items-center">
-          <Checkbox
-            inputId="calculator-form-input-checkbox-work-day-monday"
-            name="work-day-monday"
-            checked={workDays.monday}
-            onChange={() => handleWorkDayChange("monday")}
-          />
-          <label
-            htmlFor="calculator-form-input-checkbox-work-day-monday"
-            className="ml-2"
-          >
-            Segunda
-          </label>
-        </div>
-        <div className="flex align-items-center">
-          <Checkbox
-            inputId="calculator-form-input-checkbox-work-day-tuesday"
-            name="work-day-tuesday"
-            checked={workDays.tuesday}
-            onChange={() => handleWorkDayChange("tuesday")}
-          />
-          <label
-            htmlFor="calculator-form-input-checkbox-work-day-tuesday"
-            className="ml-2"
-          >
-            Terça
-          </label>
-        </div>
-        <div className="flex align-items-center">
-          <Checkbox
-            inputId="calculator-form-input-checkbox-work-day-wednesday"
-            name="work-day-wednesday"
-            checked={workDays.wednesday}
-            onChange={() => handleWorkDayChange("wednesday")}
-          />
-          <label
-            htmlFor="calculator-form-input-checkbox-work-day-wednesday"
-            className="ml-2"
-          >
-            Quarta
-          </label>
-        </div>
-        <div className="flex align-items-center">
-          <Checkbox
-            inputId="calculator-form-input-checkbox-work-day-thursday"
-            name="work-day-thursday"
-            checked={workDays.thursday}
-            onChange={() => handleWorkDayChange("thursday")}
-          />
-          <label
-            htmlFor="calculator-form-input-checkbox-work-day-thursday"
-            className="ml-2"
-          >
-            Quinta
-          </label>
-        </div>
-        <div className="flex align-items-center">
-          <Checkbox
-            inputId="calculator-form-input-checkbox-work-day-friday"
-            name="work-day-friday"
-            checked={workDays.friday}
-            onChange={() => handleWorkDayChange("friday")}
-          />
-          <label
-            htmlFor="calculator-form-input-checkbox-work-day-friday"
-            className="ml-2"
-          >
-            Sexta
-          </label>
-        </div>
-        <div className="flex align-items-center">
-          <Checkbox
-            inputId="calculator-form-input-checkbox-work-day-saturday"
-            name="work-day-saturday"
-            checked={workDays.saturday}
-            onChange={() => handleWorkDayChange("saturday")}
-          />
-          <label
-            htmlFor="calculator-form-input-checkbox-work-day-saturday"
-            className="ml-2"
-          >
-            Sábado
-          </label>
-        </div>
-        <div className="flex align-items-center">
-          <Checkbox
-            inputId="calculator-form-input-checkbox-work-day-sunday"
-            name="work-day-sunday"
-            checked={workDays.sunday}
-            onChange={() => handleWorkDayChange("sunday")}
-          />
-          <label
-            htmlFor="calculator-form-input-checkbox-work-day-sunday"
-            className="ml-2"
-          >
-            Domingo
-          </label>
-        </div>
+        {Object.keys(workDays).map((day) => (
+          <div key={day}>
+            <Checkbox
+              inputId={"calculator-form-input-checkbox-work-day-" + day}
+              name={"work-day-" + day}
+              checked={workDays[day as WorkDay]}
+              onChange={() => handleWorkDayChange(day as WorkDay)}
+            />
+            <label htmlFor={"calculator-form-input-checkbox-work-day-" + day}>
+              {translateWorkDay(day as WorkDay)}
+            </label>
+          </div>
+        ))}
       </div>
       <div>
         <Button label="Calcular" onClick={handleCalculate} />

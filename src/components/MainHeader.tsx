@@ -1,8 +1,10 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "primereact/button";
 import { Menu } from "primereact/menu";
+import { updateLocaleOptions } from "primereact/api";
+import ptBrLocale from "@/infrastructure/primelocale/pt-br.json";
 
 const MainHeader = () => {
   const router = useRouter();
@@ -24,6 +26,10 @@ const MainHeader = () => {
   const toggleMenu = (event: React.MouseEvent) => {
     if (menuRight.current && event) menuRight.current.toggle(event);
   };
+
+  useEffect(() => {
+    updateLocaleOptions(ptBrLocale["pt-br"], "pt-br");
+  });
 
   return (
     <div className="flex">

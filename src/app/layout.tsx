@@ -21,7 +21,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <title>{String(metadata.title)}</title>
         <meta name="description" content={String(metadata.description)} />
       </head>
-      <PrimeReactProvider>
+      <PrimeReactProvider value={{ locale: "pt-br" }}>
         <body>
           <MainHeader />
           {children}
