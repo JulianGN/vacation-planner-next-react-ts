@@ -18,8 +18,8 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
   return (
     <div className="flex flex-col gap-3 max-w-screen-sm mx-auto">
       <TextTitleDescription
-        title="Como gostaria de dividir suas férias?"
-        description="Dividir para conquistar! Esse é o segredo!"
+        title="Quantas vezes gostaria de sair de férias?"
+        description="Dividir para conquistar: esse é o segredo!"
       />
       <div className="flex flex-col gap-3">
         <div className="flex flex-col">
@@ -30,6 +30,12 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
             inputId="calculator-form-step-days-qtd"
             value={daysVacation}
             onValueChange={(e) => setDaysVacation(e.value || 0)}
+            showButtons
+            decrementButtonClassName="p-button-outlined"
+            incrementButtonClassName="p-button-outlined"
+            buttonLayout="horizontal"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"
             min={5}
             max={90}
           />
@@ -46,6 +52,8 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
             value={daysSplit}
             onValueChange={(e) => setDaysSplit(e.value || 1)}
             showButtons
+            decrementButtonClassName="p-button-outlined"
+            incrementButtonClassName="p-button-outlined"
             buttonLayout="horizontal"
             incrementButtonIcon="pi pi-plus"
             decrementButtonIcon="pi pi-minus"
@@ -64,6 +72,12 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
             inputId="calculator-form-step-days-extra"
             value={daysExtra}
             onValueChange={(e) => setDaysExtra(e.value || 0)}
+            showButtons
+            decrementButtonClassName="p-button-outlined"
+            incrementButtonClassName="p-button-outlined"
+            buttonLayout="horizontal"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"
             min={0}
             max={90}
           />

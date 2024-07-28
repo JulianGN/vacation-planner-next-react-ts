@@ -13,10 +13,10 @@ const StepTitleDescription: React.FC<StepTitleDescriptionProps> = ({
 }) => {
   return (
     <div>
-      <h2 className={`text-xl md:text-4xl font-light mb-0 ${textAlign}`}>
+      <h2 className={`text-2xl md:text-4xl font-light mb-0 ${textAlign}`}>
         {title}
       </h2>
-      <p className={`text-slate-600 ${textAlign}`}>{description}</p>
+      <p className={`text-slate-600 mt-1 ${textAlign}`}>{description}</p>
     </div>
   );
 };

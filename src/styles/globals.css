@@ -33,6 +33,8 @@
   --vc-slate-800: #1e293b;
   --vc-slate-900: #0f172a;
   --vc-slate-950: #020617;
+
+  --vc-danger: #dc2626;
 }
 
 body {

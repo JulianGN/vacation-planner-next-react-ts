@@ -1,5 +1,11 @@
 "use client";
-import React, { useState, forwardRef, useImperativeHandle } from "react";
+import React, {
+  useState,
+  forwardRef,
+  useImperativeHandle,
+  SetStateAction,
+  useEffect,
+} from "react";
 import { CalculatorService } from "@/domain/services/CalculatorService";
 import { State } from "@/domain/models/State";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
@@ -17,6 +23,11 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
 
   const [validState, setValidState] = useState(true);
   const [validCity, setValidCity] = useState(true);
+
+  const setValidateTrue = () => {
+    setValidState(true);
+    setValidCity(true);
+  };
 
   const handleChangeJustNational = () => {
     setJustNational(!justNational);
@@ -37,6 +48,8 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
       return false;
     },
   }));
+
+  useEffect(setValidateTrue, [justNational, selectedState, selectedCity]);
 
   return (
     <div className="flex flex-col gap-3 max-w-screen-sm mx-auto">

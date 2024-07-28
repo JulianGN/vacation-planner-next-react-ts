@@ -72,7 +72,6 @@ const CalculatorForm = () => {
         <div className="flex justify-center gap-3 mt-4">
           {step > 0 && (
             <Button
-              severity="secondary"
               outlined
               label={step + 1 === steps ? "Preencher novamente" : "Voltar"}
               onClick={handleBack}

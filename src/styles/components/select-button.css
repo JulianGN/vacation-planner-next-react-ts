@@ -1,0 +1,19 @@
+.custom-select-button .p-button.p-component {
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+}
+
+.custom-select-button.p-selectbutton .p-button {
+  border: 1px solid var(--vc-primary-700);
+}
+
+.custom-select-button.p-selectbutton.p-invalid .p-button {
+  border: 1px solid var(--vc-danger);
+}
+
+@media (max-width: 768px) {
+  .custom-select-button .p-button.p-component {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7125rem;
+  }
+}

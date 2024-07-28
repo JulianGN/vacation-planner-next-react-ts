@@ -9,41 +9,61 @@ import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { Nullable } from "primereact/ts-helpers";
 import { Calendar } from "primereact/calendar";
 import { Checkbox } from "primereact/checkbox";
-import { translateWorkDay, WorkDay } from "@/domain/models/WorkDay";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
+import SelectButton from "@/components/shared/SelectButton/SelectButton";
+import { WorkDay } from "@/domain/enums/WorkDay";
 
 const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
-  const [period, setPeriod] = useState<Nullable<(Date | null)[]>>(null);
+  const today = new Date();
+  const nextYear = new Date(today);
+  nextYear.setMonth(today.getMonth() + 12);
+
+  const [period, setPeriod] = useState<Nullable<(Date | null)[]>>([
+    today,
+    nextYear,
+  ]);
   const [fullPeriod, setFullPeriod] = useState(true);
 
   const handleFullPeriodChange = () => {
     if (!fullPeriod) return;
 
-    const today = new Date();
-    const nextYear = new Date(today);
-    nextYear.setMonth(today.getMonth() + 12);
-
     setPeriod([today, nextYear]);
   };
 
-  const [workDays, setWorkDays] = useState({
-    monday: true,
-    tuesday: true,
-    wednesday: true,
-    thursday: true,
-    friday: true,
-    saturday: false,
-    sunday: false,
-  });
-  const handleWorkDayChange = (day: WorkDay) => {
-    setWorkDays(() => ({
-      ...workDays,
-      [day]: !workDays[day],
-    }));
+  const itemsWorkDays = [
+    { name: "Domingo", value: WorkDay.sunday },
+    { name: "Segunda", value: WorkDay.monday },
+    { name: "Terça", value: WorkDay.tuesday },
+    { name: "Quarta", value: WorkDay.wednesday },
+    { name: "Quinta", value: WorkDay.thursday },
+    { name: "Sexta", value: WorkDay.friday },
+    { name: "Sábado", value: WorkDay.saturday },
+  ];
+
+  const notWorkDay = [WorkDay.saturday, WorkDay.sunday];
+  const initialWorkDays = itemsWorkDays.reduce((acc, item) => {
+    if (!notWorkDay.includes(item.value)) {
+      acc.push(item.value);
+    }
+    return acc;
+  }, [] as number[]);
+  const [workDays, setWorkDays] = useState<number[] | null>(initialWorkDays);
+
+  const [validWorkDays, setValidWorkDays] = useState(true);
+
+  const handleSetWorkDays = (values: number[] | null) => {
+    setWorkDays(values);
+    if (workDays?.length) setValidWorkDays(true);
   };
 
   useImperativeHandle(ref, () => ({
     validate: () => {
+      if (!period || !workDays?.length) {
+        setValidWorkDays(false);
+        return false;
+      }
+
+      setValidWorkDays(true);
       return true;
     },
   }));
@@ -72,6 +92,7 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
           </label>
         </div>
         <Calendar
+          className={fullPeriod ? "hidden" : ""}
           value={period}
           onChange={(e) => setPeriod(e.value)}
           selectionMode="range"
@@ -80,24 +101,14 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
           disabled={fullPeriod}
         />
       </div>
-      <div className="flex flex-col gap-3 mt-3">
-        <label>Dias que trabalha:</label>
-        <div className="flex flex-wrap justify-content-center gap-x-12 gap-y-2">
-          {Object.keys(workDays).map((day) => (
-            <div key={day} className="flex items-center gap-2">
-              <Checkbox
-                inputId={"calculator-form-input-checkbox-work-day-" + day}
-                name={"work-day-" + day}
-                checked={workDays[day as WorkDay]}
-                onChange={() => handleWorkDayChange(day as WorkDay)}
-              />
-              <label htmlFor={"calculator-form-input-checkbox-work-day-" + day}>
-                {translateWorkDay(day as WorkDay)}
-              </label>
-            </div>
-          ))}
-        </div>
-      </div>
+      <SelectButton
+        label="Dias que trabalha:"
+        items={itemsWorkDays}
+        selectedItems={workDays}
+        setCheck={handleSetWorkDays}
+        sliceItemNameAt={3}
+        invalid={!validWorkDays}
+      />
     </div>
   );
 });

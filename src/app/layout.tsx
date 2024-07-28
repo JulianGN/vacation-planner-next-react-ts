@@ -6,10 +6,7 @@ import "@/styles/globals.css";
 import MainHeader from "@/components/MainHeader";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Planejador de férias",
-    template: "%s | Seu tempo importa",
-  },
+  title: `Planejador de férias`,
   description: "Encontre os melhores dias para suas férias",
 };
 
