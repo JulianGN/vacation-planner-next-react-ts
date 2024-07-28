@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+const vacation = (req: NextApiRequest, res: NextApiResponse) => {
   // Handle GET request for holidays
   if (req.method === "GET") {
     const holidays = [
@@ -13,3 +13,5 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 };
+
+export default vacation;

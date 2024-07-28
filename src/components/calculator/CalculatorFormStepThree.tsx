@@ -73,4 +73,5 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
   );
 });
 
+CalculatorFormStepThree.displayName = "CalculatorFormStepThree";
 export default CalculatorFormStepThree;

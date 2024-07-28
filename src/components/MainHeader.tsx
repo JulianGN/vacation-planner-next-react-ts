@@ -32,7 +32,7 @@ const MainHeader = () => {
         setActiveIndex(0);
         break;
     }
-  });
+  }, [pathName]);
 
   updateLocaleOptions(ptBrLocale["pt-br"], "pt-br");
 
