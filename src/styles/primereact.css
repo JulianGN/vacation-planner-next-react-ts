@@ -8000,10 +8000,6 @@
     outline-offset: 0;
     box-shadow: 0 0 0 1px var(--vc-primary-200);
   }
-  .p-galleria-mask {
-  }
-  .p-image-mask {
-  }
   .p-image-preview-indicator {
     background-color: transparent;
     color: #f8f9fa;
