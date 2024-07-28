@@ -1,7 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
 import { PrimeReactProvider } from "primereact/api";
-
 import "@/styles/globals.css";
 
 import MainHeader from "@/components/MainHeader";
@@ -21,12 +20,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <title>{String(metadata.title)}</title>
         <meta name="description" content={String(metadata.description)} />
       </head>
-      <PrimeReactProvider value={{ locale: "pt-br" }}>
-        <body>
+      <body className="bg-slate-100">
+        <PrimeReactProvider value={{ locale: "pt-br" }}>
           <MainHeader />
-          {children}
-        </body>
-      </PrimeReactProvider>
+          <div className="lg:container mx-auto">{children}</div>
+        </PrimeReactProvider>
+      </body>
     </html>
   );
 };

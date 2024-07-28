@@ -1,0 +1,9 @@
+.p-menuitem-text {
+  font-size: 0.825rem;
+}
+
+@media (max-width: 768px) {
+  .p-menuitem-text {
+    display: none;
+  }
+}

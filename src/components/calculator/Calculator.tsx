@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-import CalculatorHeader from "./CalculatorHeader";
 import CalculatorForm from "./CalculatorForm";
 
 const Calculator = () => {
@@ -15,7 +14,6 @@ const Calculator = () => {
 
   return (
     <section>
-      <CalculatorHeader />
       <CalculatorForm />
     </section>
   );

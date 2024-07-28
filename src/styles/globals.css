@@ -1,14 +1,42 @@
-@layer tailwind-base, primereact, tailwind-utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
+@import "./primereact.css";
 @import "primeicons/primeicons.css";
-@import "primereact/resources/primereact.min.css";
-@import "primereact/resources/themes/soho-light/theme.css";
+@import "./components/_components.css";
 
-@layer tailwind-base {
-  @tailwind base;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --vc-white: #fff;
+  --vc-primary: #0284c7;
+  --vc-primary-50: #f0f9ff;
+  --vc-primary-100: #e0f2fe;
+  --vc-primary-200: #bae6fd;
+  --vc-primary-300: #7dd3fc;
+  --vc-primary-400: #38bdf8;
+  --vc-primary-500: #0ea5e9;
+  --vc-primary-600: #0284c7;
+  --vc-primary-700: #0369a1;
+  --vc-primary-800: #075985;
+  --vc-primary-900: #0c4a6e;
+  --vc-primary-950: #082f49;
+  --vc-slate-50: #f8fafc;
+  --vc-slate-100: #f1f5f9;
+  --vc-slate-200: #e2e8f0;
+  --vc-slate-300: #cbd5e1;
+  --vc-slate-400: #94a3b8;
+  --vc-slate-500: #64748b;
+  --vc-slate-600: #475569;
+  --vc-slate-700: #334155;
+  --vc-slate-800: #1e293b;
+  --vc-slate-900: #0f172a;
+  --vc-slate-950: #020617;
 }
 
-@layer tailwind-utilities {
-  @tailwind components;
-  @tailwind utilities;
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }

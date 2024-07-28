@@ -1,47 +1,47 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
-import { Button } from "primereact/button";
-import { Menu } from "primereact/menu";
+import React, { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { TabMenu } from "primereact/tabmenu";
 import { updateLocaleOptions } from "primereact/api";
 import ptBrLocale from "@/infrastructure/primelocale/pt-br.json";
 
 const MainHeader = () => {
+  const pathName = usePathname();
   const router = useRouter();
 
-  const menuRight = useRef<Menu>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const items = [
     {
-      label: "Melhorias dias de férias",
+      label: "Melhores dias",
       icon: "pi pi-calculator",
-      url: "/",
+      command: () => router.push("/"),
     },
     {
-      label: "Sobre",
       icon: "pi pi-question",
-      url: "/sobre",
+      command: () => router.push("/sobre"),
     },
   ];
 
-  const toggleMenu = (event: React.MouseEvent) => {
-    if (menuRight.current && event) menuRight.current.toggle(event);
-  };
-
   useEffect(() => {
-    updateLocaleOptions(ptBrLocale["pt-br"], "pt-br");
+    switch (pathName) {
+      case "/sobre":
+        setActiveIndex(1);
+        break;
+      default:
+        setActiveIndex(0);
+        break;
+    }
   });
 
+  updateLocaleOptions(ptBrLocale["pt-br"], "pt-br");
+
   return (
-    <div className="flex">
-      <h1>Planejador de férias</h1>;
-      <Button
-        icon="pi pi-align-right"
-        className="mr-2"
-        onClick={toggleMenu}
-        aria-controls="popup_menu_right"
-        aria-haspopup
-      />
-      <Menu model={items} popup ref={menuRight} id="popup_menu_right" />
+    <div className="bg-white ps-3">
+      <div className="lg:container mx-auto flex items-center justify-between">
+        <h1 className="font-light text-sm md:text-xl">Planejador de férias</h1>
+        <TabMenu model={items} activeIndex={activeIndex} key={activeIndex} />
+      </div>
     </div>
   );
 };
