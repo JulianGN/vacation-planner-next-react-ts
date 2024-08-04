@@ -1,13 +1,13 @@
 "use client";
-import React, { useState, forwardRef, useImperativeHandle } from "react";
+import React, { forwardRef, useImperativeHandle } from "react";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { InputNumber } from "primereact/inputnumber";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
+import useCalculatorStore from "@/application/stores/useCalculatorStore";
 
 const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
-  const [daysVacation, setDaysVacation] = useState(10);
-  const [daysSplit, setDaysSplit] = useState(1);
-  const [daysExtra, setDaysExtra] = useState(0);
+  const { stepDaysVacations } = useCalculatorStore();
+  const step = stepDaysVacations;
 
   useImperativeHandle(ref, () => ({
     validate: () => {
@@ -28,8 +28,8 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
           </label>
           <InputNumber
             inputId="calculator-form-step-days-qtd"
-            value={daysVacation}
-            onValueChange={(e) => setDaysVacation(e.value || 0)}
+            value={step.daysVacation}
+            onValueChange={(e) => step.setDaysVacation(e.value || 0)}
             showButtons
             decrementButtonClassName="p-button-outlined"
             incrementButtonClassName="p-button-outlined"
@@ -49,8 +49,8 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
           </label>
           <InputNumber
             inputId="calculator-form-step-days-split"
-            value={daysSplit}
-            onValueChange={(e) => setDaysSplit(e.value || 1)}
+            value={step.daysSplit}
+            onValueChange={(e) => step.setDaysSplit(e.value || 1)}
             showButtons
             decrementButtonClassName="p-button-outlined"
             incrementButtonClassName="p-button-outlined"
@@ -70,8 +70,8 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
           </label>
           <InputNumber
             inputId="calculator-form-step-days-extra"
-            value={daysExtra}
-            onValueChange={(e) => setDaysExtra(e.value || 0)}
+            value={step.daysExtra}
+            onValueChange={(e) => step.setDaysExtra(e.value || 0)}
             showButtons
             decrementButtonClassName="p-button-outlined"
             incrementButtonClassName="p-button-outlined"

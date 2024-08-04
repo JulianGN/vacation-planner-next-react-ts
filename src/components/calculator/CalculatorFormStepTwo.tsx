@@ -3,11 +3,10 @@ import React, {
   useState,
   forwardRef,
   useImperativeHandle,
-  SetStateAction,
   useEffect,
 } from "react";
-import { CalculatorService } from "@/domain/services/CalculatorService";
-import { State } from "@/domain/models/State";
+import useCalculatorStore from "@/application/stores/useCalculatorStore";
+import { CalculatorService } from "@/application/services/CalculatorService";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { Dropdown } from "primereact/dropdown";
 import { Checkbox } from "primereact/checkbox";
@@ -17,9 +16,8 @@ const calculatorService = new CalculatorService();
 const states = calculatorService.getStates();
 
 const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
-  const [selectedState, setSelectedState] = useState<State | null>(null);
-  const [selectedCity, setSelectedCity] = useState(null);
-  const [justNational, setJustNational] = useState(false);
+  const { stepPlace } = useCalculatorStore();
+  const step = stepPlace;
 
   const [validState, setValidState] = useState(true);
   const [validCity, setValidCity] = useState(true);
@@ -30,18 +28,18 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   };
 
   const handleChangeJustNational = () => {
-    setJustNational(!justNational);
+    step.setJustNational(!step.justNational);
 
-    if (!justNational) {
-      setSelectedState(null);
-      setSelectedCity(null);
+    if (!step.justNational) {
+      step.setSelectedState(null);
+      step.setSelectedCity(null);
     }
   };
 
   useImperativeHandle(ref, () => ({
     validate: () => {
-      if (justNational) return true;
-      if (selectedState && selectedCity) return true;
+      if (step.justNational) return true;
+      if (step.selectedState && step.selectedCity) return true;
 
       setValidState(false);
       setValidCity(false);
@@ -49,7 +47,11 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
     },
   }));
 
-  useEffect(setValidateTrue, [justNational, selectedState, selectedCity]);
+  useEffect(setValidateTrue, [
+    step.justNational,
+    step.selectedState,
+    step.selectedCity,
+  ]);
 
   return (
     <div className="flex flex-col gap-3 max-w-screen-sm mx-auto">
@@ -60,30 +62,30 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
       />
 
       <Dropdown
-        value={selectedState}
-        onChange={(e) => setSelectedState(e.value)}
+        value={step.selectedState}
+        onChange={(e) => step.setSelectedState(e.value)}
         options={states}
         optionLabel="nome"
-        placeholder={justNational ? "-" : "Selecione o estado"}
+        placeholder={step.justNational ? "-" : "Selecione o estado"}
         filter
-        disabled={justNational}
-        invalid={!justNational && !validState}
+        disabled={step.justNational}
+        invalid={!step.justNational && !validState}
       />
       <Dropdown
-        value={selectedCity}
-        onChange={(e) => setSelectedCity(e.value)}
-        options={selectedState?.cidades ?? []}
+        value={step.selectedCity}
+        onChange={(e) => step.setSelectedCity(e.value)}
+        options={step.selectedState?.cidades ?? []}
         optionLabel="nome"
         placeholder={
-          justNational
+          step.justNational
             ? "-"
-            : !selectedState
+            : !step.selectedState
             ? "Selecione primeiro o estado"
             : "Selecione a cidade"
         }
         filter
-        disabled={justNational || !selectedState}
-        invalid={!justNational && !validCity}
+        disabled={step.justNational || !step.selectedState}
+        invalid={!step.justNational && !validCity}
       />
 
       <div className="flex align-items-center">
@@ -91,7 +93,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
           inputId="calculator-form-input-checkbox-just-nat"
           name="just-nat"
           onChange={handleChangeJustNational}
-          checked={justNational}
+          checked={step.justNational}
         />
         <label
           htmlFor="calculator-form-input-checkbox-just-nat"
