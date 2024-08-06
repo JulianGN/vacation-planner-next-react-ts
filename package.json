@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/mongoose": "^5.11.97",
     "immer": "^10.1.1",
+    "mongoose": "^8.5.2",
     "next": "14.2.5",
     "primeicons": "^7.0.0",
     "primereact": "^10.7.0",
