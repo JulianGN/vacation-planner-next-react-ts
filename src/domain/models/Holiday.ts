@@ -1,8 +1,8 @@
 export interface Holiday {
-  id: string;
+  id: number;
   date: Date;
   name: string;
   type: "national" | "state" | "city";
-  state?: string;
-  city?: string;
+  id_state?: number;
+  id_city?: number;
 }
