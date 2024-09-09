@@ -1,16 +1,23 @@
-import { State } from "@/domain/models/State";
+import { SelectListViewModel } from "@/domain/models/SelectListViewModel";
 import { Nullable } from "primereact/ts-helpers";
 
 export interface CalculatorFormStep {
   validate: () => boolean;
 }
 
+interface FormLists {
+  states: SelectListViewModel[];
+  cities: SelectListViewModel[];
+  setStates: (states: SelectListViewModel[]) => void;
+  setCities: (cities: SelectListViewModel[]) => void;
+}
+
 interface StepPlace {
-  selectedState: State | null;
-  selectedCity: string | null;
+  selectedState: SelectListViewModel | null;
+  selectedCity: SelectListViewModel | null;
   justNational: boolean;
-  setSelectedState: (state: State | null) => void;
-  setSelectedCity: (city: string | null) => void;
+  setSelectedState: (state: SelectListViewModel | null) => void;
+  setSelectedCity: (city: SelectListViewModel | null) => void;
   setJustNational: (n: boolean) => void;
 }
 
@@ -34,6 +41,7 @@ interface StepPeriodWorkDays {
 }
 
 export interface CalculatorState {
+  lists: FormLists;
   stepPlace: StepPlace;
   stepDaysVacations: StepDaysVacations;
   stepPeriodWorkDays: StepPeriodWorkDays;

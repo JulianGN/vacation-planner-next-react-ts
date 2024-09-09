@@ -26,6 +26,22 @@ const useCalculatorStore = create<CalculatorState>((set) => {
   }
 
   return {
+    lists: {
+      states: [],
+      cities: [],
+      setStates: (states) =>
+        set(
+          produce((state) => {
+            state.lists.states = states;
+          })
+        ),
+      setCities: (cities) =>
+        set(
+          produce((state) => {
+            state.lists.cities = cities;
+          })
+        ),
+    },
     stepPlace: {
       selectedState: null,
       selectedCity: null,
