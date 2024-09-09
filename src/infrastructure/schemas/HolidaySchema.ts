@@ -16,4 +16,5 @@ const HolidaySchema: Schema = new Schema({
   city: { type: Schema.Types.ObjectId, ref: "City", required: false }, // FK to City
 });
 
-export default mongoose.model<HolidayDocument>("Holiday", HolidaySchema);
+export default mongoose.models.Holiday ||
+  mongoose.model<HolidayDocument>("Holiday", HolidaySchema);

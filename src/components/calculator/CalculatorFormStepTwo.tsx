@@ -1,26 +1,26 @@
-"use client";
 import React, {
   useState,
   forwardRef,
   useImperativeHandle,
   useEffect,
+  useRef,
 } from "react";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
-import { CalculatorService } from "@/application/services/CalculatorService";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { Dropdown } from "primereact/dropdown";
 import { Checkbox } from "primereact/checkbox";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
+import { CalculatorService } from "@/application/services/CalculatorService";
 
 const calculatorService = new CalculatorService();
-const states = calculatorService.getStates();
 
 const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
-  const { stepPlace } = useCalculatorStore();
+  const { stepPlace, lists } = useCalculatorStore();
   const step = stepPlace;
 
   const [validState, setValidState] = useState(true);
   const [validCity, setValidCity] = useState(true);
+  const statesFetched = useRef(false); // Add a ref to track if states have been fetched
 
   const setValidateTrue = () => {
     setValidState(true);
@@ -36,6 +36,14 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
     }
   };
 
+  const fetchStates = async () => {
+    if (statesFetched.current) return; // Check if states have already been fetched
+
+    const states = await calculatorService.getStates();
+    lists.setStates(states);
+    statesFetched.current = true; // Set the ref to true after fetching states
+  };
+
   useImperativeHandle(ref, () => ({
     validate: () => {
       if (step.justNational) return true;
@@ -46,6 +54,9 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
       return false;
     },
   }));
+  useEffect(() => {
+    fetchStates();
+  }, []);
 
   useEffect(setValidateTrue, [
     step.justNational,
@@ -60,12 +71,11 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         feriados?"
         description="Pode ser a cidade sede da empresa ou, se houver, da sua filial."
       />
-
       <Dropdown
         value={step.selectedState}
         onChange={(e) => step.setSelectedState(e.value)}
-        options={states}
-        optionLabel="nome"
+        options={lists.states ?? []}
+        optionLabel="name"
         placeholder={step.justNational ? "-" : "Selecione o estado"}
         filter
         disabled={step.justNational}
@@ -74,8 +84,8 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
       <Dropdown
         value={step.selectedCity}
         onChange={(e) => step.setSelectedCity(e.value)}
-        options={step.selectedState?.cidades ?? []}
-        optionLabel="nome"
+        options={[]} // TODO
+        optionLabel="name"
         placeholder={
           step.justNational
             ? "-"
@@ -97,8 +107,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         />
         <label
           htmlFor="calculator-form-input-checkbox-just-nat"
-          className="ml-2"
-        >
+          className="ml-2">
           Considerar apenas feriados nacionais
         </label>
       </div>

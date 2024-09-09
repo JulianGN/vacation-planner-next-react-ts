@@ -12,4 +12,5 @@ const StateSchema: Schema = new Schema({
   uf: { type: String, required: true },
 });
 
-export default mongoose.model<StateDocument>("State", StateSchema);
+export default mongoose.models.State ||
+  mongoose.model<StateDocument>("State", StateSchema);
