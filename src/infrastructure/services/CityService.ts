@@ -1,36 +1,38 @@
-import City, { CityDocument } from "@/infrastructure/schemas/CitySchema";
-import { MultiselectListViewModel } from "@/domain/models/MultiselectListViewModel";
+import CityRepository from "@/infrastructure/repositories/CityRepository";
+import { SelectListGroupByIdViewModel } from "@/domain/models/SelectListGroupByIdViewModel";
+import { SelectListViewModel } from "@/domain/models/SelectListViewModel";
+import createHttpError from "http-errors";
+
+const cityRepository = new CityRepository();
 
 export class CityService {
-  private cities: MultiselectListViewModel[] = [];
+  private cities: SelectListGroupByIdViewModel[] = [];
 
-  constructor(initialCities: MultiselectListViewModel[] = []) {
+  constructor(initialCities: SelectListGroupByIdViewModel[] = []) {
     this.cities = initialCities;
   }
 
-  async getCitiesFromMongoDB(stateId: number) {
-    try {
-      return await City.find((c: CityDocument) => c.state.id_state === stateId);
-    } catch (error) {
-      console.error("Error retrieving cities:", error);
-      return [];
-    }
-  }
+  async getCitiesByStateId(stateId: number): Promise<SelectListViewModel[]> {
+    const cachedState = this.cities.find((state) => state.id === stateId);
+    if (cachedState) return cachedState.list;
 
-  async getCityByStateId(stateId: number) {
-    if (this.cities.some((state) => state.id === stateId)) return this.cities;
+    const citiesFromDb = await cityRepository.getCitiesByStateId(stateId);
 
-    const citiesFromMongoDB = await this.getCitiesFromMongoDB(stateId);
+    if (!citiesFromDb?.length)
+      throw new createHttpError.NotFound(
+        `No cities found for stateId: ${stateId}`
+      );
 
-    this.cities.push({
+    const newState = {
       id: stateId,
-      name: citiesFromMongoDB[0].state.name_state,
-      list: citiesFromMongoDB.map((city) => ({
+      name: citiesFromDb[0].state.name_state,
+      list: citiesFromDb.map((city) => ({
         id: city.id_city,
         name: city.name_city,
       })),
-    });
+    };
 
-    return this.cities;
+    this.cities.push(newState);
+    return newState.list;
   }
 }

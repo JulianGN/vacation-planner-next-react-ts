@@ -4,11 +4,12 @@ import React, {
   useImperativeHandle,
   useEffect,
   useRef,
+  useMemo,
 } from "react";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
-import { Dropdown } from "primereact/dropdown";
-import { Checkbox } from "primereact/checkbox";
+import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+import { InputSwitch } from "primereact/inputswitch";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
 import { CalculatorService } from "@/application/services/CalculatorService";
 
@@ -20,7 +21,8 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
 
   const [validState, setValidState] = useState(true);
   const [validCity, setValidCity] = useState(true);
-  const statesFetched = useRef(false); // Add a ref to track if states have been fetched
+  const statesFetched = useRef(false);
+  const loadingCities = useRef(false);
 
   const setValidateTrue = () => {
     setValidState(true);
@@ -37,12 +39,30 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   };
 
   const fetchStates = async () => {
-    if (statesFetched.current) return; // Check if states have already been fetched
+    if (statesFetched.current) return;
 
     const states = await calculatorService.getStates();
     lists.setStates(states);
-    statesFetched.current = true; // Set the ref to true after fetching states
+    statesFetched.current = true;
   };
+
+  const fetchCitiesByStateId = async (stateId: number) => {
+    loadingCities.current = true;
+    const cities = await calculatorService.getCitiesByStateId(stateId);
+    lists.setCities(cities);
+    console.log("cities", cities);
+    loadingCities.current = false;
+  };
+
+  const handleStateChange = (e: DropdownChangeEvent) => {
+    step.setSelectedState(e.value);
+    step.setSelectedCity(null);
+    fetchCitiesByStateId(e.value.id);
+  };
+
+  const cities = useMemo(() => {
+    return step.selectedState ? lists.cities : [];
+  }, [step.selectedState, lists.cities]);
 
   useImperativeHandle(ref, () => ({
     validate: () => {
@@ -71,35 +91,8 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         feriados?"
         description="Pode ser a cidade sede da empresa ou, se houver, da sua filial."
       />
-      <Dropdown
-        value={step.selectedState}
-        onChange={(e) => step.setSelectedState(e.value)}
-        options={lists.states ?? []}
-        optionLabel="name"
-        placeholder={step.justNational ? "-" : "Selecione o estado"}
-        filter
-        disabled={step.justNational}
-        invalid={!step.justNational && !validState}
-      />
-      <Dropdown
-        value={step.selectedCity}
-        onChange={(e) => step.setSelectedCity(e.value)}
-        options={[]} // TODO
-        optionLabel="name"
-        placeholder={
-          step.justNational
-            ? "-"
-            : !step.selectedState
-            ? "Selecione primeiro o estado"
-            : "Selecione a cidade"
-        }
-        filter
-        disabled={step.justNational || !step.selectedState}
-        invalid={!step.justNational && !validCity}
-      />
-
-      <div className="flex align-items-center">
-        <Checkbox
+      <div className="flex items-center justify-center">
+        <InputSwitch
           inputId="calculator-form-input-checkbox-just-nat"
           name="just-nat"
           onChange={handleChangeJustNational}
@@ -111,6 +104,37 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
           Considerar apenas feriados nacionais
         </label>
       </div>
+      <Dropdown
+        value={step.selectedState}
+        onChange={handleStateChange}
+        options={lists.states ?? []}
+        optionLabel="name"
+        placeholder={step.justNational ? "-" : "Selecione o estado"}
+        filter
+        disabled={step.justNational || loadingCities.current}
+        invalid={!step.justNational && !validState}
+      />
+      <Dropdown
+        value={step.selectedCity}
+        onChange={(e) => step.setSelectedCity(e.value)}
+        options={cities}
+        optionLabel="name"
+        placeholder={
+          step.justNational
+            ? "-"
+            : !step.selectedState
+            ? "Selecione primeiro o estado"
+            : "Selecione a cidade"
+        }
+        filter
+        disabled={
+          step.justNational ||
+          !step.selectedState ||
+          !cities?.length ||
+          loadingCities.current
+        }
+        invalid={!step.justNational && !validCity}
+      />
     </div>
   );
 });

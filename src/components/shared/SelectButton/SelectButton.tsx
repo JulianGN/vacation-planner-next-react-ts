@@ -24,7 +24,7 @@ const Step: React.FC<SelectButtonProps> = ({
     <div className="flex flex-col gap-1 mt-3">
       {label && <label className="form-label">{label}</label>}
       <SelectButton
-        className="custom-select-button"
+        className="custom-select-button custom-select-button--weekdays"
         value={selectedItems}
         onChange={(e) => setCheck(e.value)}
         optionLabel="name"

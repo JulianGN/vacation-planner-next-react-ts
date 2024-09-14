@@ -1,5 +1,6 @@
 "use client";
 import React, {
+  useRef,
   useState,
   useEffect,
   forwardRef,
@@ -8,7 +9,7 @@ import React, {
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { Calendar } from "primereact/calendar";
-import { Checkbox } from "primereact/checkbox";
+import { InputSwitch } from "primereact/inputswitch";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
 import SelectButton from "@/components/shared/SelectButton/SelectButton";
 import { itemsWorkDays } from "@/domain/models/WorkDay";
@@ -16,11 +17,14 @@ import { itemsWorkDays } from "@/domain/models/WorkDay";
 const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
   const { stepPeriodWorkDays } = useCalculatorStore();
   const step = stepPeriodWorkDays;
+  const calendarRef = useRef<any>(null);
 
   const [validWorkDays, setValidWorkDays] = useState(true);
 
   const handleFullPeriodChange = () => {
     if (!step.fullPeriod) return;
+
+    if (calendarRef.current) calendarRef.current.hide();
 
     const fullPeriodFromToday = step.getFullPeriodFromToday();
 
@@ -53,8 +57,8 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
         description="A partir de quando podemos calcular as melhores opções"
       />
       <div className="flex flex-col gap-2">
-        <div className="flex align-items-center">
-          <Checkbox
+        <div className="flex items-center justify-center">
+          <InputSwitch
             inputId="calculator-form-input-checkbox-full-period"
             name="full-period"
             onChange={() => step.setFullPeriod(!step.fullPeriod)}
@@ -62,20 +66,28 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
           />
           <label
             htmlFor="calculator-form-input-checkbox-full-period"
-            className="ml-2"
-          >
+            className="ml-2">
             Buscar pelos próximos 12 meses
           </label>
         </div>
-        <Calendar
-          className={step.fullPeriod ? "hidden" : ""}
-          value={step.period}
-          onChange={(e) => step.setPeriod(e.value)}
-          selectionMode="range"
-          readOnlyInput
-          hideOnRangeSelection
-          disabled={step.fullPeriod}
-        />
+        <div
+          className="w-full"
+          onClick={() => {
+            if (step.fullPeriod) {
+              step.setFullPeriod(false);
+            }
+          }}>
+          <Calendar
+            ref={calendarRef}
+            className="w-full"
+            value={step.period}
+            onChange={(e) => step.setPeriod(e.value)}
+            selectionMode="range"
+            readOnlyInput
+            hideOnRangeSelection
+            disabled={step.fullPeriod}
+          />
+        </div>
       </div>
       <SelectButton
         label="Dias que trabalha:"

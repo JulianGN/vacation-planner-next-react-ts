@@ -1,17 +1,17 @@
 import { NextResponse } from "next/server";
 import { AppService } from "@/infrastructure/services/AppService";
-import { StateService } from "@/infrastructure/services/StateService"; // Import StateService
+import { StateService } from "@/infrastructure/services/StateService";
 
 const appService = new AppService();
-const stateService = new StateService(); // Create an instance of StateService
+const stateService = new StateService();
 
 export async function GET() {
   try {
     await appService.initialize();
-    const states = await stateService.getStates(); // Call getStates method
-    return NextResponse.json({ states }); // Return the states in the response
+    const states = await stateService.getStates();
+    return NextResponse.json({ states });
   } catch (error) {
-    console.error("Error in GET route:", error);
+    console.error("Error in GET STATES route:", error);
     return NextResponse.error();
   }
 }

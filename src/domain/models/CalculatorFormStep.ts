@@ -1,4 +1,5 @@
 import { SelectListViewModel } from "@/domain/models/SelectListViewModel";
+import { SelectListGroupByIdViewModel } from "@/domain/models/SelectListGroupByIdViewModel";
 import { Nullable } from "primereact/ts-helpers";
 
 export interface CalculatorFormStep {
@@ -7,9 +8,9 @@ export interface CalculatorFormStep {
 
 interface FormLists {
   states: SelectListViewModel[];
-  cities: SelectListViewModel[];
+  cities: SelectListGroupByIdViewModel[];
   setStates: (states: SelectListViewModel[]) => void;
-  setCities: (cities: SelectListViewModel[]) => void;
+  setCities: (cities: SelectListGroupByIdViewModel[]) => void;
 }
 
 interface StepPlace {

@@ -1,6 +1,7 @@
 .custom-select-button .p-button.p-component {
   padding: 0.75rem 1rem;
   font-size: 0.8125rem;
+  justify-content: center;
 }
 
 .custom-select-button.p-selectbutton .p-button {
@@ -9,6 +10,11 @@
 
 .custom-select-button.p-selectbutton.p-invalid .p-button {
   border: 1px solid var(--vc-danger);
+}
+
+.custom-select-button.custom-select-button--weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 
 @media (max-width: 768px) {
