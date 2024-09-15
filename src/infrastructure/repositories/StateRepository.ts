@@ -1,4 +1,5 @@
 import State, { StateDocument } from "@/infrastructure/schemas/StateSchema";
+import { ObjectId } from "mongodb";
 
 class StateRepository {
   async getAll(): Promise<StateDocument[]> {
@@ -10,11 +11,18 @@ class StateRepository {
     }
   }
 
-  async findById(id: string): Promise<StateDocument | null> {
+  async findById(
+    id: string | number | ObjectId
+  ): Promise<StateDocument | null> {
+    const query =
+      typeof id === "number"
+        ? { id_state: id }
+        : { _id: typeof id === "string" ? new ObjectId(id) : id };
+
     try {
-      return await State.findOne({ id_state: id });
+      return await State.findOne(query);
     } catch (error) {
-      console.error(`Error retrieving state with id ${id}:`, error);
+      console.error(`Error retrieving state with idState ${id}:`, error);
       return null;
     }
   }

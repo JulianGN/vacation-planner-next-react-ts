@@ -1,4 +1,4 @@
 export interface SelectListViewModel {
-  id: number;
+  id: number | string;
   name: string;
 }

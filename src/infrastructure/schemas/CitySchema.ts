@@ -1,7 +1,9 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { ObjectId } from "mongodb";
 import { StateDocument } from "./StateSchema"; // Import for TypeScript typing
 
 export interface CityDocument extends Document {
+  _id: ObjectId;
   id_city: number;
   name_city: string;
   state: StateDocument; // Embedding the entire State object

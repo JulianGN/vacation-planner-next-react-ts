@@ -1,30 +1,39 @@
-import { HolidayRepository } from "@/domain/repositories/HolidayRepository";
-import HolidayModel from "@/infrastructure/schemas/HolidaySchema";
-import { Holiday } from "@/domain/models/Holiday";
+import { HolidayPeriod, HolidayQuery } from "@/domain/models/Holiday";
+import Holiday, {
+  HolidayDocument,
+} from "@/infrastructure/schemas/HolidaySchema";
+import {
+  getDateExprPeriod,
+  getPeriodIgnoringYear,
+} from "../helpers/dateHelpers";
+import { getEqObjectId } from "../helpers/queryHelper";
+class StateRepository {
+  async getAllByPeriod(
+    period: HolidayPeriod,
+    idDbState?: string,
+    idDbCity?: string
+  ): Promise<HolidayDocument[]> {
+    try {
+      const dateFromDbYear = getPeriodIgnoringYear(period);
+      const datePeriod = getDateExprPeriod(dateFromDbYear);
+      const query: HolidayQuery = {
+        $expr: { $and: datePeriod },
+      };
 
-class MongooseHolidayRepository implements HolidayRepository {
-  findAll(): Promise<Holiday[]> {
-    // return HolidayModel.find().exec();
-    throw new Error("Method not implemented.");
-  }
-  findById(id: string): Promise<Holiday | null> {
-    // return HolidayModel.findById(id).exec();
-    throw new Error("Method not implemented.");
-  }
-  create(holiday: Holiday): Promise<Holiday> {
-    // const createdHoliday = new HolidayModel(holiday);
-    // return createdHoliday.save();
-    throw new Error("Method not implemented.");
-  }
-  update(id: string, holiday: Holiday): Promise<Holiday | null> {
-    // return HolidayModel.findByIdAndUpdate(id, holiday, { new: true }).exec();
-    throw new Error("Method not implemented.");
-  }
-  delete(id: string): Promise<void> {
-    // await HolidayModel.findByIdAndDelete(id).exec();
-    throw new Error("Method not implemented.");
+      if (idDbState || idDbCity) query.$expr.$and.push({ $or: [] });
+      const or = query.$expr.$and.at(-1).$or;
+      if (idDbState) or.push(getEqObjectId("state", idDbState));
+      if (idDbCity) or.push(getEqObjectId("city", idDbCity));
+
+      return await Holiday.find(query);
+    } catch (error) {
+      console.error(
+        `Error retrieving holidays for idState ${idDbState} and idCity ${idDbCity}:`,
+        error
+      );
+      return [];
+    }
   }
 }
 
-const repository = new MongooseHolidayRepository();
-export default repository;
+export default StateRepository;

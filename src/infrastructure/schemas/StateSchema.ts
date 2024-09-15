@@ -1,6 +1,8 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { ObjectId } from "mongodb";
 
 export interface StateDocument extends Document {
+  _id: ObjectId;
   id_state: number;
   name_state: string;
   uf: string;

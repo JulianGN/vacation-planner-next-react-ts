@@ -6,3 +6,14 @@ export interface Holiday {
   id_state?: number;
   id_city?: number;
 }
+
+export interface HolidayPeriod {
+  start: Date;
+  end: Date;
+}
+
+export interface HolidayQuery {
+  $expr: {
+    $and: Array<any>;
+  };
+}

@@ -19,12 +19,12 @@ export class CalculatorService {
     }
   }
 
-  async getCitiesByStateId(
-    stateId: number
+  async getCitiesByIdState(
+    idState: number
   ): Promise<SelectListGroupByIdViewModel[]> {
     try {
       const headers = apiService.getHeader("GET");
-      const response = await fetch(`api/city?stateId=${stateId}`, {
+      const response = await fetch(`api/city?idState=${idState}`, {
         headers,
       });
       const data = await response.json();

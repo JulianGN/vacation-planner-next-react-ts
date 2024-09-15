@@ -8,18 +8,18 @@ const cityService = new CityService();
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
-    const stateId = searchParams.get("stateId");
+    const idState = searchParams.get("idState");
 
-    if (!stateId) {
+    if (!idState) {
       return NextResponse.json(
-        { error: "stateId is required" },
+        { error: "idState is required" },
         { status: 400 }
       );
     }
 
     await appService.initialize();
 
-    const cities = await cityService.getCitiesByStateId(Number(stateId));
+    const cities = await cityService.getCitiesByIdState(Number(idState));
 
     return NextResponse.json({ cities });
   } catch (error) {

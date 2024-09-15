@@ -21,7 +21,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
 
   const [validState, setValidState] = useState(true);
   const [validCity, setValidCity] = useState(true);
-  const statesFetched = useRef(false);
+  const loadingStates = useRef(false);
   const loadingCities = useRef(false);
 
   const setValidateTrue = () => {
@@ -39,16 +39,17 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   };
 
   const fetchStates = async () => {
-    if (statesFetched.current) return;
+    if (lists.states.length) return;
 
+    loadingStates.current = true;
     const states = await calculatorService.getStates();
     lists.setStates(states);
-    statesFetched.current = true;
+    loadingStates.current = false;
   };
 
-  const fetchCitiesByStateId = async (stateId: number) => {
+  const fetchCitiesByStateId = async (idState: number) => {
     loadingCities.current = true;
-    const cities = await calculatorService.getCitiesByStateId(stateId);
+    const cities = await calculatorService.getCitiesByIdState(idState);
     lists.setCities(cities);
     console.log("cities", cities);
     loadingCities.current = false;
@@ -111,7 +112,9 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         optionLabel="name"
         placeholder={step.justNational ? "-" : "Selecione o estado"}
         filter
-        disabled={step.justNational || loadingCities.current}
+        disabled={
+          step.justNational || loadingStates.current || loadingCities.current
+        }
         invalid={!step.justNational && !validState}
       />
       <Dropdown
