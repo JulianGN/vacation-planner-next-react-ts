@@ -77,6 +77,7 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
               step.setFullPeriod(false);
             }
           }}>
+          {/* TODO: LIMITAR A 1 ANO */}
           <Calendar
             ref={calendarRef}
             className="w-full"

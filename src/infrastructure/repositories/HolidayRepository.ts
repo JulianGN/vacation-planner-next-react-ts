@@ -1,29 +1,31 @@
-import { HolidayPeriod, HolidayQuery } from "@/domain/models/Holiday";
+import { HolidayPeriod } from "@/domain/models/Holiday";
 import Holiday, {
   HolidayDocument,
+  HolidayQuery,
 } from "@/infrastructure/schemas/HolidaySchema";
 import {
-  getDateExprPeriod,
-  getPeriodIgnoringYear,
-} from "../helpers/dateHelpers";
-import { getEqObjectId } from "../helpers/queryHelper";
+  getEqByPropObjectId,
+  geyEqByProp,
+} from "@/infrastructure/helpers/queryHelper";
 class StateRepository {
-  async getAllByPeriod(
-    period: HolidayPeriod,
+  async getAll(
     idDbState?: string,
     idDbCity?: string
   ): Promise<HolidayDocument[]> {
     try {
-      const dateFromDbYear = getPeriodIgnoringYear(period);
-      const datePeriod = getDateExprPeriod(dateFromDbYear);
       const query: HolidayQuery = {
-        $expr: { $and: datePeriod },
+        $expr: { $and: [] },
       };
 
-      if (idDbState || idDbCity) query.$expr.$and.push({ $or: [] });
-      const or = query.$expr.$and.at(-1).$or;
-      if (idDbState) or.push(getEqObjectId("state", idDbState));
-      if (idDbCity) or.push(getEqObjectId("city", idDbCity));
+      if (!idDbState || !idDbCity) {
+        query.$expr.$and.push(geyEqByProp("type", "national"));
+      } else {
+        query.$expr.$and.push({ $or: [] });
+        const or = query.$expr.$and.at(-1).$or;
+        or.push(geyEqByProp("type", "national"));
+        if (idDbState) or.push(getEqByPropObjectId("state", idDbState));
+        if (idDbCity) or.push(getEqByPropObjectId("city", idDbCity));
+      }
 
       return await Holiday.find(query);
     } catch (error) {

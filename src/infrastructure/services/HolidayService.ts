@@ -1,20 +1,38 @@
 import createHttpError from "http-errors";
 import StateRepository from "@/infrastructure/repositories/StateRepository";
 import CityRepository from "@/infrastructure/repositories/CityRepository";
+import HolidayRepository from "@/infrastructure/repositories/HolidayRepository";
+import { HolidayVariableService } from "@/infrastructure/services/HolidayVariableService";
+import { Holiday, HolidayPeriod } from "@/domain/models/Holiday";
 import { HolidayDocument } from "../schemas/HolidaySchema";
-import HolidayRepository from "../repositories/HolidayRepository";
-import { HolidayPeriod } from "@/domain/models/Holiday";
 
 const holidayRepository = new HolidayRepository();
 const stateRepository = new StateRepository();
 const cityRepository = new CityRepository();
 
+const holidayVariableService = new HolidayVariableService();
+
 export class HolidayService {
+  updateHolidayPeriod(holidays: HolidayDocument[], period: HolidayPeriod) {
+    const startYear = new Date(period.start).getFullYear();
+    const endYear = new Date(period.end).getFullYear();
+    const difYears = endYear - startYear;
+
+    holidays.forEach((holiday) => {
+      const date = new Date(holiday.date);
+      date.setFullYear(startYear);
+      if (date.getTime() < period.start.getTime()) {
+        date.setFullYear(endYear + difYears);
+      }
+      holiday.date = date;
+    });
+  }
+
   async getHolidaysOrdenedByDate(
     period: HolidayPeriod,
     idState?: number,
     idCity?: string
-  ): Promise<HolidayDocument[]> {
+  ): Promise<Holiday[]> {
     const stateFromDb = idState
       ? await stateRepository.findById(idState)
       : null;
@@ -32,8 +50,7 @@ export class HolidayService {
       );
     }
 
-    const holidaysFromDb = await holidayRepository.getAllByPeriod(
-      period,
+    const holidaysFromDb = await holidayRepository.getAll(
       stateFromDb?._id.toString(),
       cityFromDb?._id.toString()
     );
@@ -44,6 +61,19 @@ export class HolidayService {
       );
     }
 
-    return holidaysFromDb.sort((a, b) => a.date.getTime() - b.date.getTime());
+    this.updateHolidayPeriod(holidaysFromDb, period);
+
+    const variableHolidays =
+      holidayVariableService.getVariablesHolidaysByPeriod(period);
+
+    const holidays = [...holidaysFromDb, ...variableHolidays].map(
+      (holiday) => ({
+        date: holiday.date,
+        name: holiday.name,
+        type: holiday.type,
+      })
+    );
+
+    return holidays.sort((a, b) => a.date.getTime() - b.date.getTime());
   }
 }

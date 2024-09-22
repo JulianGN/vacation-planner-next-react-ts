@@ -1,8 +1,8 @@
 export interface Holiday {
-  id: number;
   date: Date;
   name: string;
   type: "national" | "state" | "city";
+  optional?: boolean;
   id_state?: number;
   id_city?: number;
 }
@@ -10,10 +10,4 @@ export interface Holiday {
 export interface HolidayPeriod {
   start: Date;
   end: Date;
-}
-
-export interface HolidayQuery {
-  $expr: {
-    $and: Array<any>;
-  };
 }

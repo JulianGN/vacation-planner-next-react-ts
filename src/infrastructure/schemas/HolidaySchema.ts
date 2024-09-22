@@ -2,12 +2,18 @@ import mongoose, { Schema, Document, Types } from "mongoose";
 import { ObjectId } from "mongodb";
 
 export interface HolidayDocument extends Document {
-  _id: ObjectId;
+  _id?: ObjectId;
   date: Date;
   name: string;
   type: "national" | "state" | "city";
   state: Types.ObjectId | null;
   city: Types.ObjectId | null;
+}
+
+export interface HolidayQuery {
+  $expr: {
+    $and: Array<any>;
+  };
 }
 
 const HolidaySchema: Schema = new Schema({
