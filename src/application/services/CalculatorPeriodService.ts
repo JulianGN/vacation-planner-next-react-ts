@@ -4,7 +4,7 @@ import { ApiService } from "@/application/services/ApiService";
 
 const apiService = new ApiService();
 
-export class CalculatorService {
+export class CalculatorPeriodService {
   async getStates(): Promise<SelectListViewModel[]> {
     try {
       const headers = apiService.getHeader("GET");

@@ -66,12 +66,19 @@ export class HolidayService {
     const variableHolidays =
       holidayVariableService.getVariablesHolidaysByPeriod(period);
 
-    const holidays = [...holidaysFromDb, ...variableHolidays].map(
-      (holiday) => ({
-        date: holiday.date,
-        name: holiday.name,
-        type: holiday.type,
-      })
+    const holidays = [...holidaysFromDb, ...variableHolidays].reduce(
+      (acc, holiday) => {
+        const date = new Date(holiday.date);
+        if (date >= period.start && date <= period.end) {
+          acc.push({
+            date: date,
+            name: holiday.name,
+            type: holiday.type,
+          });
+        }
+        return acc;
+      },
+      [] as Holiday[]
     );
 
     return holidays.sort((a, b) => a.date.getTime() - b.date.getTime());

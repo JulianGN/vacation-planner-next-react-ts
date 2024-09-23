@@ -1,17 +1,21 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
-import { useRouter } from "next/navigation";
 import { Button } from "primereact/button";
 import Step from "@/components/shared/Step/Step";
-import CalculatorFormStepOne from "./CalculatorFormStepOne";
-import CalculatorFormStepTwo from "./CalculatorFormStepTwo";
-import CalculatorFormStepThree from "./CalculatorFormStepThree";
-import CalculatorFormStepFour from "./CalculatorFormStepFour";
-import CalculatorFormStepFive from "./CalculatorFormStepFive";
+import CalculatorFormStepOne from "@/components/calculator/CalculatorFormStepOne";
+import CalculatorFormStepTwo from "@/components/calculator/CalculatorFormStepTwo";
+import CalculatorFormStepThree from "@/components/calculator/CalculatorFormStepThree";
+import CalculatorFormStepFour from "@/components/calculator/CalculatorFormStepFour";
+import CalculatorFormStepFive from "@/components/calculator/CalculatorFormStepFive";
+import { CalculatorFormStepIndex } from "@/domain/enums/CalculatorFormStepIndex";
+import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
+import useCalculatorStore from "@/application/stores/useCalculatorStore";
+import { HolidayPeriod } from "@/domain/models/Holiday";
 
 const CalculatorForm = () => {
-  const router = useRouter();
+  const { stepPlace, stepPeriodWorkDays, stepDaysVacations } =
+    useCalculatorStore();
 
   const icons = [
     "pi pi-star",
@@ -26,12 +30,6 @@ const CalculatorForm = () => {
   const stepThree = useRef<CalculatorFormStep>(null);
   const stepFour = useRef<CalculatorFormStep>(null);
 
-  const handleCalculate = () => {
-    if (typeof window == "undefined") {
-      router.push("/sobre");
-    }
-  };
-
   const handleBack = () => {
     const newStep = step + 1 < steps ? step - 1 : 0;
     setStep(newStep);
@@ -39,15 +37,39 @@ const CalculatorForm = () => {
 
   const validateStep = () => {
     switch (step) {
-      case 1:
+      case CalculatorFormStepIndex.stepPlace:
         return stepTwo.current?.validate();
-      case 2:
+      case CalculatorFormStepIndex.stepDaysVacations:
         return stepThree.current?.validate();
-      case 3:
+      case CalculatorFormStepIndex.stepPeriodWorkDays:
         return stepFour.current?.validate();
       default:
         return true;
     }
+  };
+
+  const getCalculatorPayload = () => {
+    const justNational = stepPlace.justNational;
+    const idState = justNational ? null : stepPlace.selectedState?.id;
+    const idCity = justNational ? null : stepPlace.selectedCity?.id;
+    const daysVaction = stepDaysVacations.daysVacation;
+    const daysSplit = stepDaysVacations.daysSplit;
+    const daysExtra = stepDaysVacations.daysExtra;
+    const [start, end] = stepPeriodWorkDays.period ?? [];
+    const period = { start, end } as HolidayPeriod;
+    const workDays = stepPeriodWorkDays.workDays;
+
+    const payload = {
+      idState,
+      idCity,
+      daysVaction,
+      daysSplit,
+      daysExtra,
+      period,
+      workDays,
+    } as CalculatorPeriodDto;
+
+    return payload;
   };
 
   const handleForward = () => {
@@ -55,6 +77,11 @@ const CalculatorForm = () => {
 
     const newStep = step < steps ? step + 1 : step;
     setStep(newStep);
+
+    if (newStep === CalculatorFormStepIndex.stepFinish) {
+      const payload = getCalculatorPayload();
+      console.log("payload", payload);
+    }
   };
 
   return (
@@ -63,14 +90,24 @@ const CalculatorForm = () => {
         <Step step={step} icons={icons} setStep={setStep} />
       </header>
       <article className="flex flex-col gap-3 mt-3 p-6">
-        {step === 0 && <CalculatorFormStepOne />}
-        {step === 1 && <CalculatorFormStepTwo ref={stepTwo} />}
-        {step === 2 && <CalculatorFormStepThree ref={stepThree} />}
-        {step === 3 && <CalculatorFormStepFour ref={stepFour} />}
-        {step === 4 && <CalculatorFormStepFive />}
+        {step === CalculatorFormStepIndex.stepStart && (
+          <CalculatorFormStepOne />
+        )}
+        {step === CalculatorFormStepIndex.stepPlace && (
+          <CalculatorFormStepTwo ref={stepTwo} />
+        )}
+        {step === CalculatorFormStepIndex.stepDaysVacations && (
+          <CalculatorFormStepThree ref={stepThree} />
+        )}
+        {step === CalculatorFormStepIndex.stepPeriodWorkDays && (
+          <CalculatorFormStepFour ref={stepFour} />
+        )}
+        {step === CalculatorFormStepIndex.stepFinish && (
+          <CalculatorFormStepFive />
+        )}
 
         <div className="flex justify-center gap-3 mt-4">
-          {step > 0 && (
+          {step > CalculatorFormStepIndex.stepStart && (
             <Button
               outlined
               label={step + 1 === steps ? "Preencher novamente" : "Voltar"}

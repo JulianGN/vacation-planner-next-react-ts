@@ -20,6 +20,7 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
   const calendarRef = useRef<any>(null);
 
   const [validWorkDays, setValidWorkDays] = useState(true);
+  const [validPeriod, setValidPeriod] = useState(true);
 
   const handleFullPeriodChange = () => {
     if (!step.fullPeriod) return;
@@ -36,6 +37,23 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
     if (step.workDays?.length) setValidWorkDays(true);
   };
 
+  const validatePeriodSize = () => {
+    if (!step.period) return;
+
+    const [start, end] = step.period;
+    if (!start || !end) return false;
+
+    const diff = Math.abs(start.getTime() - end.getTime());
+    const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+    return diffDays <= 365;
+  };
+
+  const handlePeriod = (e: any) => {
+    step.setPeriod(e.value);
+    if (step.period) setValidPeriod(true);
+  };
+
   useImperativeHandle(ref, () => ({
     validate: () => {
       if (!step.period || !step.workDays?.length) {
@@ -43,7 +61,13 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
         return false;
       }
 
+      if (!validatePeriodSize()) {
+        setValidPeriod(false);
+        return false;
+      }
+
       setValidWorkDays(true);
+      setValidPeriod(true);
       return true;
     },
   }));
@@ -82,12 +106,20 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
             ref={calendarRef}
             className="w-full"
             value={step.period}
-            onChange={(e) => step.setPeriod(e.value)}
+            onChange={handlePeriod}
             selectionMode="range"
             readOnlyInput
             hideOnRangeSelection
             disabled={step.fullPeriod}
+            invalid={!validPeriod}
           />
+          {!validPeriod && (
+            <div>
+              <small className="text-red-500">
+                O período deve ser de no máximo 1 ano
+              </small>
+            </div>
+          )}
         </div>
       </div>
       <SelectButton

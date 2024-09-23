@@ -11,9 +11,9 @@ import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import { InputSwitch } from "primereact/inputswitch";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
-import { CalculatorService } from "@/application/services/CalculatorService";
+import { CalculatorPeriodService } from "@/application/services/CalculatorPeriodService";
 
-const calculatorService = new CalculatorService();
+const calculatorService = new CalculatorPeriodService();
 
 const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   const { stepPlace, lists } = useCalculatorStore();
@@ -51,7 +51,6 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
     loadingCities.current = true;
     const cities = await calculatorService.getCitiesByIdState(idState);
     lists.setCities(cities);
-    console.log("cities", cities);
     loadingCities.current = false;
   };
 
