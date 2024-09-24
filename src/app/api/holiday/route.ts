@@ -31,7 +31,7 @@ export async function GET(request: Request) {
         { status: error.statusCode }
       );
     }
-    console.error("Error in GET STATES route:", error);
+    console.error("Error in GET HOLIDAYS route:", error);
     return NextResponse.error();
   }
 }

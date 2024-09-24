@@ -76,7 +76,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   }));
   useEffect(() => {
     fetchStates();
-  }, []);
+  });
 
   useEffect(setValidateTrue, [
     step.justNational,
