@@ -112,7 +112,10 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         placeholder={step.justNational ? "-" : "Selecione o estado"}
         filter
         disabled={
-          step.justNational || loadingStates.current || loadingCities.current
+          !lists.states.length ||
+          step.justNational ||
+          loadingStates.current ||
+          loadingCities.current
         }
         invalid={!step.justNational && !validState}
       />

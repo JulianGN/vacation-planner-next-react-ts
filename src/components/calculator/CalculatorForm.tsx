@@ -12,6 +12,9 @@ import { CalculatorFormStepIndex } from "@/domain/enums/CalculatorFormStepIndex"
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
 import { HolidayPeriod } from "@/domain/models/Holiday";
+import { CalculatorPeriodService } from "@/application/services/CalculatorPeriodService";
+
+const calculatorPeriodService = new CalculatorPeriodService();
 
 const CalculatorForm = () => {
   const { stepPlace, stepPeriodWorkDays, stepDaysVacations } =
@@ -80,7 +83,8 @@ const CalculatorForm = () => {
 
     if (newStep === CalculatorFormStepIndex.stepFinish) {
       const payload = getCalculatorPayload();
-      console.log("payload", payload);
+
+      calculatorPeriodService.getPeriodOptions(payload);
     }
   };
 
