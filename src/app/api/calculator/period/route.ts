@@ -2,20 +2,21 @@ import { NextResponse } from "next/server";
 import { AppService } from "@/infrastructure/services/AppService";
 import createHttpError from "http-errors";
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
+import { CalculatorVacationService } from "@/infrastructure/services/CalculatorVacationService";
 
 const appService = new AppService();
+const calculatorVacationService = new CalculatorVacationService();
 
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as CalculatorPeriodDto;
-    console.log(body);
     if (!body) throw new createHttpError.BadRequest("body is required");
 
     await appService.initialize();
+    const periodOptions =
+      await calculatorVacationService.getVacationPeriodOptions(body);
 
-    const response = 200;
-
-    return NextResponse.json({ response });
+    return NextResponse.json({ periodOptions });
   } catch (error) {
     if (createHttpError.isHttpError(error)) {
       return NextResponse.json(

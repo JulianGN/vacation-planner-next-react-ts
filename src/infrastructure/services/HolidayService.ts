@@ -14,14 +14,15 @@ const holidayVariableService = new HolidayVariableService();
 
 export class HolidayService {
   updateHolidayPeriod(holidays: HolidayDocument[], period: HolidayPeriod) {
-    const startYear = new Date(period.start).getFullYear();
-    const endYear = new Date(period.end).getFullYear();
+    const startYear = period.start.getFullYear();
+    const endYear = period.end.getFullYear();
     const difYears = endYear - startYear;
 
     holidays.forEach((holiday) => {
       const date = new Date(holiday.date);
       date.setFullYear(startYear);
-      if (date.getTime() < period.start.getTime()) {
+      const periodStart = period.start;
+      if (date.getTime() < periodStart.getTime()) {
         date.setFullYear(endYear + difYears);
       }
       holiday.date = date;

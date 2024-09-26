@@ -1,5 +1,5 @@
 export enum WorkDay {
-  sunday = 1,
+  sunday = 0,
   monday,
   tuesday,
   wednesday,

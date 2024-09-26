@@ -44,7 +44,7 @@ export class HolidayVariableService {
 
     return [...carnivalTuesdayDate, ...easterDate, corpusChristiDate];
   }
-  getVariablesHolidaysByPeriod(period: HolidayPeriod) {
+  getVariablesHolidaysByPeriod(period: HolidayPeriod): Holiday[] {
     const holidays = [] as Holiday[];
 
     const years = new Set([
