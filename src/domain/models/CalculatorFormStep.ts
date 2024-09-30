@@ -35,10 +35,17 @@ interface StepPeriodWorkDays {
   period: Nullable<(Date | null)[]> | null;
   fullPeriod: boolean;
   workDays: number[] | null;
+  acceptJumpBridge: boolean;
   getFullPeriodFromToday: () => Date[];
   setPeriod: (period: Nullable<(Date | null)[]>) => void;
   setFullPeriod: (fullPeriod: boolean) => void;
   setWorkDays: (workDays: number[] | null) => void;
+  setAcceptJumpBridge: (acceptJumpBridge: boolean) => void;
+}
+
+interface StepFinish {
+  periodOptions: string;
+  setPeriodOptions: (periodOptions: string) => void;
 }
 
 export interface CalculatorState {
@@ -46,4 +53,5 @@ export interface CalculatorState {
   stepPlace: StepPlace;
   stepDaysVacations: StepDaysVacations;
   stepPeriodWorkDays: StepPeriodWorkDays;
+  stepFinish: StepFinish;
 }

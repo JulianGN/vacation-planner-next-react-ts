@@ -17,7 +17,7 @@ import { CalculatorPeriodService } from "@/application/services/CalculatorPeriod
 const calculatorPeriodService = new CalculatorPeriodService();
 
 const CalculatorForm = () => {
-  const { stepPlace, stepPeriodWorkDays, stepDaysVacations } =
+  const { stepPlace, stepPeriodWorkDays, stepDaysVacations, stepFinish } =
     useCalculatorStore();
 
   const icons = [
@@ -61,6 +61,7 @@ const CalculatorForm = () => {
     const [start, end] = stepPeriodWorkDays.period ?? [];
     const period = { start, end } as HolidayPeriod;
     const workDays = stepPeriodWorkDays.workDays;
+    const acceptJumpBridge = stepPeriodWorkDays.acceptJumpBridge;
 
     const payload = {
       idState,
@@ -70,6 +71,7 @@ const CalculatorForm = () => {
       daysExtra,
       period,
       workDays,
+      acceptJumpBridge,
     } as CalculatorPeriodDto;
 
     return payload;
@@ -84,7 +86,12 @@ const CalculatorForm = () => {
     if (newStep === CalculatorFormStepIndex.stepFinish) {
       const payload = getCalculatorPayload();
 
-      calculatorPeriodService.getPeriodOptions(payload);
+      calculatorPeriodService.getPeriodOptions(payload).then((response) => {
+        stepFinish.setPeriodOptions(
+          // TODO: TEMP
+          response.bestPeriods?.map((p: any) => JSON.stringify(p)).join(", ")
+        );
+      });
     }
   };
 

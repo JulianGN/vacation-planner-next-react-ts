@@ -16,15 +16,12 @@ export class HolidayService {
   updateHolidayPeriod(holidays: HolidayDocument[], period: HolidayPeriod) {
     const startYear = period.start.getFullYear();
     const endYear = period.end.getFullYear();
-    const difYears = endYear - startYear;
 
     holidays.forEach((holiday) => {
       const date = new Date(holiday.date);
       date.setFullYear(startYear);
-      const periodStart = period.start;
-      if (date.getTime() < periodStart.getTime()) {
-        date.setFullYear(endYear + difYears);
-      }
+      if (date.getTime() < period.start.getTime()) date.setFullYear(endYear);
+
       holiday.date = date;
     });
   }
@@ -67,20 +64,14 @@ export class HolidayService {
     const variableHolidays =
       holidayVariableService.getVariablesHolidaysByPeriod(period);
 
-    const holidays = [...holidaysFromDb, ...variableHolidays].reduce(
-      (acc, holiday) => {
-        const date = new Date(holiday.date);
-        if (date >= period.start && date <= period.end) {
-          acc.push({
-            date: date,
-            name: holiday.name,
-            type: holiday.type,
-          });
-        }
-        return acc;
-      },
-      [] as Holiday[]
-    );
+    const holidays = [...holidaysFromDb, ...variableHolidays].map((holiday) => {
+      const date = new Date(holiday.date);
+      return {
+        date: date,
+        name: holiday.name,
+        type: holiday.type,
+      };
+    });
 
     return holidays.sort((a, b) => a.date.getTime() - b.date.getTime());
   }

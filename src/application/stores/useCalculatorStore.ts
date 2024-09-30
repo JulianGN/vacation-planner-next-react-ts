@@ -92,6 +92,7 @@ const useCalculatorStore = create<CalculatorState>((set) => {
       period: getFullPeriodFromToday(),
       fullPeriod: true,
       workDays: getInitialWorkDays(),
+      acceptJumpBridge: true,
       getFullPeriodFromToday,
       setPeriod: (period) =>
         set(
@@ -109,6 +110,22 @@ const useCalculatorStore = create<CalculatorState>((set) => {
         set(
           produce((state) => {
             state.stepPeriodWorkDays.workDays = workDays;
+          })
+        ),
+      setAcceptJumpBridge: (acceptJumpBridge) =>
+        set(
+          produce((state) => {
+            state.stepPeriodWorkDays.acceptJumpBridge = acceptJumpBridge;
+          })
+        ),
+    },
+    stepFinish: {
+      // TODO: define type
+      periodOptions: "",
+      setPeriodOptions: (periodOptions: string) =>
+        set(
+          produce((state) => {
+            state.stepFinish.periodOptions = periodOptions;
           })
         ),
     },

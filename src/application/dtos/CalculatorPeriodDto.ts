@@ -8,4 +8,5 @@ export interface CalculatorPeriodDto {
   daysExtra: number;
   period: HolidayPeriod;
   workDays: number[];
+  acceptJumpBridge: boolean;
 }

@@ -48,7 +48,7 @@ export class CalculatorPeriodService {
         body: JSON.stringify(calculatorPeriodDto),
       });
       const data = await response.json();
-      return data?.cities || [];
+      return data?.periodOptions || [];
     } catch (error) {
       console.error("Error fetching cities:", error);
       return [];

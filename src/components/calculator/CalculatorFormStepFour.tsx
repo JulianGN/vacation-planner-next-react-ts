@@ -13,6 +13,7 @@ import { InputSwitch } from "primereact/inputswitch";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
 import SelectButton from "@/components/shared/SelectButton/SelectButton";
 import { itemsWorkDays } from "@/domain/models/WorkDay";
+import { getDiffDays } from "@/utils/date";
 
 const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
   const { stepPeriodWorkDays } = useCalculatorStore();
@@ -43,10 +44,7 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
     const [start, end] = step.period;
     if (!start || !end) return false;
 
-    const diff = Math.abs(start.getTime() - end.getTime());
-    const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
-
-    return diffDays <= 365;
+    return getDiffDays(start, end) <= 365;
   };
 
   const handlePeriod = (e: any) => {
@@ -101,7 +99,6 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
               step.setFullPeriod(false);
             }
           }}>
-          {/* TODO: LIMITAR A 1 ANO */}
           <Calendar
             ref={calendarRef}
             className="w-full"
@@ -130,6 +127,19 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
         sliceItemNameAt={3}
         invalid={!validWorkDays}
       />
+      <div className="flex items-center justify-center">
+        <InputSwitch
+          inputId="calculator-form-input-checkbox-accept-jump-bridge"
+          name="accept-jump-bridge"
+          onChange={() => step.setAcceptJumpBridge(!step.acceptJumpBridge)}
+          checked={step.acceptJumpBridge}
+        />
+        <label
+          htmlFor="calculator-form-input-checkbox-accept-jump-bridge"
+          className="ml-2">
+          Emendar feriados quando possível
+        </label>
+      </div>
     </div>
   );
 });
