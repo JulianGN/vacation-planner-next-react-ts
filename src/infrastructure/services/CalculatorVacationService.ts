@@ -21,25 +21,26 @@ export class CalculatorVacationService {
   maxSplitPeriod = 3;
   minPeriodDays = 5;
   minVacationInterval = 30;
-  weekDays = Object.values(WorkDay).filter((day) => typeof day === "number");
+  weekDays: WorkDay[] = Object.values(WorkDay).filter(
+    (day) => typeof day === "number"
+  );
   holidays: Holiday[] = [];
   workdays: WorkDay[] = [];
   notWorkdays: WorkDay[] = [];
   totalDays: number = 0;
+  acceptJumpBridge: boolean = false;
 
   private filterHolidaysInsideWorkdays(): Holiday[] {
     if (!this.notWorkdays.length) return this.holidays;
 
     return this.holidays.filter((holiday) => {
       const holidayDate = new Date(holiday.date);
-      const weekDay = holidayDate.getDay();
-      return this.workdays.includes(weekDay as WorkDay);
+      return this.verifyIfDaysIsWorkDay(holidayDate);
     });
   }
 
   private filterPotentialBridgesHolidays(
-    holidaysInsideWorkdays: Holiday[],
-    acceptJumpBridge: boolean
+    holidaysInsideWorkdays: Holiday[]
   ): Holiday[] {
     if (!this.notWorkdays.length) return holidaysInsideWorkdays;
     const potentialBridges = holidaysInsideWorkdays.filter((holiday) => {
@@ -47,7 +48,7 @@ export class CalculatorVacationService {
       const dayOfWeek = holidayDate.getDay();
       const hasBridge = this.notWorkdays.some((notWorkday) => {
         const distanceToNonWorkday = Math.abs(dayOfWeek - notWorkday);
-        return distanceToNonWorkday <= 1 + Number(acceptJumpBridge);
+        return distanceToNonWorkday <= 1 + Number(this.acceptJumpBridge);
       });
 
       return hasBridge;
@@ -56,40 +57,69 @@ export class CalculatorVacationService {
     return potentialBridges;
   }
 
-  verifyIfDaysIsHoliday(holidayDate: Date): boolean {
+  verifyIfDaysIsHoliday(date: Date): boolean {
     return this.holidays.some((holiday) => {
-      const holidayDateFromDb = new Date(holiday.date);
-      return holidayDateFromDb.getTime() === holidayDate.getTime();
+      const currentHolidayDate = new Date(holiday.date);
+
+      return currentHolidayDate.getTime() === date.getTime();
     });
   }
 
-  getClosesWorkDay(holidayDate: Date, before: boolean): Date {
+  verifyIfDaysIsWorkDay(date: Date): boolean {
+    return this.workdays.includes(date.getDay());
+  }
+
+  getClosestWorkDay(holidayDate: Date, before: boolean): Date {
     const date = new Date(holidayDate);
     const increment = before ? -1 : 1;
 
     date.setDate(date.getDate() + increment);
 
-    while (!this.workdays.includes(date.getDay() as WorkDay)) {
+    while (!this.verifyIfDaysIsWorkDay(date)) {
       date.setDate(date.getDate() + increment);
     }
 
-    if (this.verifyIfDaysIsHoliday(date))
-      return this.getClosesWorkDay(date, before);
+    if (this.verifyIfDaysIsHoliday(date)) {
+      if (this.acceptJumpBridge) {
+        if (before) {
+          const coupleDaysBefore = new Date(date);
+          coupleDaysBefore.setDate(coupleDaysBefore.getDate() - 1);
+          if (this.verifyIfDaysIsHoliday(coupleDaysBefore)) {
+            return this.getClosestWorkDay(coupleDaysBefore, before);
+          }
+          if (this.verifyIfDaysIsWorkDay(coupleDaysBefore)) {
+            return coupleDaysBefore;
+          }
+        }
+
+        if (!before) {
+          const coupleDaysAfter = new Date(date);
+          coupleDaysAfter.setDate(coupleDaysAfter.getDate() + 1);
+          if (this.verifyIfDaysIsHoliday(coupleDaysAfter)) {
+            return this.getClosestWorkDay(coupleDaysAfter, before);
+          }
+          if (this.verifyIfDaysIsWorkDay(coupleDaysAfter)) {
+            return coupleDaysAfter;
+          }
+        }
+      }
+
+      return this.getClosestWorkDay(date, before);
+    }
 
     return date;
   }
 
   getLastWorkDayBefore(holidayDate: Date): Date {
-    return this.getClosesWorkDay(holidayDate, true);
+    return this.getClosestWorkDay(holidayDate, true);
   }
 
   getFirstWorkDayAfter(holidayDate: Date): Date {
-    return this.getClosesWorkDay(holidayDate, false);
+    return this.getClosestWorkDay(holidayDate, false);
   }
 
   private getPotentialPeriodsBeginEnd(
-    potentialBridges: Holiday[],
-    acceptJumpBridge: boolean
+    potentialBridges: Holiday[]
   ): PotentialPeriodsBeginEndings {
     const firstWorkday = this.workdays[0];
     const lastWorkday = this.workdays.at(-1);
@@ -101,7 +131,7 @@ export class CalculatorVacationService {
 
         if (
           dayOfWeek === firstWorkday ||
-          dayOfWeek - Number(acceptJumpBridge) === firstWorkday
+          dayOfWeek - Number(this.acceptJumpBridge) === firstWorkday
         ) {
           acc.begin.push(this.getFirstWorkDayAfter(holidayDate));
           acc.end.push(this.getLastWorkDayBefore(holidayDate));
@@ -109,7 +139,7 @@ export class CalculatorVacationService {
 
         if (
           dayOfWeek === lastWorkday ||
-          dayOfWeek + Number(acceptJumpBridge) === lastWorkday
+          dayOfWeek + Number(this.acceptJumpBridge) === lastWorkday
         ) {
           acc.begin.push(this.getFirstWorkDayAfter(holidayDate));
           acc.end.push(this.getLastWorkDayBefore(holidayDate));
@@ -361,16 +391,16 @@ export class CalculatorVacationService {
         (day) => !workDays.includes(day)
       ) as WorkDay[];
       this.totalDays = daysVaction + daysExtra;
+      this.acceptJumpBridge = acceptJumpBridge;
 
       const holidaysInsideWorkdays = this.filterHolidaysInsideWorkdays();
 
       const potentialBridges = this.filterPotentialBridgesHolidays(
-        holidaysInsideWorkdays,
-        acceptJumpBridge
+        holidaysInsideWorkdays
       );
 
       const potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings =
-        this.getPotentialPeriodsBeginEnd(potentialBridges, acceptJumpBridge);
+        this.getPotentialPeriodsBeginEnd(potentialBridges);
 
       const bestPeriods = this.getBestPeriods(
         potentialPeriodsBeginEndings,
