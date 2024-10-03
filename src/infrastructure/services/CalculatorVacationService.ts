@@ -69,21 +69,32 @@ export class CalculatorVacationService {
     return this.workdays.includes(date.getDay());
   }
 
-  verifyIfDaysIsNotWorkDay(date: Date): boolean {
+  verifyIfIsNotWorkDay(date: Date): boolean {
     const isHoliday = this.verifyIfDaysIsHoliday(date);
     const isWorkDay = this.verifyIfDaysIsWorkDay(date);
+
     return isHoliday || !isWorkDay;
   }
 
-  verifyIfDayIsBetweenNotWorkDays(date: Date): boolean {
+  verifyIfIsBridge(date: Date): boolean {
     const dayBefore = new Date(date);
-    const dayAfter = new Date(date);
     dayBefore.setDate(date.getDate() - 1);
-    dayAfter.setDate(date.getDate() + 1);
+    const dayBeforeIsNotWorkDay = this.verifyIfIsNotWorkDay(dayBefore);
 
-    const dayBeforeIsNotWorkDay = this.verifyIfDaysIsNotWorkDay(dayBefore);
-    const dayAfterIsNotWorkDay = this.verifyIfDaysIsNotWorkDay(dayAfter);
+    const dayAfter = new Date(date);
+    dayAfter.setDate(date.getDate() + 1);
+    const dayAfterIsNotWorkDay = this.verifyIfIsNotWorkDay(dayAfter);
+
     return dayBeforeIsNotWorkDay && dayAfterIsNotWorkDay;
+  }
+
+  verifyIfDaysIsNotWorkDayOrBridge(date: Date): boolean {
+    const isNotWorkDay = this.verifyIfIsNotWorkDay(date);
+    const isBridge = this.acceptJumpBridge
+      ? this.verifyIfIsBridge(date)
+      : false;
+
+    return isNotWorkDay || isBridge;
   }
 
   getClosestWorkDay(currentDate: Date, before: boolean): Date {
@@ -92,12 +103,8 @@ export class CalculatorVacationService {
 
     date.setDate(date.getDate() + increment);
 
-    while (this.verifyIfDaysIsNotWorkDay(date)) {
+    while (this.verifyIfDaysIsNotWorkDayOrBridge(date)) {
       date.setDate(date.getDate() + increment);
-    }
-
-    if (this.acceptJumpBridge && this.verifyIfDayIsBetweenNotWorkDays(date)) {
-      return this.getClosestWorkDay(date, before);
     }
 
     return date;
@@ -112,31 +119,26 @@ export class CalculatorVacationService {
   }
 
   private getPotentialPeriodsBeginEnd(
-    potentialBridges: Holiday[]
+    holidaysInsideWorkdays: Holiday[]
   ): PotentialPeriodsBeginEndings {
     const firstWorkday = this.workdays[0];
-    const lastWorkday = this.workdays.at(-1);
+    const secondWorkday = this.workdays[1];
 
-    return potentialBridges.reduce(
+    return holidaysInsideWorkdays.reduce(
       (acc, holiday) => {
         const holidayDate = new Date(holiday.date);
-        const dayOfWeek = holidayDate.getDay();
 
-        if (
-          dayOfWeek === firstWorkday ||
-          dayOfWeek - Number(this.acceptJumpBridge) === firstWorkday
-        ) {
-          acc.begin.add(this.getFirstWorkDayAfter(holidayDate));
-          acc.end.add(this.getLastWorkDayBefore(holidayDate));
+        const firstWorkdayAfter = this.getFirstWorkDayAfter(holidayDate);
+        const lastWorkdayBefore = this.getLastWorkDayBefore(holidayDate);
+
+        const daysBegin = [firstWorkday];
+        if (this.acceptJumpBridge) daysBegin.push(secondWorkday);
+
+        if (daysBegin.includes(firstWorkdayAfter.getDay())) {
+          acc.begin.add(firstWorkdayAfter);
         }
 
-        if (
-          dayOfWeek === lastWorkday ||
-          dayOfWeek + Number(this.acceptJumpBridge) === lastWorkday
-        ) {
-          acc.begin.add(this.getFirstWorkDayAfter(holidayDate));
-          acc.end.add(this.getLastWorkDayBefore(holidayDate));
-        }
+        acc.end.add(lastWorkdayBefore);
 
         return acc;
       },
@@ -158,8 +160,6 @@ export class CalculatorVacationService {
   ): PeriodOption[] {
     const maxSequencialDays =
       this.totalDays - this.minPeriodDays * (daysSplit - 1);
-
-    debugger;
 
     const accBegin: Set<PeriodOption> = new Set();
     const accEnd: Set<PeriodOption> = new Set();
@@ -396,7 +396,7 @@ export class CalculatorVacationService {
       );
 
       const potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings =
-        this.getPotentialPeriodsBeginEnd(potentialBridges);
+        this.getPotentialPeriodsBeginEnd(holidaysInsideWorkdays);
 
       const bestPeriods = this.getBestPeriods(
         potentialPeriodsBeginEndings,
@@ -414,7 +414,10 @@ export class CalculatorVacationService {
 
       return {
         holidays: this.holidays,
-        potentialBridges,
+        potentialPeriodsBeginEndings: {
+          begin: Array.from(potentialPeriodsBeginEndings.begin),
+          end: Array.from(potentialPeriodsBeginEndings.end),
+        },
         bestPeriods,
       };
     } catch (error) {

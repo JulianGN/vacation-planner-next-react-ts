@@ -94,7 +94,7 @@ export const periodHolidays = [
     type: "national",
   },
   {
-    date: new Date("2025-07-09T00:00:00.000Z"),
+    date: new Date("2025-07-09T03:00:00.000Z"),
     name: "Revolução Constitucionalista de 1932",
     type: "state",
   },
