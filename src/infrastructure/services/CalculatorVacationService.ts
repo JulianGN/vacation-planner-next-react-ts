@@ -8,8 +8,8 @@ import { getDiffDays } from "@/utils/date";
 const holidayService = new HolidayService();
 
 interface PotentialPeriodsBeginEndings {
-  begin: Set<Date>;
-  end: Set<Date>;
+  begin: Set<string>;
+  end: Set<string>;
 }
 
 interface PeriodOption {
@@ -118,27 +118,36 @@ export class CalculatorVacationService {
     return this.getClosestWorkDay(holidayDate, false);
   }
 
+  private verifyIfIsGoodBeginDate(holidayDate: Date): boolean {
+    const firstWorkDay = this.workdays.at(0);
+    const secondWorkday = this.workdays.at(1);
+    const lastWorkDay = this.workdays.at(-1);
+    const penultimateWorkDay = this.workdays.at(-2);
+
+    const holidayWeekDay = holidayDate.getDay();
+
+    return (
+      holidayWeekDay === firstWorkDay ||
+      (this.acceptJumpBridge && holidayWeekDay === secondWorkday) ||
+      holidayWeekDay === lastWorkDay ||
+      (this.acceptJumpBridge && holidayWeekDay === penultimateWorkDay)
+    );
+  }
+
   private getPotentialPeriodsBeginEnd(
     holidaysInsideWorkdays: Holiday[]
   ): PotentialPeriodsBeginEndings {
-    const firstWorkday = this.workdays[0];
-    const secondWorkday = this.workdays[1];
-
     return holidaysInsideWorkdays.reduce(
       (acc, holiday) => {
         const holidayDate = new Date(holiday.date);
 
         const firstWorkdayAfter = this.getFirstWorkDayAfter(holidayDate);
-        const lastWorkdayBefore = this.getLastWorkDayBefore(holidayDate);
-
-        const daysBegin = [firstWorkday];
-        if (this.acceptJumpBridge) daysBegin.push(secondWorkday);
-
-        if (daysBegin.includes(firstWorkdayAfter.getDay())) {
-          acc.begin.add(firstWorkdayAfter);
+        if (this.verifyIfIsGoodBeginDate(holidayDate)) {
+          acc.begin.add(firstWorkdayAfter.toISOString());
         }
 
-        acc.end.add(lastWorkdayBefore);
+        const lastWorkdayBefore = this.getLastWorkDayBefore(holidayDate);
+        acc.end.add(lastWorkdayBefore.toISOString());
 
         return acc;
       },
@@ -364,7 +373,7 @@ export class CalculatorVacationService {
         workDays,
         daysExtra,
         daysSplit,
-        daysVaction,
+        daysVacation,
         acceptJumpBridge,
       } = calculatorPeriodDto;
 
@@ -386,7 +395,7 @@ export class CalculatorVacationService {
       this.notWorkdays = this.weekDays.filter(
         (day) => !workDays.includes(day)
       ) as WorkDay[];
-      this.totalDays = daysVaction + daysExtra;
+      this.totalDays = daysVacation + daysExtra;
       this.acceptJumpBridge = acceptJumpBridge;
 
       const holidaysInsideWorkdays = this.filterHolidaysInsideWorkdays();

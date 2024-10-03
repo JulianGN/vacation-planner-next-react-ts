@@ -1,7 +1,7 @@
 // const payload = {
 //     "idState": 35,
 //     "idCity": "66de2024360c7351bafb697a",
-//     "daysVaction": 10,
+//     "daysVacation": 10,
 //     "daysSplit": 1,
 //     "daysExtra": 0,
 //     "period": {

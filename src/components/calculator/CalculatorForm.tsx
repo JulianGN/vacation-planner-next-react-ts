@@ -55,7 +55,7 @@ const CalculatorForm = () => {
     const justNational = stepPlace.justNational;
     const idState = justNational ? null : stepPlace.selectedState?.id;
     const idCity = justNational ? null : stepPlace.selectedCity?.id;
-    const daysVaction = stepDaysVacations.daysVacation;
+    const daysVacation = stepDaysVacations.daysVacation;
     const daysSplit = stepDaysVacations.daysSplit;
     const daysExtra = stepDaysVacations.daysExtra;
     const [start, end] = stepPeriodWorkDays.period ?? [];
@@ -66,7 +66,7 @@ const CalculatorForm = () => {
     const payload = {
       idState,
       idCity,
-      daysVaction,
+      daysVacation,
       daysSplit,
       daysExtra,
       period,

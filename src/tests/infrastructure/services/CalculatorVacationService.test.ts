@@ -151,9 +151,16 @@ describe("CalculatorVacationService", () => {
       calculatorVacationService.acceptJumpBridge = true;
     });
     it("should return the next workday after Dia do Trabalho", () => {
-      debugger;
-
       const holidayDate = new Date("2025-05-01T03:00:00.000Z");
+      const closestWorkDay = calculatorVacationService.getClosestWorkDay(
+        holidayDate,
+        false
+      );
+      expect(closestWorkDay.getDay()).toBe(WorkDay.monday);
+    });
+
+    it("should return the next workday after Corpus Christi", () => {
+      const holidayDate = new Date("2025-06-19T03:00:00.000Z");
       const closestWorkDay = calculatorVacationService.getClosestWorkDay(
         holidayDate,
         false
