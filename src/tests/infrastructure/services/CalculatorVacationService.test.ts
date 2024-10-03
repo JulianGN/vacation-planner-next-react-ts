@@ -106,7 +106,6 @@ describe("CalculatorVacationService", () => {
         type: "city",
       },
     ];
-    calculatorVacationService.acceptJumpBridge = true;
   });
 
   describe("getClosestWorkDay", () => {
@@ -144,6 +143,22 @@ describe("CalculatorVacationService", () => {
         true
       );
       expect(closestWorkDay.getDay()).toBe(WorkDay.thursday);
+    });
+  });
+
+  describe("getClosestWorkDay_acceptJumpBridge", () => {
+    beforeEach(() => {
+      calculatorVacationService.acceptJumpBridge = true;
+    });
+    it("should return the next workday after Dia do Trabalho", () => {
+      debugger;
+
+      const holidayDate = new Date("2025-05-01T03:00:00.000Z");
+      const closestWorkDay = calculatorVacationService.getClosestWorkDay(
+        holidayDate,
+        false
+      );
+      expect(closestWorkDay.getDay()).toBe(WorkDay.monday);
     });
   });
 
