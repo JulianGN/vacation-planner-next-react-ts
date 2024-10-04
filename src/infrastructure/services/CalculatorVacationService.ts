@@ -28,6 +28,7 @@ export class CalculatorVacationService {
   workdays: WorkDay[] = [];
   notWorkdays: WorkDay[] = [];
   totalDays: number = 0;
+  daysSplit: number = 1;
   acceptJumpBridge: boolean = false;
 
   private filterHolidaysInsideWorkdays(): Holiday[] {
@@ -37,24 +38,6 @@ export class CalculatorVacationService {
       const holidayDate = new Date(holiday.date);
       return this.verifyIfDaysIsWorkDay(holidayDate);
     });
-  }
-
-  private filterPotentialBridgesHolidays(
-    holidaysInsideWorkdays: Holiday[]
-  ): Holiday[] {
-    if (!this.notWorkdays.length) return holidaysInsideWorkdays;
-    const potentialBridges = holidaysInsideWorkdays.filter((holiday) => {
-      const holidayDate = new Date(holiday.date);
-      const dayOfWeek = holidayDate.getDay();
-      const hasBridge = this.notWorkdays.some((notWorkday) => {
-        const distanceToNonWorkday = Math.abs(dayOfWeek - notWorkday);
-        return distanceToNonWorkday <= 1 + Number(this.acceptJumpBridge);
-      });
-
-      return hasBridge;
-    });
-
-    return potentialBridges;
   }
 
   verifyIfDaysIsHoliday(date: Date): boolean {
@@ -163,12 +146,15 @@ export class CalculatorVacationService {
     );
   }
 
+  private getOtimizedRate(period: PeriodOption): number {
+    return period.daysOff / getDiffDays(period.period.start, period.period.end);
+  }
+
   private getBestPeriods(
-    potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings,
-    daysSplit: number
+    potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings
   ): PeriodOption[] {
     const maxSequencialDays =
-      this.totalDays - this.minPeriodDays * (daysSplit - 1);
+      this.totalDays - this.minPeriodDays * (this.daysSplit - 1);
 
     const accBegin: Set<PeriodOption> = new Set();
     const accEnd: Set<PeriodOption> = new Set();
@@ -207,13 +193,123 @@ export class CalculatorVacationService {
         accBegin.add(periodOption);
       });
     });
-    return Array.from(accBegin);
+
+    return Array.from(accBegin).sort(
+      (a, b) => this.getOtimizedRate(b) - this.getOtimizedRate(a)
+    );
   }
 
-  private getPotentialSplitPeriodDays(daysSplit: number): number[][] {
+  private getBestPeriodsWithoutOverlap(
+    periods: PeriodOption[]
+  ): PeriodOption[] {
+    return periods.reduce((acc, period) => {
+      const periodStart = period.period.start;
+      const periodEnd = period.period.end;
+      const daysOff = period.daysOff;
+
+      const overlappingPeriodIndex = acc.findIndex((accPeriod) => {
+        const accPeriodStart = accPeriod.period.start;
+        const accPeriodEnd = accPeriod.period.end;
+        const accDaysOff = accPeriod.daysOff;
+
+        return (
+          periodStart >= accPeriodStart &&
+          periodEnd <= accPeriodEnd &&
+          daysOff > accDaysOff
+        );
+      });
+
+      if (overlappingPeriodIndex === -1) {
+        acc.push(period);
+      } else {
+        acc[overlappingPeriodIndex] = period;
+      }
+
+      return acc;
+    }, [] as PeriodOption[]);
+  }
+
+  private getBestPeriodsWithMinimumInterval(
+    bestPeriods: PeriodOption[]
+  ): PeriodOption[] {
+    return bestPeriods.reduce((acc, currentPeriod) => {
+      const lastPeriod = acc[acc.length - 1];
+
+      if (!lastPeriod) {
+        acc.push(currentPeriod);
+        return acc;
+      }
+
+      const intervalBetweenPeriods =
+        currentPeriod.period.start.getTime() - lastPeriod.period.end.getTime();
+
+      if (intervalBetweenPeriods >= this.minVacationInterval) {
+        acc.push(currentPeriod);
+      } else if (currentPeriod.daysOff > lastPeriod.daysOff) {
+        acc[acc.length - 1] = currentPeriod;
+      }
+
+      return acc;
+    }, [] as PeriodOption[]);
+  }
+
+  private getTotalDaysFromPeriod(periodOptions: PeriodOption[]): number {
+    return periodOptions.reduce(
+      (sum, period) =>
+        sum + getDiffDays(period.period.start, period.period.end),
+      0
+    );
+  }
+
+  private getFillSplitsOptions(
+    splits: PeriodOption[][],
+    remaining: PeriodOption[]
+  ): PeriodOption[][] {
+    for (let i = 0; i < this.daysSplit; i++) {
+      const currentSplitDays = this.getTotalDaysFromPeriod(splits[i]);
+
+      for (const period of remaining) {
+        const newSplitDays = currentSplitDays + period.daysOff;
+        if (newSplitDays <= this.totalDays) {
+          const newSplits = splits.map((split, index) =>
+            index === i ? [...split, period] : split
+          );
+          const newRemaining = remaining.filter((p) => p !== period);
+
+          return this.getFillSplitsOptions(newSplits, newRemaining);
+        }
+      }
+    }
+    return splits;
+  }
+
+  private getBestPeriodsSplitOptions(
+    bestPeriods: PeriodOption[]
+  ): PeriodOption[][] {
+    if (this.daysSplit === 1) {
+      return bestPeriods.map((period) => [period]);
+    }
+
+    const bestPeriod = bestPeriods[0];
+    const remainingPeriods = bestPeriods.slice(1);
+
+    const baseSplitPeriodOptions = Array.from(
+      { length: this.daysSplit },
+      () => [bestPeriod]
+    );
+
+    const splitPeriodOptions = this.getFillSplitsOptions(
+      baseSplitPeriodOptions,
+      remainingPeriods
+    );
+
+    return splitPeriodOptions;
+  }
+
+  private getPotentialSplitPeriodDays(): number[][] {
     const splitCombinations: number[][] = [];
 
-    if (daysSplit === 1) {
+    if (this.daysSplit === 1) {
       if (this.totalDays >= this.minPeriodDays) {
         return [[this.totalDays]];
       } else {
@@ -226,7 +322,7 @@ export class CalculatorVacationService {
       currentSplit: number,
       currentCombination: number[]
     ) => {
-      if (currentSplit === daysSplit - 1) {
+      if (currentSplit === this.daysSplit - 1) {
         if (remainingDays >= this.minPeriodDays) {
           splitCombinations.push([...currentCombination, remainingDays]);
         }
@@ -396,38 +492,33 @@ export class CalculatorVacationService {
         (day) => !workDays.includes(day)
       ) as WorkDay[];
       this.totalDays = daysVacation + daysExtra;
+      this.daysSplit = daysSplit;
       this.acceptJumpBridge = acceptJumpBridge;
 
       const holidaysInsideWorkdays = this.filterHolidaysInsideWorkdays();
 
-      const potentialBridges = this.filterPotentialBridgesHolidays(
-        holidaysInsideWorkdays
-      );
-
       const potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings =
         this.getPotentialPeriodsBeginEnd(holidaysInsideWorkdays);
 
-      const bestPeriods = this.getBestPeriods(
-        potentialPeriodsBeginEndings,
-        daysSplit
+      const bestPeriods = potentialPeriodsBeginEndings.begin.size
+        ? this.getBestPeriods(potentialPeriodsBeginEndings)
+        : [];
+
+      const bestPeriodsNoOverlap = bestPeriods.length
+        ? this.getBestPeriodsWithoutOverlap(bestPeriods)
+        : [];
+
+      const bestPeriodsWithMinimumInterval = bestPeriodsNoOverlap.length
+        ? this.getBestPeriodsWithMinimumInterval(bestPeriodsNoOverlap)
+        : [];
+
+      const bestPeriodsSplitOptions = this.getBestPeriodsSplitOptions(
+        bestPeriodsWithMinimumInterval
       );
-
-      // const potentialSplitPeriodDays: number[][] =
-      //   this.getPotentialSplitPeriodDays(daysSplit);
-
-      // const periodCombinationsBySplitPeriodOption: PeriodOption[][] =
-      //   this.getListOfPeriodCombinationsBySplitPeriodOption(
-      //     potentialSplitPeriodDays,
-      //     potentialPeriodsBeginEndings
-      //   );
 
       return {
         holidays: this.holidays,
-        potentialPeriodsBeginEndings: {
-          begin: Array.from(potentialPeriodsBeginEndings.begin),
-          end: Array.from(potentialPeriodsBeginEndings.end),
-        },
-        bestPeriods,
+        bestPeriodsSplitOptions,
       };
     } catch (error) {
       throw error;
