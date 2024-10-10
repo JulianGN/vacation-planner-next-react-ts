@@ -11,7 +11,7 @@ import CalculatorFormStepFive from "@/components/calculator/CalculatorFormStepFi
 import { CalculatorFormStepIndex } from "@/domain/enums/CalculatorFormStepIndex";
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
-import { HolidayPeriod } from "@/domain/models/Holiday";
+import { Period } from "@/domain/models/Holiday";
 import { CalculatorPeriodService } from "@/application/services/CalculatorPeriodService";
 
 const calculatorPeriodService = new CalculatorPeriodService();
@@ -59,7 +59,7 @@ const CalculatorForm = () => {
     const daysSplit = stepDaysVacations.daysSplit;
     const daysExtra = stepDaysVacations.daysExtra;
     const [start, end] = stepPeriodWorkDays.period ?? [];
-    const period = { start, end } as HolidayPeriod;
+    const period = { start, end } as Period;
     const workDays = stepPeriodWorkDays.workDays;
     const acceptJumpBridge = stepPeriodWorkDays.acceptJumpBridge;
 

@@ -1,4 +1,4 @@
-import { HolidayPeriod } from "@/domain/models/Holiday";
+import { Period } from "@/domain/models/Holiday";
 import Holiday, {
   HolidayDocument,
   HolidayQuery,

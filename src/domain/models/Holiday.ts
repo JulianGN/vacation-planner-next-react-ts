@@ -7,7 +7,7 @@ export interface Holiday {
   id_city?: number;
 }
 
-export interface HolidayPeriod {
+export interface Period {
   start: Date;
   end: Date;
 }

@@ -1,4 +1,4 @@
-import { Holiday, HolidayPeriod } from "@/domain/models/Holiday";
+import { Holiday, Period } from "@/domain/models/Holiday";
 
 export class HolidayVariableService {
   calculateEasterDate(year: number): Date[] {
@@ -44,7 +44,7 @@ export class HolidayVariableService {
 
     return [...carnivalTuesdayDate, ...easterDate, corpusChristiDate];
   }
-  getVariablesHolidaysByPeriod(period: HolidayPeriod): Holiday[] {
+  getVariablesHolidaysByPeriod(period: Period): Holiday[] {
     const holidays = [] as Holiday[];
 
     const years = new Set([

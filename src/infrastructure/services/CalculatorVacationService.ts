@@ -1,8 +1,8 @@
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import { WorkDay } from "@/domain/enums/WorkDay";
-import { Holiday, HolidayPeriod } from "@/domain/models/Holiday";
+import { Holiday, Period } from "@/domain/models/Holiday";
 import { HolidayService } from "@/infrastructure/services/HolidayService";
-import { periodHolidays } from "@/infrastructure/mocks/periodOptionsHolidays";
+// import { periodHolidays } from "@/infrastructure/mocks/periodOptionsHolidays";
 import { getDiffDays } from "@/utils/date";
 
 const holidayService = new HolidayService();
@@ -13,23 +13,40 @@ interface PotentialPeriodsBeginEndings {
 }
 
 interface PeriodOption {
-  period: HolidayPeriod;
+  period: Period;
+  daysUsed: number;
   daysOff: number;
 }
 
 export class CalculatorVacationService {
   maxSplitPeriod = 3;
   minPeriodDays = 5;
+  minPeriodForAtLeastOneWhenSplit = 14; // ex: [14, 5, 11]
   minVacationInterval = 30;
   weekDays: WorkDay[] = Object.values(WorkDay).filter(
     (day) => typeof day === "number"
   );
   holidays: Holiday[] = [];
   workdays: WorkDay[] = [];
+  lastWorkdayForBegin: WorkDay = WorkDay.thursday; // this will be updated after workdays are set
   notWorkdays: WorkDay[] = [];
   totalDays: number = 0;
   daysSplit: number = 1;
   acceptJumpBridge: boolean = false;
+
+  private getRangeWorkDays(workDays: WorkDay[]): WorkDay[] {
+    const firstWorkDay = workDays[0];
+    const lastWorkDay = workDays.at(-1);
+    if (!lastWorkDay) return [];
+
+    return this.weekDays.reduce((acc, day) => {
+      if (day >= firstWorkDay && day <= lastWorkDay) {
+        acc.push(day);
+      }
+
+      return acc;
+    }, [] as WorkDay[]);
+  }
 
   private filterHolidaysInsideWorkdays(): Holiday[] {
     if (!this.notWorkdays.length) return this.holidays;
@@ -40,7 +57,7 @@ export class CalculatorVacationService {
     });
   }
 
-  verifyIfDaysIsHoliday(date: Date): boolean {
+  private verifyIfDaysIsHoliday(date: Date): boolean {
     return this.holidays.some((holiday) => {
       const currentHolidayDate = new Date(holiday.date);
 
@@ -48,18 +65,18 @@ export class CalculatorVacationService {
     });
   }
 
-  verifyIfDaysIsWorkDay(date: Date): boolean {
+  private verifyIfDaysIsWorkDay(date: Date): boolean {
     return this.workdays.includes(date.getDay());
   }
 
-  verifyIfIsNotWorkDay(date: Date): boolean {
+  private verifyIfIsNotWorkDay(date: Date): boolean {
     const isHoliday = this.verifyIfDaysIsHoliday(date);
     const isWorkDay = this.verifyIfDaysIsWorkDay(date);
 
     return isHoliday || !isWorkDay;
   }
 
-  verifyIfIsBridge(date: Date): boolean {
+  private verifyIfIsBridge(date: Date): boolean {
     const dayBefore = new Date(date);
     dayBefore.setDate(date.getDate() - 1);
     const dayBeforeIsNotWorkDay = this.verifyIfIsNotWorkDay(dayBefore);
@@ -71,7 +88,7 @@ export class CalculatorVacationService {
     return dayBeforeIsNotWorkDay && dayAfterIsNotWorkDay;
   }
 
-  verifyIfDaysIsNotWorkDayOrBridge(date: Date): boolean {
+  private verifyIfDaysIsNotWorkDayOrBridge(date: Date): boolean {
     const isNotWorkDay = this.verifyIfIsNotWorkDay(date);
     const isBridge = this.acceptJumpBridge
       ? this.verifyIfIsBridge(date)
@@ -80,7 +97,7 @@ export class CalculatorVacationService {
     return isNotWorkDay || isBridge;
   }
 
-  getClosestWorkDay(currentDate: Date, before: boolean): Date {
+  private getClosestWorkDay(currentDate: Date, before: boolean): Date {
     const date = new Date(currentDate);
     const increment = before ? -1 : 1;
 
@@ -93,11 +110,11 @@ export class CalculatorVacationService {
     return date;
   }
 
-  getLastWorkDayBefore(holidayDate: Date): Date {
+  private getLastWorkDayBefore(holidayDate: Date): Date {
     return this.getClosestWorkDay(holidayDate, true);
   }
 
-  getFirstWorkDayAfter(holidayDate: Date): Date {
+  private getFirstWorkDayAfter(holidayDate: Date): Date {
     return this.getClosestWorkDay(holidayDate, false);
   }
 
@@ -114,6 +131,26 @@ export class CalculatorVacationService {
       (this.acceptJumpBridge && holidayWeekDay === secondWorkday) ||
       holidayWeekDay === lastWorkDay ||
       (this.acceptJumpBridge && holidayWeekDay === penultimateWorkDay)
+    );
+  }
+
+  private verifyIfPeriodsHaveMinimumInterval(periods: PeriodOption[]): boolean {
+    return periods.every((period, index) => {
+      const nextPeriod = periods[index + 1];
+      if (!nextPeriod) return true;
+
+      const intervalBetweenPeriods =
+        nextPeriod.period.start.getTime() - period.period.end.getTime();
+
+      return intervalBetweenPeriods >= this.minVacationInterval;
+    });
+  }
+
+  private verifyIfSomePeriodHasMinPeriodForOneWhenSplit(
+    periods: PeriodOption[]
+  ): boolean {
+    return periods.some(
+      (period) => period.daysUsed >= this.minPeriodForAtLeastOneWhenSplit
     );
   }
 
@@ -138,327 +175,188 @@ export class CalculatorVacationService {
     );
   }
 
-  private verifyIfPeriodIsInList(period: PeriodOption, list: PeriodOption[]) {
-    return list.some(
-      (periodOption) =>
-        periodOption.period.start.getTime() === period.period.start.getTime() &&
-        periodOption.period.end.getTime() === period.period.end.getTime()
+  private getOtimizedRate(period: PeriodOption): number {
+    return (
+      ((period.daysOff - period.daysUsed) * period.daysOff) / period.daysUsed
     );
   }
 
-  private getOtimizedRate(period: PeriodOption): number {
-    return period.daysOff / getDiffDays(period.period.start, period.period.end);
+  private getPeriodOption(periodOptionBase: PeriodOption): PeriodOption {
+    const { period } = periodOptionBase;
+    const { start, end } = period;
+
+    const lastWorkDayBefore = this.getLastWorkDayBefore(start);
+    lastWorkDayBefore.setDate(lastWorkDayBefore.getDate() + 1);
+    const firstWorkDayAfter = this.getFirstWorkDayAfter(end);
+    firstWorkDayAfter.setDate(firstWorkDayAfter.getDate() - 1);
+    periodOptionBase.daysUsed = getDiffDays(start, end);
+    periodOptionBase.daysOff = getDiffDays(
+      lastWorkDayBefore,
+      firstWorkDayAfter
+    );
+
+    return periodOptionBase;
   }
 
-  private getBestPeriods(
+  private getTotalDaysUsedFromPeriods(periodOptions: PeriodOption[]): number {
+    return periodOptions.reduce((sum, period) => sum + period.daysUsed, 0);
+  }
+
+  private getTotalDaysOffFromPeriods(periodOptions: PeriodOption[]): number {
+    return periodOptions.reduce((sum, period) => sum + period.daysOff, 0);
+  }
+
+  private getAllPeriodsFromBegin(
+    beginSetList: Set<string>,
+    maxSequencialDays: number
+  ): PeriodOption[] {
+    const periodsFromBegin: PeriodOption[] = [];
+
+    beginSetList.forEach((beginDate) => {
+      const start = new Date(beginDate);
+
+      for (let days = this.minPeriodDays; days <= maxSequencialDays; days++) {
+        const end = new Date(start);
+        end.setDate(end.getDate() + days - 1);
+
+        const periodOptionBase = {
+          period: { start, end },
+          daysUsed: 0,
+          daysOff: 0,
+        };
+
+        const periodOption = this.getPeriodOption(periodOptionBase);
+        periodsFromBegin.push(periodOption);
+      }
+    });
+
+    return periodsFromBegin;
+  }
+
+  private getAllPeriodsFromEnd(
+    endSetList: Set<string>,
+    maxSequencialDays: number
+  ): PeriodOption[] {
+    const periodsFromEnd: PeriodOption[] = [];
+
+    endSetList.forEach((endDate) => {
+      const end = new Date(endDate);
+
+      for (let days = this.minPeriodDays; days <= maxSequencialDays; days++) {
+        const start = new Date(end);
+        start.setDate(start.getDate() - days + 1);
+
+        if (start.getDay() < this.lastWorkdayForBegin) continue;
+
+        const periodOptionBase = {
+          period: { start, end },
+          daysUsed: 0,
+          daysOff: 0,
+        };
+
+        const periodOption = this.getPeriodOption(periodOptionBase);
+        periodsFromEnd.push(periodOption);
+      }
+    });
+
+    return periodsFromEnd;
+  }
+
+  private getAllGoodPeriodsOptions(
     potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings
   ): PeriodOption[] {
     const maxSequencialDays =
       this.totalDays - this.minPeriodDays * (this.daysSplit - 1);
 
-    const accBegin: Set<PeriodOption> = new Set();
-    const accEnd: Set<PeriodOption> = new Set();
+    const periodsFromBegin = this.getAllPeriodsFromBegin(
+      potentialPeriodsBeginEndings.begin,
+      maxSequencialDays
+    );
+    const periodsFromEnd = this.getAllPeriodsFromEnd(
+      potentialPeriodsBeginEndings.end,
+      maxSequencialDays
+    );
 
-    potentialPeriodsBeginEndings.begin.forEach((beginDate) => {
-      const start = new Date(beginDate);
-
-      potentialPeriodsBeginEndings.end.forEach((endDate) => {
-        const end = new Date(endDate);
-        if (end.getTime() < start.getTime()) return;
-
-        const diffDays = getDiffDays(start, end);
-        if (diffDays < this.minPeriodDays || diffDays > maxSequencialDays)
-          return;
-
-        const periodOptionBase = { period: { start, end }, daysOff: 0 };
-
-        if (this.verifyIfPeriodIsInList(periodOptionBase, Array.from(accEnd)))
-          return;
-
-        const lastWorkDayBefore = this.getLastWorkDayBefore(start);
-        lastWorkDayBefore.setDate(lastWorkDayBefore.getDate() + 1);
-        const firstWorkDayAfter = this.getFirstWorkDayAfter(end);
-        firstWorkDayAfter.setDate(firstWorkDayAfter.getDate() - 1);
-        periodOptionBase.daysOff = getDiffDays(
-          lastWorkDayBefore,
-          firstWorkDayAfter
-        );
-
-        accEnd.add(periodOptionBase);
-      });
-
-      if (!accEnd.size) return;
-
-      accEnd.forEach((periodOption) => {
-        accBegin.add(periodOption);
-      });
-    });
-
-    return Array.from(accBegin).sort(
+    const allPeriodOptions = [...periodsFromBegin, ...periodsFromEnd].sort(
       (a, b) => this.getOtimizedRate(b) - this.getOtimizedRate(a)
     );
+
+    return allPeriodOptions;
   }
 
-  private getBestPeriodsWithoutOverlap(
-    periods: PeriodOption[]
-  ): PeriodOption[] {
-    return periods.reduce((acc, period) => {
-      const periodStart = period.period.start;
-      const periodEnd = period.period.end;
-      const daysOff = period.daysOff;
-
-      const overlappingPeriodIndex = acc.findIndex((accPeriod) => {
-        const accPeriodStart = accPeriod.period.start;
-        const accPeriodEnd = accPeriod.period.end;
-        const accDaysOff = accPeriod.daysOff;
-
-        return (
-          periodStart >= accPeriodStart &&
-          periodEnd <= accPeriodEnd &&
-          daysOff > accDaysOff
-        );
-      });
-
-      if (overlappingPeriodIndex === -1) {
-        acc.push(period);
-      } else {
-        acc[overlappingPeriodIndex] = period;
-      }
-
-      return acc;
-    }, [] as PeriodOption[]);
-  }
-
-  private getBestPeriodsWithMinimumInterval(
-    bestPeriods: PeriodOption[]
-  ): PeriodOption[] {
-    return bestPeriods.reduce((acc, currentPeriod) => {
-      const lastPeriod = acc[acc.length - 1];
-
-      if (!lastPeriod) {
-        acc.push(currentPeriod);
-        return acc;
-      }
-
-      const intervalBetweenPeriods =
-        currentPeriod.period.start.getTime() - lastPeriod.period.end.getTime();
-
-      if (intervalBetweenPeriods >= this.minVacationInterval) {
-        acc.push(currentPeriod);
-      } else if (currentPeriod.daysOff > lastPeriod.daysOff) {
-        acc[acc.length - 1] = currentPeriod;
-      }
-
-      return acc;
-    }, [] as PeriodOption[]);
-  }
-
-  private getTotalDaysFromPeriod(periodOptions: PeriodOption[]): number {
-    return periodOptions.reduce(
-      (sum, period) =>
-        sum + getDiffDays(period.period.start, period.period.end),
-      0
-    );
-  }
-
-  private getFillSplitsOptions(
-    splits: PeriodOption[][],
-    remaining: PeriodOption[]
+  private getAllBestSplitPeriodsOptions(
+    allGoodPeriodsOptions: PeriodOption[]
   ): PeriodOption[][] {
-    for (let i = 0; i < this.daysSplit; i++) {
-      const currentSplitDays = this.getTotalDaysFromPeriod(splits[i]);
+    return allGoodPeriodsOptions.reduce((acc, periodOption) => {
+      const periodStart = periodOption.period.start;
+      let splitUsed = 1;
 
-      for (const period of remaining) {
-        const newSplitDays = currentSplitDays + period.daysOff;
-        if (newSplitDays <= this.totalDays) {
-          const newSplits = splits.map((split, index) =>
-            index === i ? [...split, period] : split
-          );
-          const newRemaining = remaining.filter((p) => p !== period);
+      let splitGroup: PeriodOption[] = [periodOption];
 
-          return this.getFillSplitsOptions(newSplits, newRemaining);
+      for (let i = 0; i < allGoodPeriodsOptions.length; i++) {
+        const periodOptionToCompare = allGoodPeriodsOptions[i];
+
+        if (splitUsed >= this.daysSplit) break;
+
+        const periodToCompareStart = periodOptionToCompare.period.start;
+
+        if (
+          JSON.stringify(periodOptionToCompare) ===
+            JSON.stringify(periodOption) ||
+          periodStart >= periodToCompareStart ||
+          !this.verifyIfPeriodsHaveMinimumInterval([
+            periodOption,
+            periodOptionToCompare,
+          ])
+        ) {
+          continue;
         }
+
+        const futureSplitGroup = [...splitGroup, periodOptionToCompare];
+
+        if (
+          this.getTotalDaysUsedFromPeriods(futureSplitGroup) > this.totalDays
+        ) {
+          continue;
+        }
+
+        if (
+          splitUsed + 1 === this.daysSplit &&
+          !this.verifyIfSomePeriodHasMinPeriodForOneWhenSplit(
+            futureSplitGroup
+          ) &&
+          periodOptionToCompare.daysUsed < this.minPeriodForAtLeastOneWhenSplit
+        ) {
+          continue;
+        }
+
+        splitGroup = futureSplitGroup;
+        splitUsed++;
       }
-    }
-    return splits;
+
+      if (splitGroup.length === this.daysSplit) {
+        acc.push(splitGroup);
+      }
+      return acc;
+    }, [] as PeriodOption[][]);
   }
 
-  private getBestPeriodsSplitOptions(
-    bestPeriods: PeriodOption[]
+  private getBestPeriodOptions(
+    allGoodPeriodsOptions: PeriodOption[]
   ): PeriodOption[][] {
-    if (this.daysSplit === 1) {
-      return bestPeriods.map((period) => [period]);
-    }
-
-    const bestPeriod = bestPeriods[0];
-    const remainingPeriods = bestPeriods.slice(1);
-
-    const baseSplitPeriodOptions = Array.from(
-      { length: this.daysSplit },
-      () => [bestPeriod]
+    const allBestSplitPeriodsOptions = this.getAllBestSplitPeriodsOptions(
+      allGoodPeriodsOptions
     );
+    const allBestSplitPeriodsOptionsSorted = allBestSplitPeriodsOptions
+      .sort(
+        (a, b) =>
+          this.getTotalDaysOffFromPeriods(b) -
+          this.getTotalDaysOffFromPeriods(a)
+      )
+      .slice(0, 10);
 
-    const splitPeriodOptions = this.getFillSplitsOptions(
-      baseSplitPeriodOptions,
-      remainingPeriods
-    );
-
-    return splitPeriodOptions;
+    return allBestSplitPeriodsOptionsSorted;
   }
-
-  private getPotentialSplitPeriodDays(): number[][] {
-    const splitCombinations: number[][] = [];
-
-    if (this.daysSplit === 1) {
-      if (this.totalDays >= this.minPeriodDays) {
-        return [[this.totalDays]];
-      } else {
-        throw new Error("Invalid split period");
-      }
-    }
-
-    const generateSplits = (
-      remainingDays: number,
-      currentSplit: number,
-      currentCombination: number[]
-    ) => {
-      if (currentSplit === this.daysSplit - 1) {
-        if (remainingDays >= this.minPeriodDays) {
-          splitCombinations.push([...currentCombination, remainingDays]);
-        }
-        return;
-      }
-
-      for (
-        let i = this.minPeriodDays;
-        i <= remainingDays - this.minPeriodDays;
-        i++
-      ) {
-        generateSplits(remainingDays - i, currentSplit + 1, [
-          ...currentCombination,
-          i,
-        ]);
-      }
-    };
-
-    generateSplits(this.totalDays, 0, []);
-
-    return splitCombinations;
-  }
-
-  private getPeriodOption(
-    date: Date,
-    periodDays: number,
-    countFromEnd: boolean
-  ): PeriodOption {
-    const start = new Date(date);
-    const end = new Date(date);
-    if (countFromEnd) start.setDate(start.getDate() - periodDays);
-    else end.setDate(end.getDate() + periodDays);
-
-    const firstNoWorkday = this.getLastWorkDayBefore(start);
-    firstNoWorkday.setDate(firstNoWorkday.getDate() + 1);
-    const lastDayOff = this.getFirstWorkDayAfter(end);
-    lastDayOff.setDate(lastDayOff.getDate() - 1);
-
-    const daysOff = getDiffDays(firstNoWorkday, lastDayOff);
-
-    return { period: { start, end }, daysOff };
-  }
-
-  private verifyIfPeriodAfterMinInterval(
-    start: Date,
-    end: Date,
-    usedDates: HolidayPeriod[]
-  ) {
-    return usedDates.some(
-      (date) =>
-        getDiffDays(start, date.end) < this.minVacationInterval ||
-        getDiffDays(date.start, end) < this.minVacationInterval
-    );
-  }
-
-  // private getPeriodCombinationsBySplitPeriodOption(
-  //   potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings,
-  //   periodOptions: number[]
-  // ): PeriodOption[] {
-  //   const usedDates: HolidayPeriod[] = [];
-
-  //   return periodOptions.map((periodDays) => {
-  //     return potentialPeriodsBeginEndings.begin.reduce(
-  //       (acc, beginDate, i) => {
-  //         const endEquivalent = potentialPeriodsBeginEndings.end[i];
-
-  //         const start = new Date(beginDate);
-  //         const end = new Date(endEquivalent);
-
-  //         const dateStartUsed = usedDates.some(
-  //           (date) => date.start.getTime() === start.getTime()
-  //         );
-  //         const dateEndUsed = usedDates.some(
-  //           (date) => date.end.getTime() === end.getTime()
-  //         );
-  //         const lessThanMinVacationInterval = usedDates.length
-  //           ? this.verifyIfPeriodAfterMinInterval(start, end, usedDates)
-  //           : false;
-
-  //         if (dateStartUsed || dateEndUsed || lessThanMinVacationInterval) {
-  //           return acc;
-  //         }
-
-  //         const periodOptionFromBegin = this.getPeriodOption(
-  //           beginDate,
-  //           periodDays,
-  //           false
-  //         );
-  //         const periodOptionFromEnd = this.getPeriodOption(
-  //           endEquivalent,
-  //           periodDays,
-  //           true
-  //         );
-
-  //         const betterPeriodOption =
-  //           periodOptionFromBegin.daysOff > periodOptionFromEnd.daysOff
-  //             ? periodOptionFromBegin
-  //             : periodOptionFromEnd;
-
-  //         if (betterPeriodOption.daysOff > acc.daysOff) {
-  //           usedDates.push({ start, end });
-  //           return betterPeriodOption;
-  //         }
-
-  //         return acc;
-  //       },
-  //       {
-  //         daysOff: 0,
-  //         period: {},
-  //       } as PeriodOption
-  //     );
-  //   });
-  // }
-
-  // private getListOfPeriodCombinationsBySplitPeriodOption(
-  //   potentialSplitPeriodDays: number[][],
-  //   potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings
-  // ) {
-  //   if (!potentialSplitPeriodDays.length)
-  //     throw new Error("Invalid split period");
-
-  //   return potentialSplitPeriodDays.map((splitPeriod) => {
-  //     if (!splitPeriod?.length || splitPeriod.length > this.maxSplitPeriod)
-  //       throw new Error("Invalid split period");
-
-  //     const periodCombinations = this.getPeriodCombinationsBySplitPeriodOption(
-  //       potentialPeriodsBeginEndings,
-  //       splitPeriod
-  //     );
-
-  //     if (!periodCombinations.length)
-  //       throw new Error("No period combinations found");
-
-  //     return periodCombinations;
-  //   });
-  // }
 
   async getVacationPeriodOptions(calculatorPeriodDto: CalculatorPeriodDto) {
     try {
@@ -476,20 +374,21 @@ export class CalculatorVacationService {
       const datePeriod = {
         start: new Date(period.start),
         end: new Date(period.end),
-      } as HolidayPeriod;
+      } as Period;
       const numberIdState = !isNaN(Number(idState))
         ? Number(idState)
         : undefined;
 
-      // this.holidays = await holidayService.getHolidaysOrdenedByDate(
-      //   datePeriod,
-      //   numberIdState,
-      //   idCity
-      // );
-      this.holidays = periodHolidays as Holiday[];
-      this.workdays = workDays;
+      this.holidays = await holidayService.getHolidaysOrdenedByDate(
+        datePeriod,
+        numberIdState,
+        idCity
+      );
+      // this.holidays = periodHolidays as Holiday[];
+      this.workdays = this.getRangeWorkDays(workDays);
+      this.lastWorkdayForBegin = this.workdays.at(-3) ?? WorkDay.wednesday;
       this.notWorkdays = this.weekDays.filter(
-        (day) => !workDays.includes(day)
+        (day) => !this.workdays.includes(day)
       ) as WorkDay[];
       this.totalDays = daysVacation + daysExtra;
       this.daysSplit = daysSplit;
@@ -500,25 +399,19 @@ export class CalculatorVacationService {
       const potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings =
         this.getPotentialPeriodsBeginEnd(holidaysInsideWorkdays);
 
-      const bestPeriods = potentialPeriodsBeginEndings.begin.size
-        ? this.getBestPeriods(potentialPeriodsBeginEndings)
-        : [];
-
-      const bestPeriodsNoOverlap = bestPeriods.length
-        ? this.getBestPeriodsWithoutOverlap(bestPeriods)
-        : [];
-
-      const bestPeriodsWithMinimumInterval = bestPeriodsNoOverlap.length
-        ? this.getBestPeriodsWithMinimumInterval(bestPeriodsNoOverlap)
-        : [];
-
-      const bestPeriodsSplitOptions = this.getBestPeriodsSplitOptions(
-        bestPeriodsWithMinimumInterval
+      const allPeriodOptions = this.getAllGoodPeriodsOptions(
+        potentialPeriodsBeginEndings
       );
+
+      const bestPeriodsOptions = this.getBestPeriodOptions(allPeriodOptions);
 
       return {
         holidays: this.holidays,
-        bestPeriodsSplitOptions,
+        bestPeriodsOptions,
+        potentialPeriodsBeginEndings: {
+          begin: Array.from(potentialPeriodsBeginEndings.begin),
+          end: Array.from(potentialPeriodsBeginEndings.end),
+        },
       };
     } catch (error) {
       throw error;

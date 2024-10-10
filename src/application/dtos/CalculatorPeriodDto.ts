@@ -1,4 +1,4 @@
-import { HolidayPeriod } from "@/domain/models/Holiday";
+import { Period } from "@/domain/models/Holiday";
 
 export interface CalculatorPeriodDto {
   idState?: number;
@@ -6,7 +6,7 @@ export interface CalculatorPeriodDto {
   daysVacation: number;
   daysSplit: number;
   daysExtra: number;
-  period: HolidayPeriod;
+  period: Period;
   workDays: number[];
   acceptJumpBridge: boolean;
 }

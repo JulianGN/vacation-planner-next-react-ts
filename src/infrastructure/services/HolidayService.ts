@@ -3,7 +3,7 @@ import StateRepository from "@/infrastructure/repositories/StateRepository";
 import CityRepository from "@/infrastructure/repositories/CityRepository";
 import HolidayRepository from "@/infrastructure/repositories/HolidayRepository";
 import { HolidayVariableService } from "@/infrastructure/services/HolidayVariableService";
-import { Holiday, HolidayPeriod } from "@/domain/models/Holiday";
+import { Holiday, Period } from "@/domain/models/Holiday";
 import { HolidayDocument } from "../schemas/HolidaySchema";
 
 const holidayRepository = new HolidayRepository();
@@ -13,7 +13,7 @@ const cityRepository = new CityRepository();
 const holidayVariableService = new HolidayVariableService();
 
 export class HolidayService {
-  updateHolidayPeriod(holidays: HolidayDocument[], period: HolidayPeriod) {
+  updateHolidayPeriod(holidays: HolidayDocument[], period: Period) {
     const startYear = period.start.getFullYear();
     const endYear = period.end.getFullYear();
 
@@ -27,7 +27,7 @@ export class HolidayService {
   }
 
   async getHolidaysOrdenedByDate(
-    period: HolidayPeriod,
+    period: Period,
     idState?: number,
     idCity?: string
   ): Promise<Holiday[]> {
