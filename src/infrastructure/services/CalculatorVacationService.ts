@@ -57,7 +57,7 @@ export class CalculatorVacationService {
     });
   }
 
-  private verifyIfDaysIsHoliday(date: Date): boolean {
+  verifyIfDaysIsHoliday(date: Date): boolean {
     return this.holidays.some((holiday) => {
       const currentHolidayDate = new Date(holiday.date);
 
@@ -65,7 +65,7 @@ export class CalculatorVacationService {
     });
   }
 
-  private verifyIfDaysIsWorkDay(date: Date): boolean {
+  verifyIfDaysIsWorkDay(date: Date): boolean {
     return this.workdays.includes(date.getDay());
   }
 
@@ -97,7 +97,7 @@ export class CalculatorVacationService {
     return isNotWorkDay || isBridge;
   }
 
-  private getClosestWorkDay(currentDate: Date, before: boolean): Date {
+  getClosestWorkDay(currentDate: Date, before: boolean): Date {
     const date = new Date(currentDate);
     const increment = before ? -1 : 1;
 
