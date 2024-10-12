@@ -7,6 +7,7 @@
     height: 4rem;
     text-align: center;
     padding: 0.5rem;
+    position: relative;
 }
 
 .calendar-base-header .calendar-base-day {
@@ -15,19 +16,30 @@
     padding: 0.5rem;
 }
 
+.calendar-base-title {
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
 .calendar-base-day-date {
     font-size: 0.85rem;
     font-weight: 500;
-    width: 2rem;
-    height: 2rem;
-    line-height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
     border-radius: 50%;
     display: inline-block;
     background-color: var(--vc-slate-400);
     color: var(--vc-white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
-.calendar-base-day--previous-month .calendar-base-day-date {
+.calendar-base-day--another-month .calendar-base-day-date {
     background-color: var(--vc-slate-200);
     color: var(--vc-slate-400);
 }
@@ -47,10 +59,6 @@
     color: var(--vc-white);
 }
 
-.calendar-base-day--vacation {
-    position: relative;
-}
-
 .calendar-base-day--vacation::before,
 .calendar-base-day--vacation::after {
     content: "";
@@ -59,8 +67,9 @@
     height: 1rem;
     background-color: var(--vc-primary-300);
     position: absolute;
-    z-index: -1;
-    top: 1rem;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
 
 }
 
@@ -78,4 +87,29 @@
 
 .calendar-base-day--vacation-end::after {
     display: none;
+}
+
+@media (max-width: 768px) {
+    .calendar-base-day {
+        height: 2.5rem;
+    }
+
+    .calendar-base-header .calendar-base-day {
+        font-size: 0.75rem;
+        height: 1.5rem;
+        padding: 0.25rem;
+    }
+
+    .calendar-base-title {
+        font-size: 1rem;
+        margin: 0.75rem 0 0 0;
+        text-align: center;
+    }
+
+    .calendar-base-day-date {
+        font-size: 0.75rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+    }
 }

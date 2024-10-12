@@ -1,28 +1,36 @@
 "use client";
 import { WorkDay } from "@/domain/enums/WorkDay";
 import { Period } from "@/domain/models/Holiday";
+import { isSameDay } from "@/utils/date";
 import React from "react";
 
 interface CalendarBaseProps {
   date: Date | string;
   workdays: WorkDay[];
   holidays: Date[] | string[];
-  vacationPeriods: Period[];
+  vacationPeriod: Period;
+  showTitle?: boolean;
 }
 
 const CalendarBase: React.FC<CalendarBaseProps> = ({
   date,
   workdays,
   holidays,
-  vacationPeriods,
+  vacationPeriod,
+  showTitle = true,
 }) => {
-  const currentDate = new Date(date);
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
+  const referenceDate = new Date(date);
+  const year = referenceDate.getFullYear();
+  const month = referenceDate.getMonth();
 
   const getDaysInMonth = (year: number, month: number) => {
     return new Date(year, month + 1, 0).getDate();
   };
+
+  const calendarTitle =
+    new Date(referenceDate).toLocaleString("default", { month: "long" }) +
+    " " +
+    year;
 
   const daysInMonth = getDaysInMonth(year, month);
   const firstDate = new Date(year, month, 1);
@@ -30,6 +38,9 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
   const listOfPreviosMonthDays = Array.from({ length: firstDayOfMonth })
     .map((_, index) => new Date(year, month, index * -1))
     .reverse();
+  const listOfNextMonthDays = Array.from({
+    length: 7 - ((daysInMonth + firstDayOfMonth) % 7),
+  }).map((_, index) => new Date(year, month + 1, index + 1));
 
   const calendarDays: {
     date: Date;
@@ -43,19 +54,12 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
     const isHoliday = holidays.some((holiday) => {
       const holidayDate = new Date(holiday);
 
-      return (
-        holidayDate.getFullYear() === year &&
-        holidayDate.getMonth() === month &&
-        holidayDate.getDate() === day
-      );
+      return isSameDay(holidayDate, currentDate);
     });
     const isWorkday = workdays.includes(currentDate.getDay());
-    const isVacationDay = vacationPeriods.some((period) => {
-      return (
-        currentDate.getTime() >= period.start.getTime() &&
-        currentDate.getTime() <= period.end.getTime()
-      );
-    });
+    const isVacationDay =
+      currentDate.getTime() >= vacationPeriod.start.getTime() &&
+      currentDate.getTime() <= vacationPeriod.end.getTime();
 
     calendarDays.push({
       date: currentDate,
@@ -65,13 +69,36 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
     });
   }
 
+  const verifyIfIsEdgeVacationDay = (
+    currentDate: Date,
+    isVacationDay: boolean
+  ) => {
+    const isFirstDayVacationWeek = isVacationDay && currentDate.getDay() === 0;
+    const isLastDayVacationWeek = isVacationDay && currentDate.getDay() === 6;
+    const isFirstDayVacationPeriod = isSameDay(
+      new Date(vacationPeriod.start),
+      currentDate
+    );
+    const isLastDayVacationPeriod = isSameDay(
+      new Date(vacationPeriod.end),
+      currentDate
+    );
+
+    const isFirstDayVacation =
+      isVacationDay && (isFirstDayVacationPeriod || isFirstDayVacationWeek);
+    const isLastDayVacation =
+      isVacationDay && (isLastDayVacationPeriod || isLastDayVacationWeek);
+
+    return { isFirstDayVacation, isLastDayVacation };
+  };
+
   return (
     <section>
-      <header>
-        <h2>
-          {date.toLocaleString("default", { month: "long" })} {year}
-        </h2>
-      </header>
+      {showTitle && (
+        <header>
+          <h3 className="calendar-base-title">{calendarTitle}</h3>
+        </header>
+      )}
       <div className="calendar-base-container">
         <div className="calendar-base-grid calendar-base-header">
           {[
@@ -93,22 +120,15 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
           {listOfPreviosMonthDays.map((day, i) => (
             <div
               key={`previous-month-${i}`}
-              className="calendar-base-day calendar-base-day--previous-month">
+              className="calendar-base-day calendar-base-day--another-month calendar-base-day--previous-month">
               <div className="calendar-base-day-date">{day.getDate()}</div>
             </div>
           ))}
           {calendarDays.map((dayInfo, index) => {
             const { date, isHoliday, isWorkday, isVacationDay } = dayInfo;
-            const isFirstDayVacationWeek = isVacationDay && date.getDay() === 0;
-            const isLastDayVacationWeek = isVacationDay && date.getDay() === 6;
-            const isFirstDayVacation =
-              isVacationDay &&
-              (!calendarDays[index - 1]?.isVacationDay ||
-                isFirstDayVacationWeek);
-            const isLastDayVacation =
-              isVacationDay &&
-              (!calendarDays[index + 1]?.isVacationDay ||
-                isLastDayVacationWeek);
+            const currentDate = new Date(date);
+            const { isFirstDayVacation, isLastDayVacation } =
+              verifyIfIsEdgeVacationDay(currentDate, isVacationDay);
 
             return (
               <div
@@ -120,10 +140,19 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
                 ${isFirstDayVacation ? "calendar-base-day--vacation-start" : ""}
                 ${isLastDayVacation ? "calendar-base-day--vacation-end" : ""}
                 `}>
-                <div className="calendar-base-day-date">{date.getDate()}</div>
+                <div className="calendar-base-day-date">
+                  {currentDate.getDate()}
+                </div>
               </div>
             );
           })}
+          {listOfNextMonthDays.map((day, i) => (
+            <div
+              key={`next-month-${i}`}
+              className="calendar-base-day calendar-base-day--another-month calendar-base-day--next-month">
+              <div className="calendar-base-day-date">{day.getDate()}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
