@@ -1,5 +1,6 @@
 import { SelectListViewModel } from "@/domain/models/SelectListViewModel";
 import { SelectListGroupByIdViewModel } from "@/domain/models/SelectListGroupByIdViewModel";
+import { CalculatorVacationResponseViewModel } from "@/domain/models/CalculatorVacationResponseViewModel";
 import { Nullable } from "primereact/ts-helpers";
 
 export interface CalculatorFormStep {
@@ -24,10 +25,14 @@ interface StepPlace {
 
 interface StepDaysVacations {
   daysVacation: number;
+  validDaysVacation: boolean;
   daysSplit: number;
+  validDaysSplit: boolean;
   daysExtra: number;
   setDaysVacation: (n: number) => void;
+  setValidDaysVacation: (n: boolean) => void;
   setDaysSplit: (n: number) => void;
+  setValidDaysSplit: (n: boolean) => void;
   setDaysExtra: (n: number) => void;
 }
 
@@ -44,8 +49,10 @@ interface StepPeriodWorkDays {
 }
 
 interface StepFinish {
-  periodOptions: string;
-  setPeriodOptions: (periodOptions: string) => void;
+  periodOptions: CalculatorVacationResponseViewModel;
+  setPeriodOptions: (
+    periodOptions: CalculatorVacationResponseViewModel
+  ) => void;
 }
 
 export interface CalculatorState {

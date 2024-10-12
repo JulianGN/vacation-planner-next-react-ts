@@ -3,6 +3,7 @@ import { itemsWorkDays } from "@/domain/models/WorkDay";
 import { CalculatorState } from "@/domain/models/CalculatorFormStep";
 import { create } from "zustand";
 import { produce } from "immer";
+import { CalculatorVacationResponseViewModel } from "@/domain/models/CalculatorVacationResponseViewModel";
 
 const useCalculatorStore = create<CalculatorState>((set) => {
   function getFullPeriodFromToday(): Date[] {
@@ -66,8 +67,10 @@ const useCalculatorStore = create<CalculatorState>((set) => {
         ),
     },
     stepDaysVacations: {
-      daysVacation: 10,
-      daysSplit: 1,
+      daysVacation: 30,
+      validDaysVacation: true,
+      daysSplit: 3,
+      validDaysSplit: true,
       daysExtra: 0,
       setDaysVacation: (daysVacation) =>
         set(
@@ -75,10 +78,22 @@ const useCalculatorStore = create<CalculatorState>((set) => {
             state.stepDaysVacations.daysVacation = daysVacation;
           })
         ),
+      setValidDaysSplit: (validDaysSplit) =>
+        set(
+          produce((state) => {
+            state.stepDaysVacations.validDaysSplit = validDaysSplit;
+          })
+        ),
       setDaysSplit: (daysSplit) =>
         set(
           produce((state) => {
             state.stepDaysVacations.daysSplit = daysSplit;
+          })
+        ),
+      setValidDaysVacation: (validDaysVacation) =>
+        set(
+          produce((state) => {
+            state.stepDaysVacations.validDaysVacation = validDaysVacation;
           })
         ),
       setDaysExtra: (daysExtra) =>
@@ -120,12 +135,14 @@ const useCalculatorStore = create<CalculatorState>((set) => {
         ),
     },
     stepFinish: {
-      // TODO: define type
-      periodOptions: "",
-      setPeriodOptions: (periodOptions: string) =>
+      periodOptions: {} as CalculatorVacationResponseViewModel,
+      setPeriodOptions: (
+        calculatorVacationResponseViewModel: CalculatorVacationResponseViewModel
+      ) =>
         set(
           produce((state) => {
-            state.stepFinish.periodOptions = periodOptions;
+            state.stepFinish.calculatorVacationResponseViewModel =
+              calculatorVacationResponseViewModel;
           })
         ),
     },

@@ -1,16 +1,49 @@
 "use client";
-import React, { forwardRef, useImperativeHandle } from "react";
+import React, { forwardRef, useImperativeHandle, useMemo } from "react";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
-import { InputNumber } from "primereact/inputnumber";
+import {
+  InputNumber,
+  InputNumberValueChangeEvent,
+} from "primereact/inputnumber";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
+import {
+  maxSplitPeriod,
+  minPeriodDays,
+} from "@/utils/consts/calculatorVacation";
+import { plural } from "@/utils/string";
 
 const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
   const { stepDaysVacations } = useCalculatorStore();
   const step = stepDaysVacations;
 
+  const maxDaySplit = useMemo(
+    () =>
+      Math.min(
+        Math.max(Math.floor(step.daysVacation / minPeriodDays), 1),
+        maxSplitPeriod
+      ),
+    [step.daysVacation]
+  );
+
+  const { es } = plural(maxDaySplit);
+
+  const onChangeDaysVacation = (e: InputNumberValueChangeEvent) => {
+    const daysVacation =
+      e?.value && e?.value >= minPeriodDays ? e.value : minPeriodDays;
+    step.setDaysVacation(daysVacation);
+    step.setValidDaysSplit(true);
+  };
+
   useImperativeHandle(ref, () => ({
     validate: () => {
+      step.setValidDaysSplit(true);
+      step.setValidDaysVacation(true);
+
+      if (step.daysSplit > maxDaySplit) {
+        step.setValidDaysSplit(false);
+        return false;
+      }
       return true;
     },
   }));
@@ -29,23 +62,22 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
           <InputNumber
             inputId="calculator-form-step-days-qtd"
             value={step.daysVacation}
-            onValueChange={(e) => step.setDaysVacation(e.value || 0)}
+            onValueChange={onChangeDaysVacation}
             showButtons
             decrementButtonClassName="p-button-outlined"
             incrementButtonClassName="p-button-outlined"
             buttonLayout="horizontal"
             incrementButtonIcon="pi pi-plus"
             decrementButtonIcon="pi pi-minus"
-            min={5}
+            min={minPeriodDays}
             max={90}
           />
         </div>
         <div className="flex flex-col">
           <label
             htmlFor="calculator-form-step-days-split"
-            className="form-label"
-          >
-            Dividir em{" "}
+            className="form-label">
+            Dividir em
           </label>
           <InputNumber
             inputId="calculator-form-step-days-split"
@@ -58,10 +90,21 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
             incrementButtonIcon="pi pi-plus"
             decrementButtonIcon="pi pi-minus"
             min={1}
-            max={3}
+            max={maxSplitPeriod}
+            invalid={!step.validDaysSplit}
           />
+          {!step.validDaysSplit && (
+            <small className="text-red-500">
+              Você pode dividir em até{" "}
+              <b>
+                {maxDaySplit} vez{es}
+              </b>{" "}
+              considerando os dias selecionados
+            </small>
+          )}
         </div>
-        <div className="flex flex-col">
+        {/* TODO: 'Dias de banco' needs to replace acceptJumpBridge when it is false */}
+        {/* <div className="flex flex-col">
           <label
             htmlFor="calculator-form-step-days-extra"
             className="form-label"
@@ -81,7 +124,7 @@ const CalculatorFormStepThree = forwardRef<CalculatorFormStep>((_, ref) => {
             min={0}
             max={90}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

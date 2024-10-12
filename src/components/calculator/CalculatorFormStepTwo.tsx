@@ -64,6 +64,19 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
     return step.selectedState ? lists.cities : [];
   }, [step.selectedState, lists.cities]);
 
+  const placeholderState = useMemo(() => {
+    if (step.justNational) return "-";
+    if (loadingStates.current) return "Carregando estados...";
+    return "Selecione o estado";
+  }, [step.justNational, loadingStates.current]);
+
+  const placeholderCity = useMemo(() => {
+    if (step.justNational) return "-";
+    if (loadingCities.current) return "Carregando cidades...";
+    if (!step.selectedState) return "Selecione primeiro o estado";
+    return "Selecione a cidade";
+  }, [step.justNational, loadingCities.current, step.selectedState]);
+
   useImperativeHandle(ref, () => ({
     validate: () => {
       if (step.justNational) return true;
@@ -109,7 +122,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         onChange={handleStateChange}
         options={lists.states ?? []}
         optionLabel="name"
-        placeholder={step.justNational ? "-" : "Selecione o estado"}
+        placeholder={placeholderState}
         filter
         disabled={
           !lists.states.length ||
@@ -117,6 +130,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
           loadingStates.current ||
           loadingCities.current
         }
+        loading={loadingStates.current}
         invalid={!step.justNational && !validState}
       />
       <Dropdown
@@ -124,13 +138,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         onChange={(e) => step.setSelectedCity(e.value)}
         options={cities}
         optionLabel="name"
-        placeholder={
-          step.justNational
-            ? "-"
-            : !step.selectedState
-            ? "Selecione primeiro o estado"
-            : "Selecione a cidade"
-        }
+        placeholder={placeholderCity}
         filter
         disabled={
           step.justNational ||

@@ -87,10 +87,7 @@ const CalculatorForm = () => {
       const payload = getCalculatorPayload();
 
       calculatorPeriodService.getPeriodOptions(payload).then((response) => {
-        stepFinish.setPeriodOptions(
-          // TODO: TEMP
-          response.bestPeriods?.map((p: any) => JSON.stringify(p)).join(", ")
-        );
+        if (response) stepFinish.setPeriodOptions(response);
       });
     }
   };

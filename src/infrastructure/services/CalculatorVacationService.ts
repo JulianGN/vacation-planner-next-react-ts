@@ -4,6 +4,15 @@ import { Holiday, Period } from "@/domain/models/Holiday";
 import { HolidayService } from "@/infrastructure/services/HolidayService";
 // import { periodHolidays } from "@/infrastructure/mocks/periodOptionsHolidays";
 import { getDiffDays } from "@/utils/date";
+import {
+  maxSplitPeriod,
+  minPeriodDays,
+  minPeriodForAtLeastOneWhenSplit,
+  minVacationInterval,
+  weekDays,
+} from "@/utils/consts/calculatorVacation";
+import { CalculatorVacationResponseViewModel } from "@/domain/models/CalculatorVacationResponseViewModel";
+import { PeriodOption } from "@/domain/models/CalculatorVacation";
 
 const holidayService = new HolidayService();
 
@@ -12,20 +21,7 @@ interface PotentialPeriodsBeginEndings {
   end: Set<string>;
 }
 
-interface PeriodOption {
-  period: Period;
-  daysUsed: number;
-  daysOff: number;
-}
-
 export class CalculatorVacationService {
-  maxSplitPeriod = 3;
-  minPeriodDays = 5;
-  minPeriodForAtLeastOneWhenSplit = 14; // ex: [14, 5, 11]
-  minVacationInterval = 30;
-  weekDays: WorkDay[] = Object.values(WorkDay).filter(
-    (day) => typeof day === "number"
-  );
   holidays: Holiday[] = [];
   workdays: WorkDay[] = [];
   lastWorkdayForBegin: WorkDay = WorkDay.thursday; // this will be updated after workdays are set
@@ -39,7 +35,7 @@ export class CalculatorVacationService {
     const lastWorkDay = workDays.at(-1);
     if (!lastWorkDay) return [];
 
-    return this.weekDays.reduce((acc, day) => {
+    return weekDays.reduce((acc, day) => {
       if (day >= firstWorkDay && day <= lastWorkDay) {
         acc.push(day);
       }
@@ -142,7 +138,7 @@ export class CalculatorVacationService {
       const intervalBetweenPeriods =
         nextPeriod.period.start.getTime() - period.period.end.getTime();
 
-      return intervalBetweenPeriods >= this.minVacationInterval;
+      return intervalBetweenPeriods >= minVacationInterval;
     });
   }
 
@@ -150,7 +146,7 @@ export class CalculatorVacationService {
     periods: PeriodOption[]
   ): boolean {
     return periods.some(
-      (period) => period.daysUsed >= this.minPeriodForAtLeastOneWhenSplit
+      (period) => period.daysUsed >= minPeriodForAtLeastOneWhenSplit
     );
   }
 
@@ -190,6 +186,7 @@ export class CalculatorVacationService {
     const firstWorkDayAfter = this.getFirstWorkDayAfter(end);
     firstWorkDayAfter.setDate(firstWorkDayAfter.getDate() - 1);
     periodOptionBase.daysUsed = getDiffDays(start, end);
+    // TODO: Check why the period 2025-03-05T03:00:00.000Z - 2025-03-20T03:00:00.000Z shows 20 as daysOff but should be 23
     periodOptionBase.daysOff = getDiffDays(
       lastWorkDayBefore,
       firstWorkDayAfter
@@ -215,7 +212,7 @@ export class CalculatorVacationService {
     beginSetList.forEach((beginDate) => {
       const start = new Date(beginDate);
 
-      for (let days = this.minPeriodDays; days <= maxSequencialDays; days++) {
+      for (let days = minPeriodDays; days <= maxSequencialDays; days++) {
         const end = new Date(start);
         end.setDate(end.getDate() + days - 1);
 
@@ -242,7 +239,7 @@ export class CalculatorVacationService {
     endSetList.forEach((endDate) => {
       const end = new Date(endDate);
 
-      for (let days = this.minPeriodDays; days <= maxSequencialDays; days++) {
+      for (let days = minPeriodDays; days <= maxSequencialDays; days++) {
         const start = new Date(end);
         start.setDate(start.getDate() - days + 1);
 
@@ -262,11 +259,40 @@ export class CalculatorVacationService {
     return periodsFromEnd;
   }
 
+  // TODO: Endpoint to get best period to replace another with the same number of days
+  private getBestPeriodPeriodFromBeginAndDaysUsed(
+    datesToBegin: Set<string>,
+    daysToUse: number
+  ): PeriodOption[] {
+    const allPeriodsFromBegin: PeriodOption[] = [];
+
+    datesToBegin.forEach((beginDate) => {
+      const start = new Date(beginDate);
+
+      const end = new Date(start);
+      end.setDate(end.getDate() + daysToUse - 1);
+
+      const periodOptionBase = {
+        period: { start, end },
+        daysUsed: 0,
+        daysOff: 0,
+      };
+
+      return this.getPeriodOption(periodOptionBase);
+    });
+
+    const allPeriodsSorted = allPeriodsFromBegin.sort(
+      (a, b) => this.getOtimizedRate(b) - this.getOtimizedRate(a)
+    );
+
+    return allPeriodsSorted.slice(0, 5);
+  }
+
   private getAllGoodPeriodsOptions(
     potentialPeriodsBeginEndings: PotentialPeriodsBeginEndings
   ): PeriodOption[] {
     const maxSequencialDays =
-      this.totalDays - this.minPeriodDays * (this.daysSplit - 1);
+      this.totalDays - minPeriodDays * (this.daysSplit - 1);
 
     const periodsFromBegin = this.getAllPeriodsFromBegin(
       potentialPeriodsBeginEndings.begin,
@@ -321,11 +347,11 @@ export class CalculatorVacationService {
         }
 
         if (
-          splitUsed + 1 === this.daysSplit &&
+          this.daysSplit === maxSplitPeriod &&
           !this.verifyIfSomePeriodHasMinPeriodForOneWhenSplit(
             futureSplitGroup
           ) &&
-          periodOptionToCompare.daysUsed < this.minPeriodForAtLeastOneWhenSplit
+          periodOptionToCompare.daysUsed < minPeriodForAtLeastOneWhenSplit
         ) {
           continue;
         }
@@ -358,7 +384,9 @@ export class CalculatorVacationService {
     return allBestSplitPeriodsOptionsSorted;
   }
 
-  async getVacationPeriodOptions(calculatorPeriodDto: CalculatorPeriodDto) {
+  async getVacationPeriodOptions(
+    calculatorPeriodDto: CalculatorPeriodDto
+  ): Promise<CalculatorVacationResponseViewModel> {
     try {
       const {
         period,
@@ -387,7 +415,7 @@ export class CalculatorVacationService {
       // this.holidays = periodHolidays as Holiday[];
       this.workdays = this.getRangeWorkDays(workDays);
       this.lastWorkdayForBegin = this.workdays.at(-3) ?? WorkDay.wednesday;
-      this.notWorkdays = this.weekDays.filter(
+      this.notWorkdays = weekDays.filter(
         (day) => !this.workdays.includes(day)
       ) as WorkDay[];
       this.totalDays = daysVacation + daysExtra;
@@ -406,12 +434,9 @@ export class CalculatorVacationService {
       const bestPeriodsOptions = this.getBestPeriodOptions(allPeriodOptions);
 
       return {
-        holidays: this.holidays,
         bestPeriodsOptions,
-        potentialPeriodsBeginEndings: {
-          begin: Array.from(potentialPeriodsBeginEndings.begin),
-          end: Array.from(potentialPeriodsBeginEndings.end),
-        },
+        workdays: this.workdays,
+        holidays: this.holidays.map((holiday) => holiday.date),
       };
     } catch (error) {
       throw error;

@@ -44,7 +44,7 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
     const [start, end] = step.period;
     if (!start || !end) return false;
 
-    return getDiffDays(start, end) <= 365;
+    return getDiffDays(start, end) < 367;
   };
 
   const handlePeriod = (e: any) => {

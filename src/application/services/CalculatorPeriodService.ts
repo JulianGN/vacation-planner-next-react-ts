@@ -2,6 +2,7 @@ import { SelectListViewModel } from "@/domain/models/SelectListViewModel";
 import { SelectListGroupByIdViewModel } from "@/domain/models/SelectListGroupByIdViewModel";
 import { ApiService } from "@/application/services/ApiService";
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
+import { CalculatorVacationResponseViewModel } from "@/domain/models/CalculatorVacationResponseViewModel";
 
 const apiService = new ApiService();
 
@@ -38,8 +39,7 @@ export class CalculatorPeriodService {
 
   async getPeriodOptions(
     calculatorPeriodDto: CalculatorPeriodDto
-  ): Promise<any> {
-    // TODO: Define return type
+  ): Promise<CalculatorVacationResponseViewModel | null> {
     try {
       const headers = apiService.getHeader("POST");
       const response = await fetch(`api/calculator/period`, {
@@ -48,10 +48,10 @@ export class CalculatorPeriodService {
         body: JSON.stringify(calculatorPeriodDto),
       });
       const data = await response.json();
-      return data?.periodOptions || [];
+      return data?.periodOptions || null;
     } catch (error) {
       console.error("Error fetching cities:", error);
-      return [];
+      return null;
     }
   }
 }
