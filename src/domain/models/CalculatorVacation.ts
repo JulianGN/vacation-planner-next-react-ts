@@ -5,3 +5,8 @@ export interface PeriodOption {
   daysUsed: number;
   daysOff: number;
 }
+
+export interface PotentialPeriodsBeginEndings {
+  begin: Set<string>;
+  end: Set<string>;
+}

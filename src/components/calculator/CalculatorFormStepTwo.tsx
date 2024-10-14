@@ -11,9 +11,9 @@ import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import { InputSwitch } from "primereact/inputswitch";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
-import { CalculatorPeriodService } from "@/application/services/CalculatorPeriodService";
+import { ApiCalculatorPeriodService } from "@/api/ApiCalculatorPeriodService";
 
-const calculatorService = new CalculatorPeriodService();
+const calculatorService = new ApiCalculatorPeriodService();
 
 const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   const { stepPlace, lists } = useCalculatorStore();

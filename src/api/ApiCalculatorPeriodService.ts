@@ -1,12 +1,12 @@
 import { SelectListViewModel } from "@/domain/models/SelectListViewModel";
 import { SelectListGroupByIdViewModel } from "@/domain/models/SelectListGroupByIdViewModel";
-import { ApiService } from "@/application/services/ApiService";
+import { ApiService } from "@/api/ApiService";
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import { CalculatorVacationResponseViewModel } from "@/domain/models/CalculatorVacationResponseViewModel";
 
 const apiService = new ApiService();
 
-export class CalculatorPeriodService {
+export class ApiCalculatorPeriodService {
   async getStates(): Promise<SelectListViewModel[]> {
     try {
       const headers = apiService.getHeader("GET");
@@ -50,7 +50,7 @@ export class CalculatorPeriodService {
       const data = await response.json();
       return data?.periodOptions || null;
     } catch (error) {
-      console.error("Error fetching cities:", error);
+      console.error("Error fetching periods:", error);
       return null;
     }
   }

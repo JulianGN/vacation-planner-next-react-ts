@@ -9,12 +9,14 @@ interface CalendarPeriodProps {
   workdays: WorkDay[];
   holidays: Date[] | string[];
   vacationPeriod: Period;
+  acceptJumpBridge?: boolean;
 }
 
 const CalendarPeriod: React.FC<CalendarPeriodProps> = ({
   workdays,
   holidays,
   vacationPeriod,
+  acceptJumpBridge = false,
 }) => {
   const periodTitle =
     vacationPeriod &&
@@ -64,7 +66,7 @@ const CalendarPeriod: React.FC<CalendarPeriodProps> = ({
 
   return (
     <div className="calendar-period card">
-      <header>
+      <header className="calendar-period-header">
         <h2 className="calendar-period-title">{periodTitle}</h2>
       </header>
       <div className="calendar-period-container">
@@ -74,7 +76,8 @@ const CalendarPeriod: React.FC<CalendarPeriodProps> = ({
             date={period.start}
             workdays={workdays}
             holidays={holidays}
-            vacationPeriod={period}
+            vacationPeriod={vacationPeriod}
+            acceptJumpBridge={acceptJumpBridge}
           />
         ))}
       </div>

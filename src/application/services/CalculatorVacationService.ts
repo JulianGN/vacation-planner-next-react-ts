@@ -2,7 +2,7 @@ import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import { WorkDay } from "@/domain/enums/WorkDay";
 import { Holiday, Period } from "@/domain/models/Holiday";
 import { HolidayService } from "@/infrastructure/services/HolidayService";
-// import { periodHolidays } from "@/infrastructure/mocks/periodOptionsHolidays";
+import { useCalculatorVacation } from "@/application/hooks/useCalculatorVacation";
 import { getDiffDays } from "@/utils/date";
 import {
   maxSplitPeriod,
@@ -12,17 +12,17 @@ import {
   weekDays,
 } from "@/utils/consts/calculatorVacation";
 import { CalculatorVacationResponseViewModel } from "@/domain/models/CalculatorVacationResponseViewModel";
-import { PeriodOption } from "@/domain/models/CalculatorVacation";
+import {
+  PeriodOption,
+  PotentialPeriodsBeginEndings,
+} from "@/domain/models/CalculatorVacation";
 
 const holidayService = new HolidayService();
-
-interface PotentialPeriodsBeginEndings {
-  begin: Set<string>;
-  end: Set<string>;
-}
-
+const { verifyIfDaysIsWorkDay, getLastWorkDayBefore, getFirstWorkDayAfter } =
+  useCalculatorVacation();
 export class CalculatorVacationService {
   holidays: Holiday[] = [];
+  holidayDates: Date[] = [];
   workdays: WorkDay[] = [];
   lastWorkdayForBegin: WorkDay = WorkDay.thursday; // this will be updated after workdays are set
   notWorkdays: WorkDay[] = [];
@@ -30,7 +30,16 @@ export class CalculatorVacationService {
   daysSplit: number = 1;
   acceptJumpBridge: boolean = false;
 
-  private getRangeWorkDays(workDays: WorkDay[]): WorkDay[] {
+  private filterHolidaysInsideWorkdays(): Holiday[] {
+    if (!this.notWorkdays.length) return this.holidays;
+
+    return this.holidays.filter((holiday) => {
+      const holidayDate = new Date(holiday.date);
+      return verifyIfDaysIsWorkDay(holidayDate, this.workdays);
+    });
+  }
+
+  getRangeWorkDays(workDays: WorkDay[]): WorkDay[] {
     const firstWorkDay = workDays[0];
     const lastWorkDay = workDays.at(-1);
     if (!lastWorkDay) return [];
@@ -42,76 +51,6 @@ export class CalculatorVacationService {
 
       return acc;
     }, [] as WorkDay[]);
-  }
-
-  private filterHolidaysInsideWorkdays(): Holiday[] {
-    if (!this.notWorkdays.length) return this.holidays;
-
-    return this.holidays.filter((holiday) => {
-      const holidayDate = new Date(holiday.date);
-      return this.verifyIfDaysIsWorkDay(holidayDate);
-    });
-  }
-
-  verifyIfDaysIsHoliday(date: Date): boolean {
-    return this.holidays.some((holiday) => {
-      const currentHolidayDate = new Date(holiday.date);
-
-      return currentHolidayDate.getTime() === date.getTime();
-    });
-  }
-
-  verifyIfDaysIsWorkDay(date: Date): boolean {
-    return this.workdays.includes(date.getDay());
-  }
-
-  private verifyIfIsNotWorkDay(date: Date): boolean {
-    const isHoliday = this.verifyIfDaysIsHoliday(date);
-    const isWorkDay = this.verifyIfDaysIsWorkDay(date);
-
-    return isHoliday || !isWorkDay;
-  }
-
-  private verifyIfIsBridge(date: Date): boolean {
-    const dayBefore = new Date(date);
-    dayBefore.setDate(date.getDate() - 1);
-    const dayBeforeIsNotWorkDay = this.verifyIfIsNotWorkDay(dayBefore);
-
-    const dayAfter = new Date(date);
-    dayAfter.setDate(date.getDate() + 1);
-    const dayAfterIsNotWorkDay = this.verifyIfIsNotWorkDay(dayAfter);
-
-    return dayBeforeIsNotWorkDay && dayAfterIsNotWorkDay;
-  }
-
-  private verifyIfDaysIsNotWorkDayOrBridge(date: Date): boolean {
-    const isNotWorkDay = this.verifyIfIsNotWorkDay(date);
-    const isBridge = this.acceptJumpBridge
-      ? this.verifyIfIsBridge(date)
-      : false;
-
-    return isNotWorkDay || isBridge;
-  }
-
-  getClosestWorkDay(currentDate: Date, before: boolean): Date {
-    const date = new Date(currentDate);
-    const increment = before ? -1 : 1;
-
-    date.setDate(date.getDate() + increment);
-
-    while (this.verifyIfDaysIsNotWorkDayOrBridge(date)) {
-      date.setDate(date.getDate() + increment);
-    }
-
-    return date;
-  }
-
-  private getLastWorkDayBefore(holidayDate: Date): Date {
-    return this.getClosestWorkDay(holidayDate, true);
-  }
-
-  private getFirstWorkDayAfter(holidayDate: Date): Date {
-    return this.getClosestWorkDay(holidayDate, false);
   }
 
   private verifyIfIsGoodBeginDate(holidayDate: Date): boolean {
@@ -157,12 +96,22 @@ export class CalculatorVacationService {
       (acc, holiday) => {
         const holidayDate = new Date(holiday.date);
 
-        const firstWorkdayAfter = this.getFirstWorkDayAfter(holidayDate);
+        const firstWorkdayAfter = getFirstWorkDayAfter(
+          holidayDate,
+          this.holidayDates,
+          this.workdays,
+          this.acceptJumpBridge
+        );
         if (this.verifyIfIsGoodBeginDate(holidayDate)) {
           acc.begin.add(firstWorkdayAfter.toISOString());
         }
 
-        const lastWorkdayBefore = this.getLastWorkDayBefore(holidayDate);
+        const lastWorkdayBefore = getLastWorkDayBefore(
+          holidayDate,
+          this.holidayDates,
+          this.workdays,
+          this.acceptJumpBridge
+        );
         acc.end.add(lastWorkdayBefore.toISOString());
 
         return acc;
@@ -181,9 +130,19 @@ export class CalculatorVacationService {
     const { period } = periodOptionBase;
     const { start, end } = period;
 
-    const lastWorkDayBefore = this.getLastWorkDayBefore(start);
+    const lastWorkDayBefore = getLastWorkDayBefore(
+      start,
+      this.holidayDates,
+      this.workdays,
+      this.acceptJumpBridge
+    );
     lastWorkDayBefore.setDate(lastWorkDayBefore.getDate() + 1);
-    const firstWorkDayAfter = this.getFirstWorkDayAfter(end);
+    const firstWorkDayAfter = getFirstWorkDayAfter(
+      end,
+      this.holidayDates,
+      this.workdays,
+      this.acceptJumpBridge
+    );
     firstWorkDayAfter.setDate(firstWorkDayAfter.getDate() - 1);
     periodOptionBase.daysUsed = getDiffDays(start, end);
     // TODO: Check why the period 2025-03-05T03:00:00.000Z - 2025-03-20T03:00:00.000Z shows 20 as daysOff but should be 23
@@ -412,7 +371,9 @@ export class CalculatorVacationService {
         numberIdState,
         idCity
       );
-      // this.holidays = periodHolidays as Holiday[];
+      this.holidayDates = this.holidays.map(
+        (holiday) => new Date(holiday.date)
+      );
       this.workdays = this.getRangeWorkDays(workDays);
       this.lastWorkdayForBegin = this.workdays.at(-3) ?? WorkDay.wednesday;
       this.notWorkdays = weekDays.filter(

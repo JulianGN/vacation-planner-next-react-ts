@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { AppService } from "@/infrastructure/services/AppService";
 import createHttpError from "http-errors";
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
-import { CalculatorVacationService } from "@/infrastructure/services/CalculatorVacationService";
+import { CalculatorVacationService } from "@/application/services/CalculatorVacationService";
 
 const appService = new AppService();
 const calculatorVacationService = new CalculatorVacationService();

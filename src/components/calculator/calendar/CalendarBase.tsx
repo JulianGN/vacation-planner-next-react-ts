@@ -1,8 +1,11 @@
 "use client";
+import React from "react";
 import { WorkDay } from "@/domain/enums/WorkDay";
 import { Period } from "@/domain/models/Holiday";
 import { isSameDay } from "@/utils/date";
-import React from "react";
+import { useCalculatorVacation } from "@/application/hooks/useCalculatorVacation";
+
+const { getFirstWorkDayAfter, getLastWorkDayBefore } = useCalculatorVacation();
 
 interface CalendarBaseProps {
   date: Date | string;
@@ -10,6 +13,21 @@ interface CalendarBaseProps {
   holidays: Date[] | string[];
   vacationPeriod: Period;
   showTitle?: boolean;
+  acceptJumpBridge?: boolean;
+}
+
+interface CalendarDay {
+  date: Date;
+  isHoliday: boolean;
+  isWorkday: boolean;
+  isVacationDay: boolean;
+  isInsideFullVacationPeriod: boolean;
+  isFirstDayVacation: boolean;
+  isLastDayVacation: boolean;
+  isFirstDayVacationWeek: boolean;
+  isLastDayVacationWeek: boolean;
+  isFirstDayFullVacation: boolean;
+  isLastDayFullVacation: boolean;
 }
 
 const CalendarBase: React.FC<CalendarBaseProps> = ({
@@ -18,6 +36,7 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
   holidays,
   vacationPeriod,
   showTitle = true,
+  acceptJumpBridge = false,
 }) => {
   const referenceDate = new Date(date);
   const year = referenceDate.getFullYear();
@@ -35,46 +54,11 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
   const daysInMonth = getDaysInMonth(year, month);
   const firstDate = new Date(year, month, 1);
   const firstDayOfMonth = firstDate.getDay();
-  const listOfPreviosMonthDays = Array.from({ length: firstDayOfMonth })
-    .map((_, index) => new Date(year, month, index * -1))
-    .reverse();
-  const listOfNextMonthDays = Array.from({
-    length: 7 - ((daysInMonth + firstDayOfMonth) % 7),
-  }).map((_, index) => new Date(year, month + 1, index + 1));
-
-  const calendarDays: {
-    date: Date;
-    isHoliday: boolean;
-    isWorkday: boolean;
-    isVacationDay: boolean;
-  }[] = [];
-
-  for (let day = 1; day <= daysInMonth; day++) {
-    const currentDate = new Date(year, month, day);
-    const isHoliday = holidays.some((holiday) => {
-      const holidayDate = new Date(holiday);
-
-      return isSameDay(holidayDate, currentDate);
-    });
-    const isWorkday = workdays.includes(currentDate.getDay());
-    const isVacationDay =
-      currentDate.getTime() >= vacationPeriod.start.getTime() &&
-      currentDate.getTime() <= vacationPeriod.end.getTime();
-
-    calendarDays.push({
-      date: currentDate,
-      isHoliday,
-      isWorkday,
-      isVacationDay,
-    });
-  }
 
   const verifyIfIsEdgeVacationDay = (
     currentDate: Date,
     isVacationDay: boolean
   ) => {
-    const isFirstDayVacationWeek = isVacationDay && currentDate.getDay() === 0;
-    const isLastDayVacationWeek = isVacationDay && currentDate.getDay() === 6;
     const isFirstDayVacationPeriod = isSameDay(
       new Date(vacationPeriod.start),
       currentDate
@@ -84,13 +68,182 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
       currentDate
     );
 
-    const isFirstDayVacation =
-      isVacationDay && (isFirstDayVacationPeriod || isFirstDayVacationWeek);
-    const isLastDayVacation =
-      isVacationDay && (isLastDayVacationPeriod || isLastDayVacationWeek);
+    const isFirstDayVacation = isVacationDay && isFirstDayVacationPeriod;
+    const isLastDayVacation = isVacationDay && isLastDayVacationPeriod;
 
     return { isFirstDayVacation, isLastDayVacation };
   };
+
+  const getCalendarDays = (
+    numberOfDays: number,
+    year: number,
+    month: number,
+    vacationPeriod: Period,
+    getLastDays = false
+  ): CalendarDay[] => {
+    const calendarDays: CalendarDay[] = [];
+    const start = vacationPeriod.start;
+    const end = vacationPeriod.end;
+    const lastWorkDayBeforeVacation = getLastWorkDayBefore(
+      start,
+      holidays,
+      workdays,
+      acceptJumpBridge
+    );
+    const firstWorkDayAfterVacation = getFirstWorkDayAfter(
+      end,
+      holidays,
+      workdays,
+      acceptJumpBridge
+    );
+
+    const verifyIfIsInsideFullVacationPeriod = (currentDate: Date) => {
+      return (
+        currentDate.getTime() > lastWorkDayBeforeVacation.getTime() &&
+        currentDate.getTime() < firstWorkDayAfterVacation.getTime()
+      );
+    };
+
+    for (let day = 1; day <= numberOfDays; day++) {
+      const monthOffset = getLastDays ? month + 1 : month;
+      const dayOffset = getLastDays ? 1 - day : day;
+      const currentDate = new Date(year, monthOffset, dayOffset);
+
+      const isHoliday = holidays.some((holiday) =>
+        isSameDay(new Date(holiday), currentDate)
+      );
+
+      const isWorkday = workdays.includes(currentDate.getDay());
+
+      const isVacationDay =
+        currentDate.getTime() >= start.getTime() &&
+        currentDate.getTime() <= end.getTime();
+
+      const index = calendarDays.length - 1;
+      const dayBeforeIsInsideFullVacationPeriod =
+        calendarDays[index] && calendarDays[index].isInsideFullVacationPeriod;
+      const isEdgeVacation = dayBeforeIsInsideFullVacationPeriod
+        ? { isFirstDayVacation: false, isLastDayVacation: false }
+        : verifyIfIsEdgeVacationDay(currentDate, isVacationDay);
+
+      if (isEdgeVacation.isLastDayVacation) {
+        const nextDay = new Date(currentDate);
+        nextDay.setDate(nextDay.getDate() + 1);
+        const nextDayisInsideFullVacationPeriod =
+          verifyIfIsInsideFullVacationPeriod(nextDay);
+        if (nextDayisInsideFullVacationPeriod)
+          isEdgeVacation.isLastDayVacation = false;
+      }
+
+      const isInsideFullVacationPeriod =
+        verifyIfIsInsideFullVacationPeriod(currentDate);
+
+      const isFirstDayVacationWeek =
+        (isVacationDay || isInsideFullVacationPeriod) &&
+        currentDate.getDay() === 0;
+      const isLastDayVacationWeek =
+        (isVacationDay || isInsideFullVacationPeriod) &&
+        currentDate.getDay() === 6;
+
+      const firstFullVacationDay = new Date(lastWorkDayBeforeVacation);
+      firstFullVacationDay.setDate(firstFullVacationDay.getDate() + 1);
+      const isFirstDayFullVacation = isSameDay(
+        firstFullVacationDay,
+        currentDate
+      );
+
+      const lastFullVacationDay = new Date(firstWorkDayAfterVacation);
+      lastFullVacationDay.setDate(lastFullVacationDay.getDate() - 1);
+      const isLastDayFullVacation = isSameDay(lastFullVacationDay, currentDate);
+
+      calendarDays.push({
+        date: currentDate,
+        isHoliday,
+        isWorkday,
+        isVacationDay,
+        isInsideFullVacationPeriod,
+        isFirstDayVacation: isEdgeVacation.isFirstDayVacation,
+        isLastDayVacation: isEdgeVacation.isLastDayVacation,
+        isFirstDayFullVacation,
+        isLastDayFullVacation,
+        isFirstDayVacationWeek,
+        isLastDayVacationWeek,
+      });
+    }
+
+    return getLastDays ? calendarDays.reverse() : calendarDays;
+  };
+
+  const getDayClasses = (dayInfo: CalendarDay) => {
+    const {
+      isHoliday,
+      isWorkday,
+      isVacationDay,
+      isFirstDayVacation,
+      isLastDayVacation,
+      isInsideFullVacationPeriod,
+      isFirstDayVacationWeek,
+      isLastDayVacationWeek,
+      isFirstDayFullVacation,
+      isLastDayFullVacation,
+    } = dayInfo;
+
+    const isInsideVacationBonus = !isVacationDay && isInsideFullVacationPeriod;
+
+    return `${isHoliday ? "calendar-base-day--holiday" : ""} ${
+      isWorkday ? "" : "calendar-base-day--not-workday"
+    }
+        ${isVacationDay ? "calendar-base-day--vacation" : ""}
+        ${
+          isFirstDayVacation || isFirstDayVacationWeek
+            ? "calendar-base-day--vacation-start"
+            : ""
+        }
+        ${
+          isLastDayVacation || isLastDayVacationWeek
+            ? "calendar-base-day--vacation-end"
+            : ""
+        }
+        ${
+          isInsideVacationBonus ? "calendar-base-day--inside-full-vacation" : ""
+        }
+        ${
+          isFirstDayFullVacation
+            ? "calendar-base-day--inside-full-vacation--start"
+            : ""
+        }
+        ${
+          isLastDayFullVacation
+            ? "calendar-base-day--inside-full-vacation--end"
+            : ""
+        }
+        `;
+  };
+
+  const calendarDays = getCalendarDays(
+    daysInMonth,
+    year,
+    month,
+    vacationPeriod
+  );
+  const previousMonthAndYear =
+    month === 0 ? { month: 11, year: year - 1 } : { month: month - 1, year };
+  const previousMonthDays = getCalendarDays(
+    firstDayOfMonth,
+    previousMonthAndYear.year,
+    previousMonthAndYear.month,
+    vacationPeriod,
+    true
+  );
+  const nextMonthAndYear =
+    month === 11 ? { month: 0, year: year + 1 } : { month: month + 1, year };
+  const nextMonthNumberDays = 7 - ((daysInMonth + firstDayOfMonth) % 7);
+  const nextMonthDays = getCalendarDays(
+    nextMonthNumberDays,
+    nextMonthAndYear.year,
+    nextMonthAndYear.month,
+    vacationPeriod
+  );
 
   return (
     <section>
@@ -117,40 +270,36 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
           ))}
         </div>
         <div className="calendar-base-grid calendar-base-body">
-          {listOfPreviosMonthDays.map((day, i) => (
+          {previousMonthDays.map((dayInfo, index) => (
             <div
-              key={`previous-month-${i}`}
-              className="calendar-base-day calendar-base-day--another-month calendar-base-day--previous-month">
-              <div className="calendar-base-day-date">{day.getDate()}</div>
+              key={`previous-month-${index}`}
+              className={`calendar-base-day calendar-base-day--another-month calendar-base-day--previous-month ${getDayClasses(
+                dayInfo
+              )}`}>
+              <div className="calendar-base-day-date">
+                {dayInfo.date?.getDate()}
+              </div>
             </div>
           ))}
-          {calendarDays.map((dayInfo, index) => {
-            const { date, isHoliday, isWorkday, isVacationDay } = dayInfo;
-            const currentDate = new Date(date);
-            const { isFirstDayVacation, isLastDayVacation } =
-              verifyIfIsEdgeVacationDay(currentDate, isVacationDay);
-
-            return (
-              <div
-                key={index}
-                className={`calendar-base-day ${
-                  isHoliday ? "calendar-base-day--holiday" : ""
-                } ${isWorkday ? "" : "calendar-base-day--not-workday"}
-                ${isVacationDay ? "calendar-base-day--vacation" : ""}
-                ${isFirstDayVacation ? "calendar-base-day--vacation-start" : ""}
-                ${isLastDayVacation ? "calendar-base-day--vacation-end" : ""}
-                `}>
-                <div className="calendar-base-day-date">
-                  {currentDate.getDate()}
-                </div>
-              </div>
-            );
-          })}
-          {listOfNextMonthDays.map((day, i) => (
+          {calendarDays.map((dayInfo, index) => (
             <div
-              key={`next-month-${i}`}
-              className="calendar-base-day calendar-base-day--another-month calendar-base-day--next-month">
-              <div className="calendar-base-day-date">{day.getDate()}</div>
+              key={index}
+              className={`calendar-base-day ${getDayClasses(dayInfo)}`}>
+              <div className="calendar-base-day-date">
+                {dayInfo.date?.getDate()}
+              </div>
+            </div>
+          ))}
+          {nextMonthDays.map((dayInfo, index) => (
+            <div
+              key={`next-month-${index}`}
+              className={`calendar-base-day calendar-base-day--another-month calendar-base-day--next-month ${getDayClasses(
+                dayInfo
+              )}
+                  `}>
+              <div className="calendar-base-day-date">
+                {dayInfo.date?.getDate()}
+              </div>
             </div>
           ))}
         </div>
