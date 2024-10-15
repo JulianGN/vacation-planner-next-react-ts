@@ -1,34 +1,9 @@
 "use client";
 import React from "react";
-import { WorkDay } from "@/domain/enums/WorkDay";
 import { Period } from "@/domain/models/Holiday";
 import { isSameDay } from "@/utils/date";
 import { useCalculatorVacation } from "@/application/hooks/useCalculatorVacation";
-
-const { getFirstWorkDayAfter, getLastWorkDayBefore } = useCalculatorVacation();
-
-interface CalendarBaseProps {
-  date: Date | string;
-  workdays: WorkDay[];
-  holidays: Date[] | string[];
-  vacationPeriod: Period;
-  showTitle?: boolean;
-  acceptJumpBridge?: boolean;
-}
-
-interface CalendarDay {
-  date: Date;
-  isHoliday: boolean;
-  isWorkday: boolean;
-  isVacationDay: boolean;
-  isInsideFullVacationPeriod: boolean;
-  isFirstDayVacation: boolean;
-  isLastDayVacation: boolean;
-  isFirstDayVacationWeek: boolean;
-  isLastDayVacationWeek: boolean;
-  isFirstDayFullVacation: boolean;
-  isLastDayFullVacation: boolean;
-}
+import { CalendarBaseProps, CalendarDay } from "@/domain/models/CalendarBase";
 
 const CalendarBase: React.FC<CalendarBaseProps> = ({
   date,
@@ -38,6 +13,9 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
   showTitle = true,
   acceptJumpBridge = false,
 }) => {
+  const { getFirstWorkDayAfter, getLastWorkDayBefore } =
+    useCalculatorVacation();
+
   const referenceDate = new Date(date);
   const year = referenceDate.getFullYear();
   const month = referenceDate.getMonth();

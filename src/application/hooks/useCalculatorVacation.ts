@@ -1,5 +1,4 @@
 import { WorkDay } from "@/domain/enums/WorkDay";
-import { Holiday } from "@/domain/models/Holiday";
 
 export const useCalculatorVacation = () => {
   function verifyIfDaysIsWorkDay(date: Date, workdays: WorkDay[]): boolean {

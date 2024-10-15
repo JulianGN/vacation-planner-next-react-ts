@@ -18,9 +18,10 @@ import {
 } from "@/domain/models/CalculatorVacation";
 
 const holidayService = new HolidayService();
-const { verifyIfDaysIsWorkDay, getLastWorkDayBefore, getFirstWorkDayAfter } =
-  useCalculatorVacation();
+
 export class CalculatorVacationService {
+  calculatorVacation = useCalculatorVacation();
+
   holidays: Holiday[] = [];
   holidayDates: Date[] = [];
   workdays: WorkDay[] = [];
@@ -35,7 +36,10 @@ export class CalculatorVacationService {
 
     return this.holidays.filter((holiday) => {
       const holidayDate = new Date(holiday.date);
-      return verifyIfDaysIsWorkDay(holidayDate, this.workdays);
+      return this.calculatorVacation.verifyIfDaysIsWorkDay(
+        holidayDate,
+        this.workdays
+      );
     });
   }
 
@@ -96,7 +100,7 @@ export class CalculatorVacationService {
       (acc, holiday) => {
         const holidayDate = new Date(holiday.date);
 
-        const firstWorkdayAfter = getFirstWorkDayAfter(
+        const firstWorkdayAfter = this.calculatorVacation.getFirstWorkDayAfter(
           holidayDate,
           this.holidayDates,
           this.workdays,
@@ -106,7 +110,7 @@ export class CalculatorVacationService {
           acc.begin.add(firstWorkdayAfter.toISOString());
         }
 
-        const lastWorkdayBefore = getLastWorkDayBefore(
+        const lastWorkdayBefore = this.calculatorVacation.getLastWorkDayBefore(
           holidayDate,
           this.holidayDates,
           this.workdays,
@@ -130,14 +134,14 @@ export class CalculatorVacationService {
     const { period } = periodOptionBase;
     const { start, end } = period;
 
-    const lastWorkDayBefore = getLastWorkDayBefore(
+    const lastWorkDayBefore = this.calculatorVacation.getLastWorkDayBefore(
       start,
       this.holidayDates,
       this.workdays,
       this.acceptJumpBridge
     );
     lastWorkDayBefore.setDate(lastWorkDayBefore.getDate() + 1);
-    const firstWorkDayAfter = getFirstWorkDayAfter(
+    const firstWorkDayAfter = this.calculatorVacation.getFirstWorkDayAfter(
       end,
       this.holidayDates,
       this.workdays,
