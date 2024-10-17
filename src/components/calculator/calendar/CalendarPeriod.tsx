@@ -4,31 +4,32 @@ import { Period } from "@/domain/models/Holiday";
 import React from "react";
 import CalendarBase from "@/components/calculator/calendar/CalendarBase";
 import { getArrayDatesBetween } from "@/utils/array";
+import { PeriodOption } from "@/domain/models/CalculatorVacation";
 
 interface CalendarPeriodProps {
   workdays: WorkDay[];
   holidays: Date[] | string[];
-  vacationPeriod: Period;
+  vacationPeriodOption: PeriodOption;
   acceptJumpBridge?: boolean;
 }
 
 const CalendarPeriod: React.FC<CalendarPeriodProps> = ({
   workdays,
   holidays,
-  vacationPeriod,
+  vacationPeriodOption,
   acceptJumpBridge = false,
 }) => {
+  const start = new Date(vacationPeriodOption?.period?.start);
+  const end = new Date(vacationPeriodOption?.period?.end);
+  const vacationPeriod = { start, end };
   const periodTitle =
     vacationPeriod &&
-    `${vacationPeriod.start.toLocaleDateString()} - ${vacationPeriod.end.toLocaleDateString()}`;
+    `${start.toLocaleDateString()} - ${end.toLocaleDateString()}`;
 
-  const getSplitPeriodsInMonths = (vacationPeriod: Period): Period[] => {
+  const getSplitPeriodsInMonths = (): Period[] => {
     if (!vacationPeriod) return [];
 
-    const arrayDatesBetween = getArrayDatesBetween(
-      vacationPeriod.start,
-      vacationPeriod.end
-    );
+    const arrayDatesBetween = getArrayDatesBetween(start, end);
 
     const periodsInMonths = arrayDatesBetween.reduce((acc, date) => {
       const month = date.getMonth();
@@ -39,22 +40,17 @@ const CalendarPeriod: React.FC<CalendarPeriodProps> = ({
 
       const lastDayOfMonth = new Date(year, month + 1, 0);
       if (!period) {
-        const end = Math.min(
-          Number(lastDayOfMonth),
-          Number(new Date(vacationPeriod.end))
-        );
+        const periodEnd = Math.min(Number(lastDayOfMonth), Number(end));
         acc.set(key, {
           start: date,
-          end: new Date(year, month, end),
+          end: new Date(year, month, periodEnd),
         });
       } else {
-        const vacationEnd = vacationPeriod.end;
         const isSameMonth =
-          vacationEnd.getMonth() === month &&
-          vacationEnd.getFullYear() === year;
+          end.getMonth() === month && end.getFullYear() === year;
         acc.set(key, {
           start: period.start,
-          end: isSameMonth ? vacationEnd : lastDayOfMonth,
+          end: isSameMonth ? end : lastDayOfMonth,
         });
       }
 
@@ -64,19 +60,33 @@ const CalendarPeriod: React.FC<CalendarPeriodProps> = ({
     return Array.from(periodsInMonths.values());
   };
 
+  const splitPeriodsInMonths = getSplitPeriodsInMonths();
+
   return (
     <div className="calendar-period card">
       <header className="calendar-period-header">
         <h2 className="calendar-period-title">{periodTitle}</h2>
+        <div className="calendar-period-subtitle">
+          <p>Dias utilizados: {vacationPeriodOption?.daysUsed}</p>
+          <p>
+            <b>Dias de férias: {vacationPeriodOption?.daysOff}</b>
+          </p>
+        </div>
       </header>
-      <div className="calendar-period-container">
-        {getSplitPeriodsInMonths(vacationPeriod).map((period) => (
+      <div
+        className={
+          "calendar-period-container" +
+          (splitPeriodsInMonths.length === 1
+            ? "calendar-period-container--solo"
+            : "")
+        }>
+        {splitPeriodsInMonths.map((period) => (
           <CalendarBase
             key={period.start.toString()}
             date={period.start}
             workdays={workdays}
             holidays={holidays}
-            vacationPeriod={vacationPeriod}
+            vacationPeriod={period}
             acceptJumpBridge={acceptJumpBridge}
           />
         ))}

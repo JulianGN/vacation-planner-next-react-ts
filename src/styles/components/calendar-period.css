@@ -5,17 +5,29 @@
 
 .calendar-period-header {
     display: flex;
-    align-items: center;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .calendar-period-title {
     width: 100%;
+    margin: 0;
+}
+
+.calendar-period-subtitle p {
+    margin: 0;
+    font-size: small;
 }
 
 .calendar-period-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+}
+
+.calendar-period-container.calendar-period-container--solo {
+    grid-template-columns: 1fr;
 }
 
 @media (max-width: 1400px) {

@@ -168,34 +168,21 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
 
     const isInsideVacationBonus = !isVacationDay && isInsideFullVacationPeriod;
 
-    return `${isHoliday ? "calendar-base-day--holiday" : ""} ${
-      isWorkday ? "" : "calendar-base-day--not-workday"
-    }
-        ${isVacationDay ? "calendar-base-day--vacation" : ""}
-        ${
-          isFirstDayVacation || isFirstDayVacationWeek
-            ? "calendar-base-day--vacation-start"
-            : ""
-        }
-        ${
-          isLastDayVacation || isLastDayVacationWeek
-            ? "calendar-base-day--vacation-end"
-            : ""
-        }
-        ${
-          isInsideVacationBonus ? "calendar-base-day--inside-full-vacation" : ""
-        }
-        ${
-          isFirstDayFullVacation
-            ? "calendar-base-day--inside-full-vacation--start"
-            : ""
-        }
-        ${
-          isLastDayFullVacation
-            ? "calendar-base-day--inside-full-vacation--end"
-            : ""
-        }
-        `;
+    const classes = [
+      isHoliday && "calendar-base-day--holiday",
+      !isWorkday && "calendar-base-day--not-workday",
+      isVacationDay && "calendar-base-day--vacation",
+      (isFirstDayVacation || isFirstDayVacationWeek) &&
+        "calendar-base-day--vacation-start",
+      (isLastDayVacation || isLastDayVacationWeek) &&
+        "calendar-base-day--vacation-end",
+      isInsideVacationBonus && "calendar-base-day--inside-full-vacation",
+      isFirstDayFullVacation &&
+        "calendar-base-day--inside-full-vacation--start",
+      isLastDayFullVacation && "calendar-base-day--inside-full-vacation--end",
+    ];
+
+    return classes.filter(Boolean).join(" ");
   };
 
   const calendarDays = getCalendarDays(

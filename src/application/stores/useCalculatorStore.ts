@@ -141,7 +141,7 @@ const useCalculatorStore = create<CalculatorState>((set) => {
       ) =>
         set(
           produce((state) => {
-            state.stepFinish.calculatorVacationResponseViewModel =
+            state.stepFinish.periodOptions =
               calculatorVacationResponseViewModel;
           })
         ),

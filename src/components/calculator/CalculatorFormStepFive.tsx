@@ -1,25 +1,23 @@
 "use client";
 import React from "react";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
-import CalendarPeriod from "@/components/calculator/calendar/CalendarPeriod";
+import CalendarMultiplePeriods from "@/components/calculator/calendar/CalendarMultiplePeriods";
 
 const CalculatorFormStepFive = () => {
   const { stepFinish } = useCalculatorStore();
+  const { bestPeriodsOptions, workdays, holidays } = stepFinish.periodOptions;
 
   return (
-    <CalendarPeriod
-      workdays={[1, 2, 3, 4, 5]}
-      holidays={[
-        new Date("2025-04-18T03:00:00.000Z"),
-        new Date("2025-04-21T03:00:00.000Z"),
-        new Date("2025-05-01T03:00:00.000Z"),
-      ]}
-      vacationPeriod={{
-        start: new Date(2025, 3, 22),
-        end: new Date(2025, 3, 30),
-      }}
-      acceptJumpBridge={true}
-    />
+    <>
+      {!!bestPeriodsOptions?.length && (
+        <CalendarMultiplePeriods
+          workdays={workdays}
+          holidays={holidays}
+          vacationPeriodOptions={bestPeriodsOptions}
+          acceptJumpBridge={true}
+        />
+      )}
+    </>
   );
 };
 
