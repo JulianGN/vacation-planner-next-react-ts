@@ -1,0 +1,21 @@
+.loading-spinner-global {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--vc-white);
+    z-index: 9999;
+}
+
+.p-progress-spinner-circle {
+    stroke: var(--vc-primary);
+    animation: p-progress-spinner-dash 1.5s ease-in-out infinite;
+}

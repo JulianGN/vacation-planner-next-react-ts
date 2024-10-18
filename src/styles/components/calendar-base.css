@@ -14,11 +14,12 @@
     font-weight: 500;
     font-size: 0.85rem;
     padding: 0.5rem;
+    height: auto;
 }
 
 .calendar-base-title {
     font-size: 1rem;
-    margin: 1rem 0;
+    margin: 2rem 0 0 0;
     text-align: center;
 }
 

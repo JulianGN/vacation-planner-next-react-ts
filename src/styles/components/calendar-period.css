@@ -30,6 +30,22 @@
     grid-template-columns: 1fr;
 }
 
+.calendar-multiple-period-tab-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--vc-primary-100);
+    color: var(--vc-primary-600);
+}
+
+.calendar-multiple-period-tab-header--selected {
+    background-color: var(--vc-white);
+    color: var(--vc-primary-900);
+}
+
 @media (max-width: 1400px) {
     .calendar-period-container {
         grid-template-columns: 1fr;
@@ -46,5 +62,13 @@
         margin: 0;
         padding: 0;
         border-bottom: 1px solid var(--vc-slate-200);
+        text-align: center;
+    }
+
+    .calendar-period-subtitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
     }
 }

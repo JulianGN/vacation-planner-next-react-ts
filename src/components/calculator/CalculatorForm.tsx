@@ -13,10 +13,12 @@ import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
 import { Period } from "@/domain/models/Holiday";
 import { ApiCalculatorPeriodService } from "@/api/ApiCalculatorPeriodService";
+import useUiStore from "@/application/stores/useUiStore";
 
 const calculatorPeriodService = new ApiCalculatorPeriodService();
 
 const CalculatorForm = () => {
+  const { setLoading } = useUiStore();
   const { stepPlace, stepPeriodWorkDays, stepDaysVacations, stepFinish } =
     useCalculatorStore();
 
@@ -86,9 +88,14 @@ const CalculatorForm = () => {
     if (newStep === CalculatorFormStepIndex.stepFinish) {
       const payload = getCalculatorPayload();
 
-      calculatorPeriodService.getPeriodOptions(payload).then((response) => {
-        if (response) stepFinish.setPeriodOptions(response);
-      });
+      setLoading(true);
+      calculatorPeriodService
+        .getPeriodOptions(payload)
+        .then((response) => {
+          if (response) stepFinish.setPeriodOptions(response);
+        })
+        .catch((error) => console.error(error))
+        .finally(() => setLoading(false));
     }
   };
 

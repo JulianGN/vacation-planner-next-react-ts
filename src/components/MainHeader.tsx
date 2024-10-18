@@ -4,8 +4,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { TabMenu } from "primereact/tabmenu";
 import { updateLocaleOptions } from "primereact/api";
 import ptBrLocale from "@/infrastructure/primelocale/pt-br.json";
+import LoadingSpinnerGlobal from "@/components/shared/Loading/LoadingSpinnerGlobal";
+import useUiStore from "@/application/stores/useUiStore";
 
 const MainHeader = () => {
+  const { loading } = useUiStore();
   const pathName = usePathname();
   const router = useRouter();
 
@@ -37,12 +40,17 @@ const MainHeader = () => {
   updateLocaleOptions(ptBrLocale["pt-br"], "pt-br");
 
   return (
-    <div className="bg-white ps-3">
-      <div className="lg:container mx-auto flex items-center justify-between">
-        <h1 className="font-light text-sm md:text-xl">Planejador de férias</h1>
-        <TabMenu model={items} activeIndex={activeIndex} key={activeIndex} />
+    <>
+      <div className="bg-white ps-3">
+        <div className="lg:container mx-auto flex items-center justify-between">
+          <h1 className="font-light text-sm md:text-xl">
+            Planejador de férias
+          </h1>
+          <TabMenu model={items} activeIndex={activeIndex} key={activeIndex} />
+        </div>
       </div>
-    </div>
+      {loading && <LoadingSpinnerGlobal />}
+    </>
   );
 };
 

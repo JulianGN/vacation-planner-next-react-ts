@@ -63,14 +63,20 @@ const CalendarPeriod: React.FC<CalendarPeriodProps> = ({
   const splitPeriodsInMonths = getSplitPeriodsInMonths();
 
   return (
-    <div className="calendar-period card">
+    <div className="calendar-period">
       <header className="calendar-period-header">
         <h2 className="calendar-period-title">{periodTitle}</h2>
         <div className="calendar-period-subtitle">
-          <p>Dias utilizados: {vacationPeriodOption?.daysUsed}</p>
-          <p>
-            <b>Dias de férias: {vacationPeriodOption?.daysOff}</b>
-          </p>
+          <div className="calendar-period-subtitle-days">
+            <p>Dias utilizados: {vacationPeriodOption?.daysUsed}</p>
+            <p>
+              <b>Dias de férias: {vacationPeriodOption?.daysOff}</b>
+            </p>
+          </div>
+          <h3 className="calendar-period-subtitle-plus">
+            (+{vacationPeriodOption?.daysOff - vacationPeriodOption?.daysUsed}{" "}
+            dias)
+          </h3>
         </div>
       </header>
       <div
