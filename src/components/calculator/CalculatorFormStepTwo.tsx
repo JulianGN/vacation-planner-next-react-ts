@@ -100,9 +100,8 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   return (
     <div className="flex flex-col gap-3 max-w-screen-sm mx-auto">
       <TextTitleDescription
-        title="Qual é o estado e a cidade que devemos considerar para calcular os
-        feriados?"
-        description="Pode ser a cidade sede da empresa ou, se houver, da sua filial."
+        title="Onde fica sua empresa?"
+        description="Isso nos ajuda a buscar os melhores períodos considerando os feriados municipais e estaduais."
       />
       <div className="flex items-center justify-center">
         <InputSwitch
