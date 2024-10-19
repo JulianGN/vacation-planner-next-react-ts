@@ -1,4 +1,3 @@
-import { Period } from "@/domain/models/Holiday";
 import Holiday, {
   HolidayDocument,
   HolidayQuery,

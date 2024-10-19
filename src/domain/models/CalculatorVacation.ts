@@ -1,5 +1,7 @@
-import { Period } from "@/domain/models/Holiday";
-
+export interface Period {
+  start: Date;
+  end: Date;
+}
 export interface PeriodOption {
   period: Period;
   daysUsed: number;

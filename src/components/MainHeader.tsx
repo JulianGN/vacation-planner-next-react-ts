@@ -8,7 +8,7 @@ import LoadingSpinnerGlobal from "@/components/shared/Loading/LoadingSpinnerGlob
 import useUiStore from "@/application/stores/useUiStore";
 
 const MainHeader = () => {
-  const { loading } = useUiStore();
+  const { loading, loadingMessage } = useUiStore();
   const pathName = usePathname();
   const router = useRouter();
 
@@ -49,7 +49,7 @@ const MainHeader = () => {
           <TabMenu model={items} activeIndex={activeIndex} key={activeIndex} />
         </div>
       </div>
-      {loading && <LoadingSpinnerGlobal />}
+      {loading && <LoadingSpinnerGlobal message={loadingMessage} />}
     </>
   );
 };

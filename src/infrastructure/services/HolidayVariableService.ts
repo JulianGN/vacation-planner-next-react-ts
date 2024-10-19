@@ -1,4 +1,5 @@
-import { Holiday, Period } from "@/domain/models/Holiday";
+import { Period } from "@/domain/models/CalculatorVacation";
+import { Holiday } from "@/domain/models/Holiday";
 
 export class HolidayVariableService {
   calculateEasterDate(year: number): Date[] {

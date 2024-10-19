@@ -1,14 +1,14 @@
 "use client";
 import { WorkDay } from "@/domain/enums/WorkDay";
-import { Period } from "@/domain/models/Holiday";
 import React from "react";
 import CalendarBase from "@/components/calculator/calendar/CalendarBase";
 import { getArrayDatesBetween } from "@/utils/array";
-import { PeriodOption } from "@/domain/models/CalculatorVacation";
+import { PeriodOption, Period } from "@/domain/models/CalculatorVacation";
+import { HolidayViewModel } from "@/domain/models/HolidayViewModel";
 
 interface CalendarPeriodProps {
   workdays: WorkDay[];
-  holidays: Date[] | string[];
+  holidays: HolidayViewModel[];
   vacationPeriodOption: PeriodOption;
   acceptJumpBridge?: boolean;
 }

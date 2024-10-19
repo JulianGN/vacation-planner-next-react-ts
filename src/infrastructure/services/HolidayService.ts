@@ -3,8 +3,9 @@ import StateRepository from "@/infrastructure/repositories/StateRepository";
 import CityRepository from "@/infrastructure/repositories/CityRepository";
 import HolidayRepository from "@/infrastructure/repositories/HolidayRepository";
 import { HolidayVariableService } from "@/infrastructure/services/HolidayVariableService";
-import { Holiday, Period } from "@/domain/models/Holiday";
+import { Holiday } from "@/domain/models/Holiday";
 import { HolidayDocument } from "../schemas/HolidaySchema";
+import { Period } from "@/domain/models/CalculatorVacation";
 
 const holidayRepository = new HolidayRepository();
 const stateRepository = new StateRepository();

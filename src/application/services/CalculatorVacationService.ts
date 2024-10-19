@@ -1,6 +1,6 @@
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import { WorkDay } from "@/domain/enums/WorkDay";
-import { Holiday, Period } from "@/domain/models/Holiday";
+import { Holiday } from "@/domain/models/Holiday";
 import { HolidayService } from "@/infrastructure/services/HolidayService";
 import { useCalculatorVacation } from "@/application/hooks/useCalculatorVacation";
 import { getDiffDays } from "@/utils/date";
@@ -13,9 +13,11 @@ import {
 } from "@/utils/consts/calculatorVacation";
 import { CalculatorVacationResponseViewModel } from "@/domain/models/CalculatorVacationResponseViewModel";
 import {
+  Period,
   PeriodOption,
   PotentialPeriodsBeginEndings,
 } from "@/domain/models/CalculatorVacation";
+import { HolidayViewModel } from "@/domain/models/HolidayViewModel";
 
 const holidayService = new HolidayService();
 
@@ -23,7 +25,7 @@ export class CalculatorVacationService {
   calculatorVacation = useCalculatorVacation();
 
   holidays: Holiday[] = [];
-  holidayDates: Date[] = [];
+  holidayDates: HolidayViewModel[] = [];
   workdays: WorkDay[] = [];
   lastWorkdayForBegin: WorkDay = WorkDay.thursday; // this will be updated after workdays are set
   notWorkdays: WorkDay[] = [];
@@ -375,9 +377,11 @@ export class CalculatorVacationService {
         numberIdState,
         idCity
       );
-      this.holidayDates = this.holidays.map(
-        (holiday) => new Date(holiday.date)
-      );
+      this.holidayDates = this.holidays.map((holiday) => ({
+        date: new Date(holiday.date),
+        name: holiday.name,
+        type: holiday.type,
+      }));
       this.workdays = this.getRangeWorkDays(workDays);
       this.lastWorkdayForBegin = this.workdays.at(-3) ?? WorkDay.wednesday;
       this.notWorkdays = weekDays.filter(
@@ -401,7 +405,7 @@ export class CalculatorVacationService {
       return {
         bestPeriodsOptions,
         workdays: this.workdays,
-        holidays: this.holidays.map((holiday) => holiday.date),
+        holidays: this.holidays,
       };
     } catch (error) {
       throw error;

@@ -11,7 +11,7 @@ import CalculatorFormStepFive from "@/components/calculator/CalculatorFormStepFi
 import { CalculatorFormStepIndex } from "@/domain/enums/CalculatorFormStepIndex";
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
-import { Period } from "@/domain/models/Holiday";
+import { Period } from "@/domain/models/CalculatorVacation";
 import { ApiCalculatorPeriodService } from "@/api/ApiCalculatorPeriodService";
 import useUiStore from "@/application/stores/useUiStore";
 
@@ -104,7 +104,7 @@ const CalculatorForm = () => {
       <header className="pt-6">
         <Step step={step} icons={icons} setStep={setStep} />
       </header>
-      <article className="flex flex-col gap-3 mt-3 p-6">
+      <article className="flex flex-col gap-3 mt-3 py-6">
         {step === CalculatorFormStepIndex.stepStart && (
           <CalculatorFormStepOne />
         )}

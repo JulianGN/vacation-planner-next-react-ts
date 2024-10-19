@@ -9,10 +9,11 @@ import {
   TabPanelHeaderTemplateOptions,
 } from "primereact/tabview";
 import { getStringDayMonth } from "@/utils/date";
+import { HolidayViewModel } from "@/domain/models/HolidayViewModel";
 
 interface CalendarMultiplePeriodProps {
   workdays: WorkDay[];
-  holidays: Date[] | string[];
+  holidays: HolidayViewModel[];
   vacationPeriodOptions: PeriodOption[][];
   acceptJumpBridge?: boolean;
 }

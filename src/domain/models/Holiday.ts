@@ -6,8 +6,3 @@ export interface Holiday {
   id_state?: number;
   id_city?: number;
 }
-
-export interface Period {
-  start: Date;
-  end: Date;
-}

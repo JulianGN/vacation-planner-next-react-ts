@@ -35,6 +35,8 @@
   --vc-slate-950: #020617;
 
   --vc-danger: #dc2626;
+
+  --vc-border-radius: 0.25rem;
 }
 
 body {

@@ -10,12 +10,18 @@ const CalculatorFormStepFive = () => {
   return (
     <>
       {!!bestPeriodsOptions?.length && (
-        <CalendarMultiplePeriods
-          workdays={workdays}
-          holidays={holidays}
-          vacationPeriodOptions={bestPeriodsOptions}
-          acceptJumpBridge={true}
-        />
+        <div>
+          <h2 className="text-2xl md:text-4xl font-light text-center px-3 mt-0">
+            Confira abaixo <b>{bestPeriodsOptions?.length} opções</b> de
+            distribuição de dias pra suas férias!
+          </h2>
+          <CalendarMultiplePeriods
+            workdays={workdays}
+            holidays={holidays}
+            vacationPeriodOptions={bestPeriodsOptions}
+            acceptJumpBridge={true}
+          />
+        </div>
       )}
     </>
   );

@@ -1,4 +1,5 @@
 import { WorkDay } from "@/domain/enums/WorkDay";
+import { HolidayViewModel } from "@/domain/models/HolidayViewModel";
 
 export const useCalculatorVacation = () => {
   function verifyIfDaysIsWorkDay(date: Date, workdays: WorkDay[]): boolean {
@@ -90,11 +91,11 @@ export const useCalculatorVacation = () => {
 
   function getLastWorkDayBefore(
     holidayDate: Date,
-    holidayDates: Date[] | string[],
+    holidayDates: HolidayViewModel[],
     workdays: WorkDay[],
     acceptJumpBridge: boolean
   ): Date {
-    const dates = holidayDates.map((date) => new Date(date));
+    const dates = holidayDates.map((holiday) => new Date(holiday.date));
     return getClosestWorkDay(
       holidayDate,
       true,
@@ -106,11 +107,11 @@ export const useCalculatorVacation = () => {
 
   function getFirstWorkDayAfter(
     holidayDate: Date,
-    holidayDates: Date[] | string[],
+    holidayDates: HolidayViewModel[],
     workdays: WorkDay[],
     acceptJumpBridge: boolean
   ): Date {
-    const dates = holidayDates.map((date) => new Date(date));
+    const dates = holidayDates.map((holiday) => new Date(holiday.date));
     return getClosestWorkDay(
       holidayDate,
       false,

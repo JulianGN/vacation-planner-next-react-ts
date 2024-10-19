@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Period } from "@/domain/models/Holiday";
+import { Period } from "@/domain/models/CalculatorVacation";
 import { isSameDay } from "@/utils/date";
 import { useCalculatorVacation } from "@/application/hooks/useCalculatorVacation";
 import { CalendarBaseProps, CalendarDay } from "@/domain/models/CalendarBase";
@@ -88,7 +88,7 @@ const CalendarBase: React.FC<CalendarBaseProps> = ({
       const currentDate = new Date(year, monthOffset, dayOffset);
 
       const isHoliday = holidays.some((holiday) =>
-        isSameDay(new Date(holiday), currentDate)
+        isSameDay(new Date(holiday.date), currentDate)
       );
 
       const isWorkday = workdays.includes(currentDate.getDay());

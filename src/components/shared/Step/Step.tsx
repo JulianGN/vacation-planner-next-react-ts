@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Steps } from "primereact/steps";
+import React, { useMemo, useRef } from "react";
+import { Steps, StepsSelectEvent } from "primereact/steps";
 import { MenuItem } from "primereact/menuitem";
 import { Toast } from "primereact/toast";
 import StepCircle from "@/components/shared/Step/StepCircle";
@@ -17,6 +17,10 @@ const Step: React.FC<StepProps> = ({ step, icons, setStep }) => {
   })) as MenuItem[];
 
   const toast = useRef<Toast>(null);
+  const lastStep = useMemo(
+    () => step === icons.length - 1,
+    [step, icons.length]
+  );
 
   const showToast = () => {
     toast.current?.clear();
@@ -26,14 +30,23 @@ const Step: React.FC<StepProps> = ({ step, icons, setStep }) => {
     });
   };
 
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!lastStep) showToast();
+  };
+
+  const handleSelect = (event: StepsSelectEvent) => {
+    if (lastStep) setStep(event.index);
+  };
+
   return (
     <>
       <Steps
         model={stepItems}
         activeIndex={step}
-        readOnly={true}
+        readOnly={!lastStep}
         className="m-2 pt-4"
-        onClick={showToast}
+        onClick={handleClick}
+        onSelect={handleSelect}
       />
       <Toast ref={toast} />
     </>

@@ -3,7 +3,6 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useEffect,
-  useRef,
   useMemo,
 } from "react";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
@@ -21,8 +20,8 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
 
   const [validState, setValidState] = useState(true);
   const [validCity, setValidCity] = useState(true);
-  const loadingStates = useRef(false);
-  const loadingCities = useRef(false);
+  const [loadingStates, setLoadingStates] = useState(false);
+  const [loadingCities, setLoadingCities] = useState(false);
 
   const setValidateTrue = () => {
     setValidState(true);
@@ -41,17 +40,17 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   const fetchStates = async () => {
     if (lists.states.length) return;
 
-    loadingStates.current = true;
+    setLoadingStates(true);
     const states = await calculatorService.getStates();
     lists.setStates(states);
-    loadingStates.current = false;
+    setLoadingStates(false);
   };
 
   const fetchCitiesByStateId = async (idState: number) => {
-    loadingCities.current = true;
+    setLoadingCities(true);
     const cities = await calculatorService.getCitiesByIdState(idState);
     lists.setCities(cities);
-    loadingCities.current = false;
+    setLoadingCities(false);
   };
 
   const handleStateChange = (e: DropdownChangeEvent) => {
@@ -66,27 +65,26 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
 
   const placeholderState = useMemo(() => {
     if (step.justNational) return "-";
-    if (loadingStates.current) return "Carregando estados...";
+    if (loadingStates) return "Carregando estados...";
     return "Selecione o estado";
-  }, [step.justNational, loadingStates.current]);
+  }, [step.justNational, loadingStates]);
 
   const placeholderCity = useMemo(() => {
     if (step.justNational) return "-";
-    if (loadingCities.current) return "Carregando cidades...";
+    if (loadingCities) return "Carregando cidades...";
     if (!step.selectedState) return "Selecione primeiro o estado";
     return "Selecione a cidade";
-  }, [step.justNational, loadingCities.current, step.selectedState]);
+  }, [step.justNational, loadingCities, step.selectedState]);
 
-  useImperativeHandle(ref, () => ({
-    validate: () => {
-      if (step.justNational) return true;
-      if (step.selectedState && step.selectedCity) return true;
+  const validate = () => {
+    if (step.justNational) return true;
+    if (step.selectedState && step.selectedCity) return true;
 
-      setValidState(false);
-      setValidCity(false);
-      return false;
-    },
-  }));
+    setValidState(false);
+    setValidCity(false);
+    return false;
+  };
+
   useEffect(() => {
     fetchStates();
   });
@@ -96,6 +94,10 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
     step.selectedState,
     step.selectedCity,
   ]);
+
+  useImperativeHandle(ref, () => ({
+    validate,
+  }));
 
   return (
     <div className="flex flex-col gap-3 max-w-screen-sm mx-auto">
@@ -126,10 +128,10 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         disabled={
           !lists.states.length ||
           step.justNational ||
-          loadingStates.current ||
-          loadingCities.current
+          loadingStates ||
+          loadingCities
         }
-        loading={loadingStates.current}
+        loading={loadingStates}
         invalid={!step.justNational && !validState}
       />
       <Dropdown
@@ -143,7 +145,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
           step.justNational ||
           !step.selectedState ||
           !cities?.length ||
-          loadingCities.current
+          loadingCities
         }
         invalid={!step.justNational && !validCity}
       />

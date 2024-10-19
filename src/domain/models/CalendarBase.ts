@@ -1,10 +1,11 @@
 import { WorkDay } from "@/domain/enums/WorkDay";
-import { Period } from "@/domain/models/Holiday";
+import { Period } from "./CalculatorVacation";
+import { HolidayViewModel } from "./HolidayViewModel";
 
 export interface CalendarBaseProps {
   date: Date | string;
   workdays: WorkDay[];
-  holidays: Date[] | string[];
+  holidays: HolidayViewModel[];
   vacationPeriod: Period;
   showTitle?: boolean;
   acceptJumpBridge?: boolean;

@@ -1,4 +1,4 @@
-import { Period } from "@/domain/models/Holiday";
+import { Period } from "@/domain/models/CalculatorVacation";
 
 export interface CalculatorPeriodDto {
   idState?: number;

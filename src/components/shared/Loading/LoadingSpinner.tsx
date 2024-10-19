@@ -4,8 +4,20 @@ import {
   ProgressSpinnerProps,
 } from "primereact/progressspinner";
 
-export default function LoadingSpinner(props: ProgressSpinnerProps) {
+interface LoadingSpinnerProps extends ProgressSpinnerProps {
+  message?: string;
+}
+
+export default function LoadingSpinner(props: LoadingSpinnerProps) {
   return (
-    <ProgressSpinner strokeWidth="4" color="var(--vc-primary)" {...props} />
+    <div className="flex flex-col items-center justify-center text-center">
+      <ProgressSpinner
+        strokeWidth="4"
+        color="var(--vc-primary)"
+        aria-label="Carregando"
+        {...props}
+      />
+      {props.message && <small>{props.message}</small>}
+    </div>
   );
 }
