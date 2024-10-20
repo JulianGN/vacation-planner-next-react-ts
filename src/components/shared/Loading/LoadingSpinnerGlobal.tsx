@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import LoadingSpinner from "@/components/shared/Loading/LoadingSpinner";
 
