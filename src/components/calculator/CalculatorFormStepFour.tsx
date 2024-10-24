@@ -70,7 +70,7 @@ const CalculatorFormStepFour = forwardRef<CalculatorFormStep>((_, ref) => {
     },
   }));
 
-  useEffect(handleFullPeriodChange, [step, step.fullPeriod]);
+  useEffect(handleFullPeriodChange, [step.fullPeriod]);
 
   return (
     <div className="flex flex-col gap-3 max-w-screen-sm mx-auto">
