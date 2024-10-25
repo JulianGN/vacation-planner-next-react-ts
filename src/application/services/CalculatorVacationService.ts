@@ -3,7 +3,7 @@ import { WorkDay } from "@/domain/enums/WorkDay";
 import { Holiday } from "@/domain/models/Holiday";
 import { HolidayService } from "@/infrastructure/services/HolidayService";
 import { useCalculatorVacation } from "@/application/hooks/useCalculatorVacation";
-import { getDiffDays } from "@/utils/date";
+import { getDiffDays, getMsInDays } from "@/utils/date";
 import {
   maxSplitPeriod,
   minPeriodDays,
@@ -80,8 +80,9 @@ export class CalculatorVacationService {
       const nextPeriod = periods[index + 1];
       if (!nextPeriod) return true;
 
-      const intervalBetweenPeriods =
+      const msBetweenPeriods =
         nextPeriod.period.start.getTime() - period.period.end.getTime();
+      const intervalBetweenPeriods = getMsInDays(msBetweenPeriods);
 
       return intervalBetweenPeriods >= minVacationInterval;
     });
@@ -289,34 +290,36 @@ export class CalculatorVacationService {
 
         if (splitUsed >= this.daysSplit) break;
 
-        const periodToCompareStart = periodOptionToCompare.period.start;
-
-        if (
-          JSON.stringify(periodOptionToCompare) ===
-            JSON.stringify(periodOption) ||
-          periodStart >= periodToCompareStart ||
-          !this.verifyIfPeriodsHaveMinimumInterval([
-            periodOption,
-            periodOptionToCompare,
-          ])
-        ) {
-          continue;
-        }
-
         const futureSplitGroup = [...splitGroup, periodOptionToCompare];
 
+        const isSamePeriod =
+          JSON.stringify(periodOptionToCompare) ===
+          JSON.stringify(periodOption);
+        const isPeriodStartAfterOrEqual =
+          periodStart >= periodOptionToCompare.period.start;
+        const hasMinimumInterval =
+          this.verifyIfPeriodsHaveMinimumInterval(futureSplitGroup);
+        const exceedsTotalDays =
+          this.getTotalDaysUsedFromPeriods(futureSplitGroup) > this.totalDays;
+        const isMaxSplitPeriod = this.daysSplit === maxSplitPeriod;
+        const hasMinPeriodForOneWhenSplit =
+          this.verifyIfSomePeriodHasMinPeriodForOneWhenSplit(futureSplitGroup);
+        const isBelowMinPeriodForAtLeastOneWhenSplit =
+          periodOptionToCompare.daysUsed < minPeriodForAtLeastOneWhenSplit;
+
         if (
-          this.getTotalDaysUsedFromPeriods(futureSplitGroup) > this.totalDays
+          isSamePeriod ||
+          isPeriodStartAfterOrEqual ||
+          !hasMinimumInterval ||
+          exceedsTotalDays
         ) {
           continue;
         }
 
         if (
-          this.daysSplit === maxSplitPeriod &&
-          !this.verifyIfSomePeriodHasMinPeriodForOneWhenSplit(
-            futureSplitGroup
-          ) &&
-          periodOptionToCompare.daysUsed < minPeriodForAtLeastOneWhenSplit
+          isMaxSplitPeriod &&
+          !hasMinPeriodForOneWhenSplit &&
+          isBelowMinPeriodForAtLeastOneWhenSplit
         ) {
           continue;
         }

@@ -1,8 +1,10 @@
+export const getMsInDays = (ms: number): number => ms / (1000 * 60 * 60 * 24);
+
 export const getDiffDays = (start: Date, end: Date): number => {
   const diffTime = Math.abs(end.getTime() - start.getTime());
   if (!diffTime) return 0;
 
-  return Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+  return Math.ceil(getMsInDays(diffTime)) + 1;
 };
 
 export const isSameDay = (date1: Date, date2: Date): boolean => {
