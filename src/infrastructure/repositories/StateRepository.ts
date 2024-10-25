@@ -4,7 +4,9 @@ import { ObjectId } from "mongodb";
 class StateRepository {
   async getAll(): Promise<StateDocument[]> {
     try {
-      return await State.find();
+      return await State.find().sort({
+        name_state: 1,
+      });
     } catch (error) {
       console.error("Error retrieving states:", error);
       return [];

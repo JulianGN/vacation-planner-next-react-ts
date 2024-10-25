@@ -7,10 +7,11 @@ import React, {
 } from "react";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
-import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
 import { InputSwitch } from "primereact/inputswitch";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
 import { ApiCalculatorPeriodService } from "@/api/ApiCalculatorPeriodService";
+import DropdownSelect from "@/components/shared/Dropdown/DropdownSelect";
+import { DropdownChangeEvent } from "primereact/dropdown";
 
 const calculatorService = new ApiCalculatorPeriodService();
 
@@ -118,9 +119,9 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
           Considerar apenas feriados nacionais
         </label>
       </div>
-      <Dropdown
+      <DropdownSelect
+        id="calculator-form-dropdown-state"
         value={step.selectedState}
-        onChange={handleStateChange}
         options={lists.states ?? []}
         optionLabel="name"
         placeholder={placeholderState}
@@ -133,10 +134,11 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         }
         loading={loadingStates}
         invalid={!step.justNational && !validState}
+        onChange={handleStateChange}
       />
-      <Dropdown
+      <DropdownSelect
+        id="calculator-form-dropdown-city"
         value={step.selectedCity}
-        onChange={(e) => step.setSelectedCity(e.value)}
         options={cities}
         optionLabel="name"
         placeholder={placeholderCity}
@@ -148,6 +150,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
           loadingCities
         }
         invalid={!step.justNational && !validCity}
+        onChange={(e) => step.setSelectedCity(e.value)}
       />
     </div>
   );

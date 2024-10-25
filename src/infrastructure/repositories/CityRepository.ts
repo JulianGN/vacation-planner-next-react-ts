@@ -4,7 +4,9 @@ import { ObjectId } from "mongodb";
 class CityRepository {
   async getCitiesByIdState(idState: number): Promise<CityDocument[]> {
     try {
-      return await City.find({ "state.id_state": idState });
+      return await City.find({ "state.id_state": idState }).sort({
+        name_city: 1,
+      });
     } catch (error) {
       console.error("Error retrieving cities:", error);
       return [];

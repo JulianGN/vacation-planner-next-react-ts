@@ -18,7 +18,7 @@ export class StateService {
       this.stateList =
         stateList?.map((state) => ({
           id: state.id_state,
-          name: state.name_state,
+          name: `${state.uf} - ${state.name_state}`,
         })) || [];
 
       return this.stateList;
