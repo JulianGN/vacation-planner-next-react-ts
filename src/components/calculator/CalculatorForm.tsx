@@ -3,11 +3,11 @@ import React, { useState, useRef } from "react";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { Button } from "primereact/button";
 import Step from "@/components/shared/Step/Step";
-import CalculatorFormStepOne from "@/components/calculator/CalculatorFormStepOne";
-import CalculatorFormStepTwo from "@/components/calculator/CalculatorFormStepTwo";
-import CalculatorFormStepThree from "@/components/calculator/CalculatorFormStepThree";
-import CalculatorFormStepFour from "@/components/calculator/CalculatorFormStepFour";
-import CalculatorFormStepFive from "@/components/calculator/CalculatorFormStepFive";
+import StepIntro from "@/components/calculator/StepIntro";
+import StepPlace from "@/components/calculator/StepPlace";
+import StepVacationDays from "@/components/calculator/StepVacationDays";
+import StepPeriod from "@/components/calculator/StepPeriod";
+import StepResult from "@/components/calculator/StepResult";
 import { CalculatorFormStepIndex } from "@/domain/enums/CalculatorFormStepIndex";
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
@@ -105,21 +105,17 @@ const CalculatorForm = () => {
         <Step step={step} icons={icons} setStep={setStep} />
       </header>
       <article className="flex flex-col gap-3 mt-3 py-6">
-        {step === CalculatorFormStepIndex.stepStart && (
-          <CalculatorFormStepOne />
-        )}
+        {step === CalculatorFormStepIndex.stepStart && <StepIntro />}
         {step === CalculatorFormStepIndex.stepPlace && (
-          <CalculatorFormStepTwo ref={stepTwo} />
+          <StepPlace ref={stepTwo} />
         )}
         {step === CalculatorFormStepIndex.stepDaysVacations && (
-          <CalculatorFormStepThree ref={stepThree} />
+          <StepVacationDays ref={stepThree} />
         )}
         {step === CalculatorFormStepIndex.stepPeriodWorkDays && (
-          <CalculatorFormStepFour ref={stepFour} />
+          <StepPeriod ref={stepFour} />
         )}
-        {step === CalculatorFormStepIndex.stepFinish && (
-          <CalculatorFormStepFive />
-        )}
+        {step === CalculatorFormStepIndex.stepFinish && <StepResult />}
 
         <div className="flex justify-center gap-3 mt-4">
           {step > CalculatorFormStepIndex.stepStart && (
