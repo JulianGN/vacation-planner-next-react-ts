@@ -6,17 +6,16 @@ import "@/styles/globals.css";
 import MainHeader from "@/components/MainHeader";
 
 export const metadata: Metadata = {
-  title: `Planejador de férias`,
+  title: `Deu férias!`,
   description: "Encontre os melhores dias para suas férias",
+  icons: {
+    icon: ["/favicon.svg", "/favicon.ico"],
+  },
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="pt-br">
-      <head>
-        <title>{String(metadata.title)}</title>
-        <meta name="description" content={String(metadata.description)} />
-      </head>
       <body>
         <PrimeReactProvider value={{ locale: "pt-br" }}>
           <MainHeader />
