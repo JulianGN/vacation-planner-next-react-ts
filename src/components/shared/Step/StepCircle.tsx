@@ -23,7 +23,7 @@ const StepCircle: React.FC<StepCircleProps> = ({
       className={styles["vc-step-circle"]}
       onClick={() => setStep(itemIndex)}>
       <i
-        className={`${icon}`}
+        className={`${icon} transition-all`}
         style={{
           color,
           fontSize,

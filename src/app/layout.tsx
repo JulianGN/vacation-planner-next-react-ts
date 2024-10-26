@@ -20,7 +20,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body>
         <PrimeReactProvider value={{ locale: "pt-br" }}>
           <MainHeader />
-          <div className="container mx-auto">{children}</div>
+          <div className="container mx-auto px-3">{children}</div>
         </PrimeReactProvider>
       </body>
     </html>
