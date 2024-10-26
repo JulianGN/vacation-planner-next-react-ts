@@ -4,12 +4,8 @@
   justify-content: center;
 }
 
-.custom-select-button.p-selectbutton .p-button {
-  border: 1px solid var(--vc-primary-700);
-}
-
 .custom-select-button.p-selectbutton.p-invalid .p-button {
-  border: 1px solid var(--vc-danger);
+  color: var(--vc-danger);
 }
 
 .custom-select-button.custom-select-button--weekdays {

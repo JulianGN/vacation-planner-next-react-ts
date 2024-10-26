@@ -17,7 +17,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <title>{String(metadata.title)}</title>
         <meta name="description" content={String(metadata.description)} />
       </head>
-      <body className="bg-slate-100">
+      <body>
         <PrimeReactProvider value={{ locale: "pt-br" }}>
           <MainHeader />
           <div className="lg:container mx-auto">{children}</div>

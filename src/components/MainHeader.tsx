@@ -6,6 +6,7 @@ import { updateLocaleOptions } from "primereact/api";
 import ptBrLocale from "@/infrastructure/primelocale/pt-br.json";
 import LoadingSpinnerGlobal from "@/components/shared/Loading/LoadingSpinnerGlobal";
 import useUiStore from "@/application/stores/useUiStore";
+import Image from "next/image";
 
 const MainHeader = () => {
   const { loading, loadingMessage } = useUiStore();
@@ -43,9 +44,14 @@ const MainHeader = () => {
     <>
       <div className="bg-white ps-3">
         <div className="lg:container mx-auto flex items-center justify-between">
-          <h1 className="font-light text-sm md:text-xl">
-            Planejador de férias
-          </h1>
+          {
+            <Image
+              src="/imgs/logo-deu-ferias-verde.svg"
+              alt="Deu férias!"
+              width="120"
+              height="80"
+            />
+          }
           <TabMenu model={items} activeIndex={activeIndex} key={activeIndex} />
         </div>
       </div>

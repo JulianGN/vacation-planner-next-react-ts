@@ -3,3 +3,24 @@
   font-size: 0.9125rem;
   color: var(--vc-slate-700);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--vc-black);
+}
+
+.vc-highlight-underline-primary {
+  border-bottom: 0.25rem solid var(--vc-primary);
+}
+
+.vc-highlight-underline-primary.vc-highlight-underline-primary--sm {
+  border-width: 0.15rem;
+}
+
+.vc-highlight-underline-primary.vc-highlight-underline-primary--lg {
+  border-width: 0.5rem;
+}

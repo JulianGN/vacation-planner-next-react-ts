@@ -10,18 +10,57 @@
 
 :root {
   --vc-white: #fff;
-  --vc-primary: #0284c7;
-  --vc-primary-50: #f0f9ff;
-  --vc-primary-100: #e0f2fe;
-  --vc-primary-200: #bae6fd;
-  --vc-primary-300: #7dd3fc;
-  --vc-primary-400: #38bdf8;
-  --vc-primary-500: #0ea5e9;
-  --vc-primary-600: #0284c7;
-  --vc-primary-700: #0369a1;
-  --vc-primary-800: #075985;
-  --vc-primary-900: #0c4a6e;
-  --vc-primary-950: #082f49;
+  --vc-black: #000;
+  --vc-btn-primary: var(--vc-black);
+  --vc-primary: #2CE4B5;
+  /* TODO: MAKE DINAMIC BY USE CHOICE */
+  --vc-primary-50: #E5FCF7;
+  --vc-primary-100: #CFFAF0;
+  --vc-primary-200: #A4F4DF;
+  --vc-primary-300: #75ECCC;
+  --vc-primary-400: #47E4BA;
+  --vc-primary-500: #2CE4B5;
+  --vc-primary-600: #22B18E;
+  --vc-primary-700: #1A8E70;
+  --vc-primary-800: #116B52;
+  --vc-primary-900: #0B503F;
+  --vc-primary-950: #07332A;
+  --vc-primary-montain: #2CE4B5;
+  --vc-primary-montain-50: #E5FCF7;
+  --vc-primary-montain-100: #CFFAF0;
+  --vc-primary-montain-200: #A4F4DF;
+  --vc-primary-montain-300: #75ECCC;
+  --vc-primary-montain-400: #47E4BA;
+  --vc-primary-montain-500: #2CE4B5;
+  --vc-primary-montain-600: #22B18E;
+  --vc-primary-montain-700: #1A8E70;
+  --vc-primary-montain-800: #116B52;
+  --vc-primary-montain-900: #0B503F;
+  --vc-primary-montain-950: #07332A;
+  --vc-primary-beach: #EED63E;
+  --vc-primary-beach-50: #FFFAEB;
+  --vc-primary-beach-100: #FEF3C7;
+  --vc-primary-beach-200: #FDE68A;
+  --vc-primary-beach-300: #FCD34D;
+  --vc-primary-beach-400: #FBBF24;
+  --vc-primary-beach-500: #F59E0B;
+  --vc-primary-beach-600: #D97706;
+  --vc-primary-beach-700: #B45309;
+  --vc-primary-beach-800: #92400E;
+  --vc-primary-beach-900: #78350F;
+  --vc-primary-beach-950: #451A03;
+  --vc-primary-city: #D761EA;
+  --vc-primary-city-50: #F9EBFE;
+  --vc-primary-city-100: #F3D5FC;
+  --vc-primary-city-200: #E6ADFA;
+  --vc-primary-city-300: #D883F3;
+  --vc-primary-city-400: #CC59EB;
+  --vc-primary-city-500: #B839DA;
+  --vc-primary-city-600: #9A29B5;
+  --vc-primary-city-700: #7D2091;
+  --vc-primary-city-800: #61176E;
+  --vc-primary-city-900: #4C1255;
+  --vc-primary-city-950: #2C0730;
   --vc-slate-50: #f8fafc;
   --vc-slate-100: #f1f5f9;
   --vc-slate-200: #e2e8f0;
@@ -37,10 +76,14 @@
   --vc-danger: #dc2626;
 
   --vc-border-radius: 0.25rem;
+  --vc-border-radius-circle: 10rem;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 1rem;
+  line-height: 1.15;
+  color: var(--vc-slate-700);
 }

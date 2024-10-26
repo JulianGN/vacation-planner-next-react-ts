@@ -15,21 +15,20 @@ const StepCircle: React.FC<StepCircleProps> = ({
   icon,
 }) => {
   const isActiveItem = step === itemIndex;
-  const backgroundColor = isActiveItem
-    ? "var(--vc-primary)"
-    : "var(--vc-slate-100)";
-  const textColor = isActiveItem ? "var(--vc-slate-100)" : "gray";
+  const color = isActiveItem ? "var(--vc-primary)" : "gray";
+  const fontSize = isActiveItem ? "2.5rem" : "1.25rem";
 
   return (
     <div
       className={styles["vc-step-circle"]}
-      style={{
-        backgroundColor: backgroundColor,
-        color: textColor,
-      }}
-      onClick={() => setStep(itemIndex)}
-    >
-      <i className={`${icon} text-xl`} />
+      onClick={() => setStep(itemIndex)}>
+      <i
+        className={`${icon}`}
+        style={{
+          color,
+          fontSize,
+        }}
+      />
     </div>
   );
 };
