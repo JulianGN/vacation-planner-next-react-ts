@@ -105,7 +105,7 @@ export class CalculatorVacationService {
 
         const firstWorkdayAfter = this.calculatorVacation.getFirstWorkDayAfter(
           holidayDate,
-          this.holidayDates,
+          this.holidays,
           this.workdays,
           this.acceptJumpBridge
         );
@@ -115,7 +115,7 @@ export class CalculatorVacationService {
 
         const lastWorkdayBefore = this.calculatorVacation.getLastWorkDayBefore(
           holidayDate,
-          this.holidayDates,
+          this.holidays,
           this.workdays,
           this.acceptJumpBridge
         );
@@ -139,14 +139,14 @@ export class CalculatorVacationService {
 
     const lastWorkDayBefore = this.calculatorVacation.getLastWorkDayBefore(
       start,
-      this.holidayDates,
+      this.holidays,
       this.workdays,
       this.acceptJumpBridge
     );
     lastWorkDayBefore.setDate(lastWorkDayBefore.getDate() + 1);
     const firstWorkDayAfter = this.calculatorVacation.getFirstWorkDayAfter(
       end,
-      this.holidayDates,
+      this.holidays,
       this.workdays,
       this.acceptJumpBridge
     );
@@ -380,11 +380,6 @@ export class CalculatorVacationService {
         numberIdState,
         idCity
       );
-      this.holidayDates = this.holidays.map((holiday) => ({
-        date: new Date(holiday.date),
-        name: holiday.name,
-        type: holiday.type,
-      }));
       this.workdays = this.getRangeWorkDays(workDays);
       this.lastWorkdayForBegin = this.workdays.at(-3) ?? WorkDay.wednesday;
       this.notWorkdays = weekDays.filter(
