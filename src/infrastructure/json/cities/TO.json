@@ -1,0 +1,697 @@
+[
+    {
+        "id_city": 1700350,
+        "name_city": "Aliança do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1700707,
+        "name_city": "Alvorada",
+        "id_state": 17
+    },
+    {
+        "id_city": 1701101,
+        "name_city": "Aparecida do Rio Negro",
+        "id_state": 17
+    },
+    {
+        "id_city": 1701309,
+        "name_city": "Aragominas",
+        "id_state": 17
+    },
+    {
+        "id_city": 1701002,
+        "name_city": "Ananás",
+        "id_state": 17
+    },
+    {
+        "id_city": 1701051,
+        "name_city": "Angico",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702000,
+        "name_city": "Araguaçu",
+        "id_state": 17
+    },
+    {
+        "id_city": 1700251,
+        "name_city": "Abreulândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1700301,
+        "name_city": "Aguiarnópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1700400,
+        "name_city": "Almas",
+        "id_state": 17
+    },
+    {
+        "id_city": 1701903,
+        "name_city": "Araguacema",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702109,
+        "name_city": "Araguaína",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702158,
+        "name_city": "Araguanã",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702208,
+        "name_city": "Araguatins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702901,
+        "name_city": "Axixá do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703057,
+        "name_city": "Bandeirantes do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703206,
+        "name_city": "Bernardo Sayão",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703305,
+        "name_city": "Bom Jesus do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703867,
+        "name_city": "Cariri do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1716703,
+        "name_city": "Colméia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1706258,
+        "name_city": "Crixás do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1707207,
+        "name_city": "Dois Irmãos do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1707306,
+        "name_city": "Dueré",
+        "id_state": 17
+    },
+    {
+        "id_city": 1708205,
+        "name_city": "Formoso do Araguaia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1709500,
+        "name_city": "Gurupi",
+        "id_state": 17
+    },
+    {
+        "id_city": 1711803,
+        "name_city": "Juarina",
+        "id_state": 17
+    },
+    {
+        "id_city": 1712405,
+        "name_city": "Lizarda",
+        "id_state": 17
+    },
+    {
+        "id_city": 1712504,
+        "name_city": "Marianópolis do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1713205,
+        "name_city": "Miracema do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702406,
+        "name_city": "Arraias",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702703,
+        "name_city": "Aurora do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703701,
+        "name_city": "Brejinho de Nazaré",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703800,
+        "name_city": "Buriti do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703842,
+        "name_city": "Campos Lindos",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703883,
+        "name_city": "Carmolândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1706506,
+        "name_city": "Darcinópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1707553,
+        "name_city": "Fátima",
+        "id_state": 17
+    },
+    {
+        "id_city": 1710706,
+        "name_city": "Itaguatins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1710904,
+        "name_city": "Itapiratins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1711100,
+        "name_city": "Itaporã do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1712009,
+        "name_city": "Lajeado",
+        "id_state": 17
+    },
+    {
+        "id_city": 1712801,
+        "name_city": "Maurilândia do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702307,
+        "name_city": "Arapoema",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703073,
+        "name_city": "Barra do Ouro",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703602,
+        "name_city": "Brasilândia do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703826,
+        "name_city": "Cachoeirinha",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703891,
+        "name_city": "Carrasco Bonito",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703909,
+        "name_city": "Caseara",
+        "id_state": 17
+    },
+    {
+        "id_city": 1704105,
+        "name_city": "Centenário",
+        "id_state": 17
+    },
+    {
+        "id_city": 1705102,
+        "name_city": "Chapada da Natividade",
+        "id_state": 17
+    },
+    {
+        "id_city": 1706100,
+        "name_city": "Cristalândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1707009,
+        "name_city": "Dianópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1707108,
+        "name_city": "Divinópolis do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1707405,
+        "name_city": "Esperantina",
+        "id_state": 17
+    },
+    {
+        "id_city": 1707652,
+        "name_city": "Figueirópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1707702,
+        "name_city": "Filadélfia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1708304,
+        "name_city": "Goianorte",
+        "id_state": 17
+    },
+    {
+        "id_city": 1709005,
+        "name_city": "Goiatins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1709807,
+        "name_city": "Ipueiras",
+        "id_state": 17
+    },
+    {
+        "id_city": 1711506,
+        "name_city": "Jaú do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1711902,
+        "name_city": "Lagoa da Confusão",
+        "id_state": 17
+    },
+    {
+        "id_city": 1712157,
+        "name_city": "Lavandeira",
+        "id_state": 17
+    },
+    {
+        "id_city": 1712454,
+        "name_city": "Luzinópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1712702,
+        "name_city": "Mateiros",
+        "id_state": 17
+    },
+    {
+        "id_city": 1702554,
+        "name_city": "Augustinópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703008,
+        "name_city": "Babaçulândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1703107,
+        "name_city": "Barrolândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1704600,
+        "name_city": "Chapada de Areia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1705508,
+        "name_city": "Colinas do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1705557,
+        "name_city": "Combinado",
+        "id_state": 17
+    },
+    {
+        "id_city": 1705607,
+        "name_city": "Conceição do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1706001,
+        "name_city": "Couto Magalhães",
+        "id_state": 17
+    },
+    {
+        "id_city": 1709302,
+        "name_city": "Guaraí",
+        "id_state": 17
+    },
+    {
+        "id_city": 1710508,
+        "name_city": "Itacajá",
+        "id_state": 17
+    },
+    {
+        "id_city": 1711951,
+        "name_city": "Lagoa do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1713304,
+        "name_city": "Miranorte",
+        "id_state": 17
+    },
+    {
+        "id_city": 1713601,
+        "name_city": "Monte do Carmo",
+        "id_state": 17
+    },
+    {
+        "id_city": 1716109,
+        "name_city": "Paraíso do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1717503,
+        "name_city": "Pium",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718303,
+        "name_city": "Praia Norte",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718808,
+        "name_city": "Sampaio",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718865,
+        "name_city": "Santa Fé do Araguaia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718881,
+        "name_city": "Santa Maria do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718899,
+        "name_city": "Santa Rita do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720101,
+        "name_city": "São Bento do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720150,
+        "name_city": "São Félix do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720309,
+        "name_city": "São Sebastião do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720804,
+        "name_city": "Sítio Novo do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1721109,
+        "name_city": "Tocantínia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1721257,
+        "name_city": "Tupirama",
+        "id_state": 17
+    },
+    {
+        "id_city": 1713700,
+        "name_city": "Monte Santo do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1713957,
+        "name_city": "Muricilândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1714302,
+        "name_city": "Nazaré",
+        "id_state": 17
+    },
+    {
+        "id_city": 1715150,
+        "name_city": "Novo Alegre",
+        "id_state": 17
+    },
+    {
+        "id_city": 1715259,
+        "name_city": "Novo Jardim",
+        "id_state": 17
+    },
+    {
+        "id_city": 1721000,
+        "name_city": "Palmas",
+        "id_state": 17
+    },
+    {
+        "id_city": 1715705,
+        "name_city": "Palmeirante",
+        "id_state": 17
+    },
+    {
+        "id_city": 1715754,
+        "name_city": "Palmeirópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1716505,
+        "name_city": "Pedro Afonso",
+        "id_state": 17
+    },
+    {
+        "id_city": 1717206,
+        "name_city": "Piraquê",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718204,
+        "name_city": "Porto Nacional",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718501,
+        "name_city": "Recursolândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718659,
+        "name_city": "Rio da Conceição",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718840,
+        "name_city": "Sandolândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720002,
+        "name_city": "Santa Terezinha do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720200,
+        "name_city": "São Miguel do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720259,
+        "name_city": "São Salvador do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720499,
+        "name_city": "São Valério",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720978,
+        "name_city": "Talismã",
+        "id_state": 17
+    },
+    {
+        "id_city": 1722107,
+        "name_city": "Xambioá",
+        "id_state": 17
+    },
+    {
+        "id_city": 1714203,
+        "name_city": "Natividade",
+        "id_state": 17
+    },
+    {
+        "id_city": 1714880,
+        "name_city": "Nova Olinda",
+        "id_state": 17
+    },
+    {
+        "id_city": 1715101,
+        "name_city": "Novo Acordo",
+        "id_state": 17
+    },
+    {
+        "id_city": 1716307,
+        "name_city": "Pau D'Arco",
+        "id_state": 17
+    },
+    {
+        "id_city": 1716604,
+        "name_city": "Peixe",
+        "id_state": 17
+    },
+    {
+        "id_city": 1717008,
+        "name_city": "Pindorama do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718006,
+        "name_city": "Porto Alegre do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718402,
+        "name_city": "Presidente Kennedy",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718550,
+        "name_city": "Riachinho",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718709,
+        "name_city": "Rio dos Bois",
+        "id_state": 17
+    },
+    {
+        "id_city": 1719004,
+        "name_city": "Santa Tereza do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720655,
+        "name_city": "Silvanópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720853,
+        "name_city": "Sucupira",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720937,
+        "name_city": "Taipas do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1722081,
+        "name_city": "Wanderlândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1715002,
+        "name_city": "Nova Rosalândia",
+        "id_state": 17
+    },
+    {
+        "id_city": 1715507,
+        "name_city": "Oliveira de Fátima",
+        "id_state": 17
+    },
+    {
+        "id_city": 1713809,
+        "name_city": "Palmeiras do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1716208,
+        "name_city": "Paranã",
+        "id_state": 17
+    },
+    {
+        "id_city": 1716653,
+        "name_city": "Pequizeiro",
+        "id_state": 17
+    },
+    {
+        "id_city": 1717800,
+        "name_city": "Ponte Alta do Bom Jesus",
+        "id_state": 17
+    },
+    {
+        "id_city": 1717909,
+        "name_city": "Ponte Alta do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718451,
+        "name_city": "Pugmil",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718758,
+        "name_city": "Rio Sono",
+        "id_state": 17
+    },
+    {
+        "id_city": 1718907,
+        "name_city": "Santa Rosa do Tocantins",
+        "id_state": 17
+    },
+    {
+        "id_city": 1708254,
+        "name_city": "Tabocão",
+        "id_state": 17
+    },
+    {
+        "id_city": 1720903,
+        "name_city": "Taguatinga",
+        "id_state": 17
+    },
+    {
+        "id_city": 1721208,
+        "name_city": "Tocantinópolis",
+        "id_state": 17
+    },
+    {
+        "id_city": 1721307,
+        "name_city": "Tupiratins",
+        "id_state": 17
+    }
+]

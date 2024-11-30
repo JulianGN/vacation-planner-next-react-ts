@@ -1,0 +1,922 @@
+[
+    {
+        "id_city": 2300507,
+        "name_city": "Alcântaras",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300754,
+        "name_city": "Amontada",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300804,
+        "name_city": "Antonina do Norte",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301109,
+        "name_city": "Aracati",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301208,
+        "name_city": "Aracoiaba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301505,
+        "name_city": "Arneiroz",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301703,
+        "name_city": "Aurora",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300101,
+        "name_city": "Abaiara",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301604,
+        "name_city": "Assaré",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300150,
+        "name_city": "Acarape",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300606,
+        "name_city": "Altaneira",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300705,
+        "name_city": "Alto Santo",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300903,
+        "name_city": "Apuiarés",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301000,
+        "name_city": "Aquiraz",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301257,
+        "name_city": "Ararendá",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301307,
+        "name_city": "Araripe",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300200,
+        "name_city": "Acaraú",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300309,
+        "name_city": "Acopiara",
+        "id_state": 23
+    },
+    {
+        "id_city": 2300408,
+        "name_city": "Aiuaba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301406,
+        "name_city": "Aratuba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301802,
+        "name_city": "Baixio",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302107,
+        "name_city": "Baturité",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301901,
+        "name_city": "Barbalha",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302008,
+        "name_city": "Barro",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302206,
+        "name_city": "Beberibe",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302503,
+        "name_city": "Brejo Santo",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303303,
+        "name_city": "Cariús",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303600,
+        "name_city": "Catarina",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304202,
+        "name_city": "Crato",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304236,
+        "name_city": "Croatá",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304269,
+        "name_city": "Deputado Irapuan Pinheiro",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304608,
+        "name_city": "General Sampaio",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305332,
+        "name_city": "Ibicuitinga",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305357,
+        "name_city": "Icapuí",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305506,
+        "name_city": "Iguatu",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306009,
+        "name_city": "Iracema",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302602,
+        "name_city": "Camocim",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302701,
+        "name_city": "Campos Sales",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302800,
+        "name_city": "Canindé",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303204,
+        "name_city": "Caririaçu",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303659,
+        "name_city": "Catunda",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303709,
+        "name_city": "Caucaia",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303956,
+        "name_city": "Chorozinho",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304103,
+        "name_city": "Crateús",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304277,
+        "name_city": "Ereré",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304350,
+        "name_city": "Forquilha",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304459,
+        "name_city": "Fortim",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304509,
+        "name_city": "Frecheirinha",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304657,
+        "name_city": "Graça",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305605,
+        "name_city": "Independência",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305902,
+        "name_city": "Ipueiras",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301851,
+        "name_city": "Banabuiú",
+        "id_state": 23
+    },
+    {
+        "id_city": 2301950,
+        "name_city": "Barreira",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302404,
+        "name_city": "Boa Viagem",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303006,
+        "name_city": "Caridade",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303402,
+        "name_city": "Carnaubal",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303501,
+        "name_city": "Cascavel",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303808,
+        "name_city": "Cedro",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304004,
+        "name_city": "Coreaú",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304301,
+        "name_city": "Farias Brito",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304707,
+        "name_city": "Granja",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305209,
+        "name_city": "Hidrolândia",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305407,
+        "name_city": "Icó",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305654,
+        "name_city": "Ipaporanga",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305704,
+        "name_city": "Ipaumirim",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305803,
+        "name_city": "Ipu",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306207,
+        "name_city": "Itaiçaba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302057,
+        "name_city": "Barroquinha",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302305,
+        "name_city": "Bela Cruz",
+        "id_state": 23
+    },
+    {
+        "id_city": 2302909,
+        "name_city": "Capistrano",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303105,
+        "name_city": "Cariré",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303907,
+        "name_city": "Chaval",
+        "id_state": 23
+    },
+    {
+        "id_city": 2303931,
+        "name_city": "Choró",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304251,
+        "name_city": "Cruz",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304285,
+        "name_city": "Eusébio",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304400,
+        "name_city": "Fortaleza",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304806,
+        "name_city": "Granjeiro",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304905,
+        "name_city": "Groaíras",
+        "id_state": 23
+    },
+    {
+        "id_city": 2304954,
+        "name_city": "Guaiúba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305001,
+        "name_city": "Guaraciaba do Norte",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305100,
+        "name_city": "Guaramiranga",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305233,
+        "name_city": "Horizonte",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305266,
+        "name_city": "Ibaretama",
+        "id_state": 23
+    },
+    {
+        "id_city": 2305308,
+        "name_city": "Ibiapina",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306108,
+        "name_city": "Irauçuba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306702,
+        "name_city": "Jaguaretama",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306256,
+        "name_city": "Itaitinga",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306405,
+        "name_city": "Itapipoca",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306504,
+        "name_city": "Itapiúna",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306603,
+        "name_city": "Itatira",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306801,
+        "name_city": "Jaguaribara",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307007,
+        "name_city": "Jaguaruana",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307502,
+        "name_city": "Lavras da Mangabeira",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307601,
+        "name_city": "Limoeiro do Norte",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307700,
+        "name_city": "Maranguape",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307809,
+        "name_city": "Marco",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308500,
+        "name_city": "Mombaça",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308609,
+        "name_city": "Monsenhor Tabosa",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309409,
+        "name_city": "Novo Oriente",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310001,
+        "name_city": "Palhano",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310209,
+        "name_city": "Paracuru",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310258,
+        "name_city": "Paraipaba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310605,
+        "name_city": "Penaforte",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310803,
+        "name_city": "Pereiro",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310902,
+        "name_city": "Piquet Carneiro",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311009,
+        "name_city": "Poranga",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311108,
+        "name_city": "Porteiras",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311207,
+        "name_city": "Potengi",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311306,
+        "name_city": "Quixadá",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307254,
+        "name_city": "Jijoca de Jericoacoara",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307403,
+        "name_city": "Jucás",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307908,
+        "name_city": "Martinópole",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308005,
+        "name_city": "Massapê",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308104,
+        "name_city": "Mauriti",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308377,
+        "name_city": "Miraíma",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308708,
+        "name_city": "Morada Nova",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308807,
+        "name_city": "Moraújo",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308906,
+        "name_city": "Morrinhos",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309102,
+        "name_city": "Mulungu",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309201,
+        "name_city": "Nova Olinda",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309300,
+        "name_city": "Nova Russas",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309458,
+        "name_city": "Ocara",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309706,
+        "name_city": "Pacatuba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310308,
+        "name_city": "Parambu",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310407,
+        "name_city": "Paramoti",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310852,
+        "name_city": "Pindoretama",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311231,
+        "name_city": "Potiretama",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311264,
+        "name_city": "Quiterianópolis",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306306,
+        "name_city": "Itapajé",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306553,
+        "name_city": "Itarema",
+        "id_state": 23
+    },
+    {
+        "id_city": 2306900,
+        "name_city": "Jaguaribe",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307106,
+        "name_city": "Jardim",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307205,
+        "name_city": "Jati",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307650,
+        "name_city": "Maracanaú",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308302,
+        "name_city": "Milagres",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308351,
+        "name_city": "Milhã",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309003,
+        "name_city": "Mucambo",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309508,
+        "name_city": "Orós",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309805,
+        "name_city": "Pacoti",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310100,
+        "name_city": "Palmácia",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310951,
+        "name_city": "Pires Ferreira",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307304,
+        "name_city": "Juazeiro do Norte",
+        "id_state": 23
+    },
+    {
+        "id_city": 2307635,
+        "name_city": "Madalena",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308203,
+        "name_city": "Meruoca",
+        "id_state": 23
+    },
+    {
+        "id_city": 2308401,
+        "name_city": "Missão Velha",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309607,
+        "name_city": "Pacajus",
+        "id_state": 23
+    },
+    {
+        "id_city": 2309904,
+        "name_city": "Pacujá",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310506,
+        "name_city": "Pedra Branca",
+        "id_state": 23
+    },
+    {
+        "id_city": 2310704,
+        "name_city": "Pentecoste",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311504,
+        "name_city": "Quixeré",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311702,
+        "name_city": "Reriutaba",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312700,
+        "name_city": "Senador Pompeu",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313104,
+        "name_city": "Tabuleiro do Norte",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313401,
+        "name_city": "Tianguá",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313500,
+        "name_city": "Trairi",
+        "id_state": 23
+    },
+    {
+        "id_city": 2314102,
+        "name_city": "Viçosa do Ceará",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311355,
+        "name_city": "Quixelô",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311405,
+        "name_city": "Quixeramobim",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311801,
+        "name_city": "Russas",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312205,
+        "name_city": "Santa Quitéria",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312403,
+        "name_city": "São Gonçalo do Amarante",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312502,
+        "name_city": "São João do Jaguaribe",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312809,
+        "name_city": "Senador Sá",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313559,
+        "name_city": "Tururu",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313906,
+        "name_city": "Uruoca",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311603,
+        "name_city": "Redenção",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312601,
+        "name_city": "São Luís do Curu",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312908,
+        "name_city": "Sobral",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313005,
+        "name_city": "Solonópole",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313203,
+        "name_city": "Tamboril",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313252,
+        "name_city": "Tarrafas",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313302,
+        "name_city": "Tauá",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313708,
+        "name_city": "Umari",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313955,
+        "name_city": "Varjota",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311900,
+        "name_city": "Saboeiro",
+        "id_state": 23
+    },
+    {
+        "id_city": 2311959,
+        "name_city": "Salitre",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312007,
+        "name_city": "Santana do Acaraú",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312106,
+        "name_city": "Santana do Cariri",
+        "id_state": 23
+    },
+    {
+        "id_city": 2312304,
+        "name_city": "São Benedito",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313351,
+        "name_city": "Tejuçuoca",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313609,
+        "name_city": "Ubajara",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313757,
+        "name_city": "Umirim",
+        "id_state": 23
+    },
+    {
+        "id_city": 2313807,
+        "name_city": "Uruburetama",
+        "id_state": 23
+    },
+    {
+        "id_city": 2314003,
+        "name_city": "Várzea Alegre",
+        "id_state": 23
+    }
+]

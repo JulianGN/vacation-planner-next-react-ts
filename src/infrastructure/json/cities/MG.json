@@ -1,0 +1,4267 @@
+[
+    {
+        "id_city": 3100104,
+        "name_city": "Abadia dos Dourados",
+        "id_state": 31
+    },
+    {
+        "id_city": 3100302,
+        "name_city": "Abre Campo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3100609,
+        "name_city": "Água Boa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101102,
+        "name_city": "Aimorés",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101508,
+        "name_city": "Além Paraíba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101607,
+        "name_city": "Alfenas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101904,
+        "name_city": "Alpinópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102605,
+        "name_city": "Andradas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102852,
+        "name_city": "Angelândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102902,
+        "name_city": "Antônio Carlos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103108,
+        "name_city": "Antônio Prado de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103207,
+        "name_city": "Araçaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103504,
+        "name_city": "Araguari",
+        "id_state": 31
+    },
+    {
+        "id_city": 3100500,
+        "name_city": "Açucena",
+        "id_state": 31
+    },
+    {
+        "id_city": 3100807,
+        "name_city": "Aguanil",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153509,
+        "name_city": "Alto Jequitibá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102100,
+        "name_city": "Alto Rio Doce",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102209,
+        "name_city": "Alvarenga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102308,
+        "name_city": "Alvinópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102407,
+        "name_city": "Alvorada de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103405,
+        "name_city": "Araçuaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101300,
+        "name_city": "Alagoa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101409,
+        "name_city": "Albertina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101706,
+        "name_city": "Almenara",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101805,
+        "name_city": "Alpercata",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102050,
+        "name_city": "Alto Caparaó",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103009,
+        "name_city": "Antônio Dias",
+        "id_state": 31
+    },
+    {
+        "id_city": 3100203,
+        "name_city": "Abaeté",
+        "id_state": 31
+    },
+    {
+        "id_city": 3100401,
+        "name_city": "Acaiaca",
+        "id_state": 31
+    },
+    {
+        "id_city": 3100708,
+        "name_city": "Água Comprida",
+        "id_state": 31
+    },
+    {
+        "id_city": 3100906,
+        "name_city": "Águas Formosas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101003,
+        "name_city": "Águas Vermelhas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101201,
+        "name_city": "Aiuruoca",
+        "id_state": 31
+    },
+    {
+        "id_city": 3101631,
+        "name_city": "Alfredo Vasconcelos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102001,
+        "name_city": "Alterosa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102506,
+        "name_city": "Amparo do Serra",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102803,
+        "name_city": "Andrelândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103306,
+        "name_city": "Aracitaba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104809,
+        "name_city": "Augusto de Lima",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105608,
+        "name_city": "Barbacena",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106101,
+        "name_city": "Belmiro Braga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106507,
+        "name_city": "Berilo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106655,
+        "name_city": "Berizal",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106804,
+        "name_city": "Bias Fortes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107208,
+        "name_city": "Bocaina de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107307,
+        "name_city": "Bocaiúva",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107604,
+        "name_city": "Bom Jesus da Penha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108255,
+        "name_city": "Bonito de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108701,
+        "name_city": "Brás Pires",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108800,
+        "name_city": "Braúnas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109105,
+        "name_city": "Bueno Brandão",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104403,
+        "name_city": "Argirita",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105301,
+        "name_city": "Bandeira do Sul",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105707,
+        "name_city": "Barra Longa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105905,
+        "name_city": "Barroso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106002,
+        "name_city": "Bela Vista de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106309,
+        "name_city": "Belo Oriente",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106606,
+        "name_city": "Bertópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106705,
+        "name_city": "Betim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107703,
+        "name_city": "Bom Jesus do Amparo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107802,
+        "name_city": "Bom Jesus do Galho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108008,
+        "name_city": "Bom Sucesso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108602,
+        "name_city": "Brasília de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109204,
+        "name_city": "Buenópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109253,
+        "name_city": "Bugre",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103702,
+        "name_city": "Araponga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103801,
+        "name_city": "Arapuá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104106,
+        "name_city": "Arceburgo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104304,
+        "name_city": "Areado",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104502,
+        "name_city": "Arinos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104601,
+        "name_city": "Astolfo Dutra",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104908,
+        "name_city": "Baependi",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105400,
+        "name_city": "Barão de Cocais",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106200,
+        "name_city": "Belo Horizonte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107000,
+        "name_city": "Biquinhas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107109,
+        "name_city": "Boa Esperança",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107406,
+        "name_city": "Bom Despacho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107505,
+        "name_city": "Bom Jardim de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3107901,
+        "name_city": "Bom Repouso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108305,
+        "name_city": "Borda da Mata",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108909,
+        "name_city": "Brazópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109006,
+        "name_city": "Brumadinho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109303,
+        "name_city": "Buritis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109402,
+        "name_city": "Buritizeiro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103603,
+        "name_city": "Arantina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103751,
+        "name_city": "Araporã",
+        "id_state": 31
+    },
+    {
+        "id_city": 3103900,
+        "name_city": "Araújos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104007,
+        "name_city": "Araxá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104205,
+        "name_city": "Arcos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104452,
+        "name_city": "Aricanduva",
+        "id_state": 31
+    },
+    {
+        "id_city": 3104700,
+        "name_city": "Ataléia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105004,
+        "name_city": "Baldim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105103,
+        "name_city": "Bambuí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105202,
+        "name_city": "Bandeira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3105509,
+        "name_city": "Barão de Monte Alto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106408,
+        "name_city": "Belo Vale",
+        "id_state": 31
+    },
+    {
+        "id_city": 3106903,
+        "name_city": "Bicas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108107,
+        "name_city": "Bonfim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108206,
+        "name_city": "Bonfinópolis de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108404,
+        "name_city": "Botelhos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108503,
+        "name_city": "Botumirim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3108552,
+        "name_city": "Brasilândia de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109600,
+        "name_city": "Cachoeira da Prata",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109808,
+        "name_city": "Cachoeira Dourada",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110004,
+        "name_city": "Caeté",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110103,
+        "name_city": "Caiana",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110301,
+        "name_city": "Caldas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110608,
+        "name_city": "Cambuí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110905,
+        "name_city": "Campanha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111150,
+        "name_city": "Campo Azul",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111705,
+        "name_city": "Canaã",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111804,
+        "name_city": "Canápolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112802,
+        "name_city": "Capitólio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113305,
+        "name_city": "Carangola",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113404,
+        "name_city": "Caratinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114006,
+        "name_city": "Carmo da Mata",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114550,
+        "name_city": "Carneirinho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114808,
+        "name_city": "Carvalhos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109501,
+        "name_city": "Cabo Verde",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110707,
+        "name_city": "Cambuquira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110806,
+        "name_city": "Campanário",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111002,
+        "name_city": "Campestre",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111200,
+        "name_city": "Campo Belo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111408,
+        "name_city": "Campo Florido",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112000,
+        "name_city": "Candeias",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112406,
+        "name_city": "Capetinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112604,
+        "name_city": "Capinópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113701,
+        "name_city": "Carlos Chagas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114204,
+        "name_city": "Carmo do Cajuru",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115102,
+        "name_city": "Cássia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109451,
+        "name_city": "Cabeceira Grande",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109709,
+        "name_city": "Cachoeira de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110509,
+        "name_city": "Camanducaia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111101,
+        "name_city": "Campina Verde",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112109,
+        "name_city": "Caparaó",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112307,
+        "name_city": "Capelinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112505,
+        "name_city": "Capim Branco",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112653,
+        "name_city": "Capitão Andrade",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112703,
+        "name_city": "Capitão Enéas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112901,
+        "name_city": "Caputira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113008,
+        "name_city": "Caraí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113206,
+        "name_city": "Carandaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113800,
+        "name_city": "Carmésia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113909,
+        "name_city": "Carmo da Cachoeira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114105,
+        "name_city": "Carmo de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114303,
+        "name_city": "Carmo do Paranaíba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114402,
+        "name_city": "Carmo do Rio Claro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114709,
+        "name_city": "Carvalhópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114907,
+        "name_city": "Casa Grande",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115003,
+        "name_city": "Cascalho Rico",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115300,
+        "name_city": "Cataguases",
+        "id_state": 31
+    },
+    {
+        "id_city": 3102704,
+        "name_city": "Cachoeira de Pajeú",
+        "id_state": 31
+    },
+    {
+        "id_city": 3109907,
+        "name_city": "Caetanópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110202,
+        "name_city": "Cajuri",
+        "id_state": 31
+    },
+    {
+        "id_city": 3110400,
+        "name_city": "Camacho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111309,
+        "name_city": "Campo do Meio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111507,
+        "name_city": "Campos Altos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111606,
+        "name_city": "Campos Gerais",
+        "id_state": 31
+    },
+    {
+        "id_city": 3111903,
+        "name_city": "Cana Verde",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112059,
+        "name_city": "Cantagalo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3112208,
+        "name_city": "Capela Nova",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113107,
+        "name_city": "Caranaíba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113503,
+        "name_city": "Carbonita",
+        "id_state": 31
+    },
+    {
+        "id_city": 3113602,
+        "name_city": "Careaçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114501,
+        "name_city": "Carmópolis de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3114600,
+        "name_city": "Carrancas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115607,
+        "name_city": "Cedro do Abaeté",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115409,
+        "name_city": "Catas Altas da Noruega",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115359,
+        "name_city": "Catas Altas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115458,
+        "name_city": "Catuji",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115474,
+        "name_city": "Catuti",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115805,
+        "name_city": "Centralina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115904,
+        "name_city": "Chácara",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116506,
+        "name_city": "Claro dos Poções",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117207,
+        "name_city": "Conceição das Pedras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118007,
+        "name_city": "Congonhas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118106,
+        "name_city": "Congonhas do Norte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118304,
+        "name_city": "Conselheiro Lafaiete",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118403,
+        "name_city": "Conselheiro Pena",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118601,
+        "name_city": "Contagem",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118700,
+        "name_city": "Coqueiral",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120151,
+        "name_city": "Crisólita",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120409,
+        "name_city": "Cristiano Otoni",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120805,
+        "name_city": "Cruzília",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115508,
+        "name_city": "Caxambu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115706,
+        "name_city": "Central de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116407,
+        "name_city": "Claraval",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116803,
+        "name_city": "Coluna",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117108,
+        "name_city": "Conceição da Aparecida",
+        "id_state": 31
+    },
+    {
+        "id_city": 3115201,
+        "name_city": "Conceição da Barra de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117504,
+        "name_city": "Conceição do Mato Dentro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117603,
+        "name_city": "Conceição do Pará",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118205,
+        "name_city": "Conquista",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118502,
+        "name_city": "Consolação",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119005,
+        "name_city": "Cordislândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119500,
+        "name_city": "Coronel Murta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119807,
+        "name_city": "Córrego Danta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119906,
+        "name_city": "Córrego do Bom Jesus",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119955,
+        "name_city": "Córrego Fundo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120003,
+        "name_city": "Córrego Novo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120300,
+        "name_city": "Cristália",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120508,
+        "name_city": "Cristina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116100,
+        "name_city": "Chapada do Norte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116159,
+        "name_city": "Chapada Gaúcha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116209,
+        "name_city": "Chiador",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116308,
+        "name_city": "Cipotânea",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117405,
+        "name_city": "Conceição de Ipanema",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117702,
+        "name_city": "Conceição do Rio Verde",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117836,
+        "name_city": "Cônego Marinho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117876,
+        "name_city": "Confins",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117900,
+        "name_city": "Congonhal",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119104,
+        "name_city": "Corinto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119203,
+        "name_city": "Coroaci",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119302,
+        "name_city": "Coromandel",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119401,
+        "name_city": "Coronel Fabriciano",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120102,
+        "name_city": "Couto de Magalhães de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120607,
+        "name_city": "Crucilândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120706,
+        "name_city": "Cruzeiro da Fortaleza",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116001,
+        "name_city": "Chalé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116605,
+        "name_city": "Cláudio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116704,
+        "name_city": "Coimbra",
+        "id_state": 31
+    },
+    {
+        "id_city": 3116902,
+        "name_city": "Comendador Gomes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117009,
+        "name_city": "Comercinho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117306,
+        "name_city": "Conceição das Alagoas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3117801,
+        "name_city": "Conceição dos Ouros",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118809,
+        "name_city": "Coração de Jesus",
+        "id_state": 31
+    },
+    {
+        "id_city": 3118908,
+        "name_city": "Cordisburgo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119609,
+        "name_city": "Coronel Pacheco",
+        "id_state": 31
+    },
+    {
+        "id_city": 3119708,
+        "name_city": "Coronel Xavier Chaves",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120201,
+        "name_city": "Cristais",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121001,
+        "name_city": "Datas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120904,
+        "name_city": "Curvelo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121100,
+        "name_city": "Delfim Moreira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121704,
+        "name_city": "Diogo de Vasconcelos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121902,
+        "name_city": "Divinésia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122009,
+        "name_city": "Divino",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122470,
+        "name_city": "Dom Bosco",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122504,
+        "name_city": "Dom Cavati",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122801,
+        "name_city": "Dom Viçoso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123106,
+        "name_city": "Dores de Guanhães",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123205,
+        "name_city": "Dores do Indaiá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123304,
+        "name_city": "Dores do Turvo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123528,
+        "name_city": "Durandé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123700,
+        "name_city": "Engenheiro Caldas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123809,
+        "name_city": "Engenheiro Navarro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124104,
+        "name_city": "Esmeraldas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124203,
+        "name_city": "Espera Feliz",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124500,
+        "name_city": "Estiva",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124906,
+        "name_city": "Eugenópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125101,
+        "name_city": "Extrema",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125200,
+        "name_city": "Fama",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125705,
+        "name_city": "Felixlândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125903,
+        "name_city": "Ferros",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125952,
+        "name_city": "Fervedouro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126000,
+        "name_city": "Florestal",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126307,
+        "name_city": "Fortaleza de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121209,
+        "name_city": "Delfinópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121258,
+        "name_city": "Delta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121803,
+        "name_city": "Dionísio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122108,
+        "name_city": "Divino das Laranjeiras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122405,
+        "name_city": "Divisa Nova",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123007,
+        "name_city": "Dores de Campos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123858,
+        "name_city": "Entre Folhas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124302,
+        "name_city": "Espinosa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124401,
+        "name_city": "Espírito Santo do Dourado",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125309,
+        "name_city": "Faria Lemos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125606,
+        "name_city": "Felisburgo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126406,
+        "name_city": "Fortuna de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120839,
+        "name_city": "Cuparaque",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121407,
+        "name_city": "Desterro de Entre Rios",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121506,
+        "name_city": "Desterro do Melo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122306,
+        "name_city": "Divinópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122454,
+        "name_city": "Divisópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122603,
+        "name_city": "Dom Joaquim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123403,
+        "name_city": "Doresópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123601,
+        "name_city": "Elói Mendes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123908,
+        "name_city": "Entre Rios de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124609,
+        "name_city": "Estrela Dalva",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124708,
+        "name_city": "Estrela do Indaiá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124807,
+        "name_city": "Estrela do Sul",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125408,
+        "name_city": "Felício dos Santos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126109,
+        "name_city": "Formiga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3120870,
+        "name_city": "Curral de Dentro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121308,
+        "name_city": "Descoberto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3121605,
+        "name_city": "Diamantina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122207,
+        "name_city": "Divinolândia de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122355,
+        "name_city": "Divisa Alegre",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122702,
+        "name_city": "Dom Silvério",
+        "id_state": 31
+    },
+    {
+        "id_city": 3122900,
+        "name_city": "Dona Euzébia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3123502,
+        "name_city": "Douradoquara",
+        "id_state": 31
+    },
+    {
+        "id_city": 3124005,
+        "name_city": "Ervália",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125002,
+        "name_city": "Ewbank da Câmara",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125804,
+        "name_city": "Fernandes Tourinho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126208,
+        "name_city": "Formoso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126604,
+        "name_city": "Francisco Dumont",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126703,
+        "name_city": "Francisco Sá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127057,
+        "name_city": "Fronteira dos Vales",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127370,
+        "name_city": "Goiabeira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127388,
+        "name_city": "Goianá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128253,
+        "name_city": "Guaraciama",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128303,
+        "name_city": "Guaranésia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129657,
+        "name_city": "Ibiracatu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130051,
+        "name_city": "Icaraí de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130101,
+        "name_city": "Igarapé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130408,
+        "name_city": "Ijaci",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130804,
+        "name_city": "Ingaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131307,
+        "name_city": "Ipatinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131406,
+        "name_city": "Ipiaçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126505,
+        "name_city": "Francisco Badaró",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126901,
+        "name_city": "Frei Inocêncio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127008,
+        "name_city": "Fronteira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127073,
+        "name_city": "Fruta de Leite",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127206,
+        "name_city": "Funilândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127339,
+        "name_city": "Gameleiras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127354,
+        "name_city": "Glaucilândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127602,
+        "name_city": "Gouveia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127701,
+        "name_city": "Governador Valadares",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127800,
+        "name_city": "Grão Mogol",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127909,
+        "name_city": "Grupiara",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128105,
+        "name_city": "Guapé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128600,
+        "name_city": "Guarda-Mor",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128907,
+        "name_city": "Guimarânia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129202,
+        "name_city": "Heliodora",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129400,
+        "name_city": "Ibertioga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129509,
+        "name_city": "Ibiá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129707,
+        "name_city": "Ibiraci",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130002,
+        "name_city": "Ibituruna",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130507,
+        "name_city": "Ilicínea",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130556,
+        "name_city": "Imbé de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131109,
+        "name_city": "Inimutaba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131158,
+        "name_city": "Ipaba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126802,
+        "name_city": "Frei Gaspar",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127107,
+        "name_city": "Frutal",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127305,
+        "name_city": "Galiléia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127503,
+        "name_city": "Gonzaga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128204,
+        "name_city": "Guaraciaba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128501,
+        "name_city": "Guarará",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128808,
+        "name_city": "Guidoval",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129004,
+        "name_city": "Guiricema",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129301,
+        "name_city": "Iapu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129806,
+        "name_city": "Ibirité",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130309,
+        "name_city": "Iguatama",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130606,
+        "name_city": "Inconfidentes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130705,
+        "name_city": "Indianópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131000,
+        "name_city": "Inhaúma",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131208,
+        "name_city": "Ipanema",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126752,
+        "name_city": "Franciscópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3126950,
+        "name_city": "Frei Lagonegro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3127404,
+        "name_city": "Gonçalves",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128006,
+        "name_city": "Guanhães",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128402,
+        "name_city": "Guarani",
+        "id_state": 31
+    },
+    {
+        "id_city": 3128709,
+        "name_city": "Guaxupé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129103,
+        "name_city": "Gurinhatã",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129608,
+        "name_city": "Ibiaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3129905,
+        "name_city": "Ibitiúra de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130200,
+        "name_city": "Igaratinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130655,
+        "name_city": "Indaiabira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3130903,
+        "name_city": "Inhapim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131505,
+        "name_city": "Ipuiúna",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131901,
+        "name_city": "Itabirito",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132206,
+        "name_city": "Itaguara",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132909,
+        "name_city": "Itamogi",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133709,
+        "name_city": "Itatiaiuçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134004,
+        "name_city": "Itinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134103,
+        "name_city": "Itueta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134202,
+        "name_city": "Ituiutaba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134707,
+        "name_city": "Jacinto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134806,
+        "name_city": "Jacuí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135076,
+        "name_city": "Jampruca",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135357,
+        "name_city": "Japonvar",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135506,
+        "name_city": "Jequeri",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136009,
+        "name_city": "Joaíma",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136108,
+        "name_city": "Joanésia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136504,
+        "name_city": "Jordânia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136959,
+        "name_city": "Juvenília",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132107,
+        "name_city": "Itacarambi",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132503,
+        "name_city": "Itamarandiba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133006,
+        "name_city": "Itamonte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133600,
+        "name_city": "Itapeva",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133758,
+        "name_city": "Itaú de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133907,
+        "name_city": "Itaverava",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135100,
+        "name_city": "Janaúba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135209,
+        "name_city": "Januária",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135308,
+        "name_city": "Japaraíba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135605,
+        "name_city": "Jequitaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135704,
+        "name_city": "Jequitibá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135902,
+        "name_city": "Jesuânia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136306,
+        "name_city": "João Pinheiro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136405,
+        "name_city": "Joaquim Felício",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136579,
+        "name_city": "Josenópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136652,
+        "name_city": "Juatuba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136900,
+        "name_city": "Juruaia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131802,
+        "name_city": "Itabirinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132008,
+        "name_city": "Itacambira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132305,
+        "name_city": "Itaipé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132404,
+        "name_city": "Itajubá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133105,
+        "name_city": "Itanhandu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133204,
+        "name_city": "Itanhomi",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133303,
+        "name_city": "Itaobim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133402,
+        "name_city": "Itapagipe",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133808,
+        "name_city": "Itaúna",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134509,
+        "name_city": "Itutinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134608,
+        "name_city": "Jaboticatubas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134905,
+        "name_city": "Jacutinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135001,
+        "name_city": "Jaguaraçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136702,
+        "name_city": "Juiz de Fora",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136801,
+        "name_city": "Juramento",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131604,
+        "name_city": "Iraí de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3131703,
+        "name_city": "Itabira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132602,
+        "name_city": "Itamarati de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132701,
+        "name_city": "Itambacuri",
+        "id_state": 31
+    },
+    {
+        "id_city": 3132800,
+        "name_city": "Itambé do Mato Dentro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3133501,
+        "name_city": "Itapecerica",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134301,
+        "name_city": "Itumirim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3134400,
+        "name_city": "Iturama",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135050,
+        "name_city": "Jaíba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135407,
+        "name_city": "Jeceaba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135456,
+        "name_city": "Jenipapo de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3135803,
+        "name_city": "Jequitinhonha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136207,
+        "name_city": "João Monlevade",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136520,
+        "name_city": "José Gonçalves de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136553,
+        "name_city": "José Raydan",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137502,
+        "name_city": "Lagoa Formosa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137205,
+        "name_city": "Lagoa da Prata",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137403,
+        "name_city": "Lagoa Dourada",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137601,
+        "name_city": "Lagoa Santa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137700,
+        "name_city": "Lajinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137809,
+        "name_city": "Lambari",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138500,
+        "name_city": "Liberdade",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138625,
+        "name_city": "Limeira do Oeste",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138906,
+        "name_city": "Machacalis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139003,
+        "name_city": "Machado",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139102,
+        "name_city": "Madre de Deus de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139201,
+        "name_city": "Malacacheta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139250,
+        "name_city": "Mamonas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139805,
+        "name_city": "Mar de Espanha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140001,
+        "name_city": "Mariana",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140209,
+        "name_city": "Maripá de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140530,
+        "name_city": "Martins Soares",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140555,
+        "name_city": "Mata Verde",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140605,
+        "name_city": "Materlândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140704,
+        "name_city": "Mateus Leme",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141207,
+        "name_city": "Matutina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141405,
+        "name_city": "Medina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141801,
+        "name_city": "Minas Novas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138005,
+        "name_city": "Laranjal",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138401,
+        "name_city": "Leopoldina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138658,
+        "name_city": "Lontra",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138682,
+        "name_city": "Luislândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139409,
+        "name_city": "Manhuaçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139904,
+        "name_city": "Maria da Fé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140100,
+        "name_city": "Marilac",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171501,
+        "name_city": "Mathias Lobato",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140803,
+        "name_city": "Matias Barbosa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141603,
+        "name_city": "Mercês",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141900,
+        "name_city": "Minduri",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137106,
+        "name_city": "Lagamar",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137536,
+        "name_city": "Lagoa Grande",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137908,
+        "name_city": "Lamim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139508,
+        "name_city": "Manhumirim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139607,
+        "name_city": "Mantena",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139706,
+        "name_city": "Maravilhas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140407,
+        "name_city": "Marmelópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140506,
+        "name_city": "Martinho Campos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140902,
+        "name_city": "Matipó",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141009,
+        "name_city": "Mato Verde",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141108,
+        "name_city": "Matozinhos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141504,
+        "name_city": "Mendes Pimentel",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141702,
+        "name_city": "Mesquita",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137007,
+        "name_city": "Ladainha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3137304,
+        "name_city": "Lagoa dos Patos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138104,
+        "name_city": "Lassance",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138203,
+        "name_city": "Lavras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138302,
+        "name_city": "Leandro Ferreira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138351,
+        "name_city": "Leme do Prado",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138609,
+        "name_city": "Lima Duarte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138674,
+        "name_city": "Luisburgo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138708,
+        "name_city": "Luminárias",
+        "id_state": 31
+    },
+    {
+        "id_city": 3138807,
+        "name_city": "Luz",
+        "id_state": 31
+    },
+    {
+        "id_city": 3139300,
+        "name_city": "Manga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140159,
+        "name_city": "Mário Campos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140308,
+        "name_city": "Marliéria",
+        "id_state": 31
+    },
+    {
+        "id_city": 3140852,
+        "name_city": "Matias Cardoso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3141306,
+        "name_city": "Medeiros",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142007,
+        "name_city": "Mirabela",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142106,
+        "name_city": "Miradouro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142502,
+        "name_city": "Monjolos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142809,
+        "name_city": "Monte Alegre de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143153,
+        "name_city": "Monte Formoso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143401,
+        "name_city": "Monte Sião",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143302,
+        "name_city": "Montes Claros",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143500,
+        "name_city": "Morada Nova de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143906,
+        "name_city": "Muriaé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144375,
+        "name_city": "Natalândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144805,
+        "name_city": "Nova Lima",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144904,
+        "name_city": "Nova Módica",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145000,
+        "name_city": "Nova Ponte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145372,
+        "name_city": "Novorizonte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145505,
+        "name_city": "Olímpio Noronha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145877,
+        "name_city": "Orizânia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146552,
+        "name_city": "Pai Pedro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146503,
+        "name_city": "Pains",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142601,
+        "name_city": "Monsenhor Paulo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142908,
+        "name_city": "Monte Azul",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144508,
+        "name_city": "Nazareno",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144607,
+        "name_city": "Nepomuceno",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145059,
+        "name_city": "Nova Porteirinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145604,
+        "name_city": "Oliveira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145703,
+        "name_city": "Oliveira Fortes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145802,
+        "name_city": "Onça de Pitangui",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146008,
+        "name_city": "Ouro Fino",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146206,
+        "name_city": "Ouro Verde de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146305,
+        "name_city": "Padre Paraíso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146701,
+        "name_city": "Palma",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146750,
+        "name_city": "Palmópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146909,
+        "name_city": "Papagaios",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142304,
+        "name_city": "Moeda",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142700,
+        "name_city": "Montalvânia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143203,
+        "name_city": "Monte Santo de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143450,
+        "name_city": "Montezuma",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143807,
+        "name_city": "Munhoz",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144003,
+        "name_city": "Mutum",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144102,
+        "name_city": "Muzambinho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144201,
+        "name_city": "Nacip Raydan",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144656,
+        "name_city": "Ninheira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144706,
+        "name_city": "Nova Era",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145109,
+        "name_city": "Nova Resende",
+        "id_state": 31
+    },
+    {
+        "id_city": 3136603,
+        "name_city": "Nova União",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145406,
+        "name_city": "Olaria",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145851,
+        "name_city": "Oratórios",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146107,
+        "name_city": "Ouro Preto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146404,
+        "name_city": "Paineiras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146602,
+        "name_city": "Paiva",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142205,
+        "name_city": "Miraí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142254,
+        "name_city": "Miravânia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3142403,
+        "name_city": "Moema",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143005,
+        "name_city": "Monte Belo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143104,
+        "name_city": "Monte Carmelo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143609,
+        "name_city": "Morro da Garça",
+        "id_state": 31
+    },
+    {
+        "id_city": 3143708,
+        "name_city": "Morro do Pilar",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144300,
+        "name_city": "Nanuque",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144359,
+        "name_city": "Naque",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144409,
+        "name_city": "Natércia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3144672,
+        "name_city": "Nova Belém",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145208,
+        "name_city": "Nova Serrana",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145307,
+        "name_city": "Novo Cruzeiro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145356,
+        "name_city": "Novo Oriente de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145455,
+        "name_city": "Olhos-d'Água",
+        "id_state": 31
+    },
+    {
+        "id_city": 3145901,
+        "name_city": "Ouro Branco",
+        "id_state": 31
+    },
+    {
+        "id_city": 3146255,
+        "name_city": "Padre Carvalho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147105,
+        "name_city": "Pará de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147709,
+        "name_city": "Passa Tempo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148103,
+        "name_city": "Patrocínio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149309,
+        "name_city": "Pedro Leopoldo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150158,
+        "name_city": "Piedade de Caratinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150208,
+        "name_city": "Piedade de Ponte Nova",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150307,
+        "name_city": "Piedade do Rio Grande",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150505,
+        "name_city": "Pimenta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150604,
+        "name_city": "Piracema",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150802,
+        "name_city": "Piranga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151206,
+        "name_city": "Pirapora",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151909,
+        "name_city": "Pocrane",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152105,
+        "name_city": "Ponte Nova",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147808,
+        "name_city": "Passa Vinte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147501,
+        "name_city": "Passabém",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147907,
+        "name_city": "Passos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148202,
+        "name_city": "Patrocínio do Muriaé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148301,
+        "name_city": "Paula Cândido",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148756,
+        "name_city": "Pedra Bonita",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149002,
+        "name_city": "Pedra Dourada",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149150,
+        "name_city": "Pedras de Maria da Cruz",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149507,
+        "name_city": "Pequeri",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149903,
+        "name_city": "Perdões",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150000,
+        "name_city": "Pescador",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150570,
+        "name_city": "Pintópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151008,
+        "name_city": "Piranguinho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151503,
+        "name_city": "Piumhi",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152131,
+        "name_city": "Ponto Chique",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152170,
+        "name_city": "Ponto dos Volantes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152204,
+        "name_city": "Porteirinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152303,
+        "name_city": "Porto Firme",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147006,
+        "name_city": "Paracatu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147204,
+        "name_city": "Paraguaçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147303,
+        "name_city": "Paraisópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147402,
+        "name_city": "Paraopeba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147600,
+        "name_city": "Passa Quatro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3147956,
+        "name_city": "Patis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148400,
+        "name_city": "Paulistas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148608,
+        "name_city": "Peçanha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148707,
+        "name_city": "Pedra Azul",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148905,
+        "name_city": "Pedra do Indaiá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149606,
+        "name_city": "Pequi",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149804,
+        "name_city": "Perdizes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150406,
+        "name_city": "Piedade dos Gerais",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150539,
+        "name_city": "Pingo-d'Água",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150703,
+        "name_city": "Pirajuba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150901,
+        "name_city": "Piranguçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151305,
+        "name_city": "Piraúba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151800,
+        "name_city": "Poços de Caldas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152006,
+        "name_city": "Pompéu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148004,
+        "name_city": "Patos de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148509,
+        "name_city": "Pavão",
+        "id_state": 31
+    },
+    {
+        "id_city": 3148806,
+        "name_city": "Pedra do Anta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149101,
+        "name_city": "Pedralva",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149200,
+        "name_city": "Pedrinópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149408,
+        "name_city": "Pedro Teixeira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149705,
+        "name_city": "Perdigão",
+        "id_state": 31
+    },
+    {
+        "id_city": 3149952,
+        "name_city": "Periquito",
+        "id_state": 31
+    },
+    {
+        "id_city": 3150109,
+        "name_city": "Piau",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151107,
+        "name_city": "Pirapetinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151404,
+        "name_city": "Pitangui",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151602,
+        "name_city": "Planura",
+        "id_state": 31
+    },
+    {
+        "id_city": 3151701,
+        "name_city": "Poço Fundo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152402,
+        "name_city": "Poté",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152600,
+        "name_city": "Pouso Alto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153004,
+        "name_city": "Pratinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152709,
+        "name_city": "Prados",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152907,
+        "name_city": "Pratápolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153202,
+        "name_city": "Presidente Juscelino",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154408,
+        "name_city": "Ressaquinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154507,
+        "name_city": "Riacho dos Machados",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154903,
+        "name_city": "Rio Casca",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155009,
+        "name_city": "Rio Doce",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155702,
+        "name_city": "Rio Piracicaba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153608,
+        "name_city": "Prudente de Morais",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153400,
+        "name_city": "Presidente Olegário",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153806,
+        "name_city": "Queluzito",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153905,
+        "name_city": "Raposos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154002,
+        "name_city": "Raul Soares",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154150,
+        "name_city": "Reduto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154457,
+        "name_city": "Riachinho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155405,
+        "name_city": "Rio Novo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155801,
+        "name_city": "Rio Pomba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155900,
+        "name_city": "Rio Preto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154101,
+        "name_city": "Recreio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154200,
+        "name_city": "Resende Costa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154309,
+        "name_city": "Resplendor",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154606,
+        "name_city": "Ribeirão das Neves",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154705,
+        "name_city": "Ribeirão Vermelho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155207,
+        "name_city": "Rio Espera",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155306,
+        "name_city": "Rio Manso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155504,
+        "name_city": "Rio Paranaíba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156007,
+        "name_city": "Rio Vermelho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156106,
+        "name_city": "Ritápolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156205,
+        "name_city": "Rochedo de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152501,
+        "name_city": "Pouso Alegre",
+        "id_state": 31
+    },
+    {
+        "id_city": 3152808,
+        "name_city": "Prata",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153103,
+        "name_city": "Presidente Bernardes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153301,
+        "name_city": "Presidente Kubitschek",
+        "id_state": 31
+    },
+    {
+        "id_city": 3153707,
+        "name_city": "Quartel Geral",
+        "id_state": 31
+    },
+    {
+        "id_city": 3154804,
+        "name_city": "Rio Acima",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155108,
+        "name_city": "Rio do Prado",
+        "id_state": 31
+    },
+    {
+        "id_city": 3155603,
+        "name_city": "Rio Pardo de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156502,
+        "name_city": "Rubelita",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156700,
+        "name_city": "Sabará",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157252,
+        "name_city": "Santa Bárbara do Leste",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157302,
+        "name_city": "Santa Bárbara do Tugúrio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157336,
+        "name_city": "Santa Cruz de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157377,
+        "name_city": "Santa Cruz de Salinas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157807,
+        "name_city": "Santa Luzia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159209,
+        "name_city": "Santa Rita de Caldas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159605,
+        "name_city": "Santa Rita do Sapucaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159704,
+        "name_city": "Santa Rosa da Serra",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158508,
+        "name_city": "Santana de Pirapama",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158953,
+        "name_city": "Santana do Paraíso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159001,
+        "name_city": "Santana do Riacho",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159100,
+        "name_city": "Santana dos Montes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159902,
+        "name_city": "Santo Antônio do Amparo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161205,
+        "name_city": "São Francisco de Paula",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156452,
+        "name_city": "Rosário da Limeira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156809,
+        "name_city": "Sabinópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156908,
+        "name_city": "Sacramento",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157708,
+        "name_city": "Santa Juliana",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159506,
+        "name_city": "Santa Rita do Itueto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158409,
+        "name_city": "Santana de Cataguases",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158706,
+        "name_city": "Santana do Garambéu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158805,
+        "name_city": "Santana do Jacaré",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158904,
+        "name_city": "Santana do Manhuaçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160306,
+        "name_city": "Santo Antônio do Jacinto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160405,
+        "name_city": "Santo Antônio do Monte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160454,
+        "name_city": "Santo Antônio do Retiro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160504,
+        "name_city": "Santo Antônio do Rio Abaixo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160603,
+        "name_city": "Santo Hipólito",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160959,
+        "name_city": "São Domingos das Dores",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161007,
+        "name_city": "São Domingos do Prata",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161106,
+        "name_city": "São Francisco",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161403,
+        "name_city": "São Francisco do Glória",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156304,
+        "name_city": "Rodeiro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156403,
+        "name_city": "Romaria",
+        "id_state": 31
+    },
+    {
+        "id_city": 3156601,
+        "name_city": "Rubim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157104,
+        "name_city": "Salto da Divisa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157203,
+        "name_city": "Santa Bárbara",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157278,
+        "name_city": "Santa Bárbara do Monte Verde",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157401,
+        "name_city": "Santa Cruz do Escalvado",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157609,
+        "name_city": "Santa Fé de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157906,
+        "name_city": "Santa Margarida",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158003,
+        "name_city": "Santa Maria de Itabira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159308,
+        "name_city": "Santa Rita de Jacutinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158607,
+        "name_city": "Santana do Deserto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160009,
+        "name_city": "Santo Antônio do Aventureiro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160108,
+        "name_city": "Santo Antônio do Grama",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160207,
+        "name_city": "Santo Antônio do Itambé",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160900,
+        "name_city": "São Brás do Suaçuí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161056,
+        "name_city": "São Félix de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157005,
+        "name_city": "Salinas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157500,
+        "name_city": "Santa Efigênia de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3157658,
+        "name_city": "Santa Helena de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158102,
+        "name_city": "Santa Maria do Salto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158201,
+        "name_city": "Santa Maria do Suaçuí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159407,
+        "name_city": "Santa Rita de Ibitipoca",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159357,
+        "name_city": "Santa Rita de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3159803,
+        "name_city": "Santa Vitória",
+        "id_state": 31
+    },
+    {
+        "id_city": 3158300,
+        "name_city": "Santana da Vargem",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160702,
+        "name_city": "Santos Dumont",
+        "id_state": 31
+    },
+    {
+        "id_city": 3160801,
+        "name_city": "São Bento Abade",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161304,
+        "name_city": "São Francisco de Sales",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161502,
+        "name_city": "São Geraldo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161700,
+        "name_city": "São Gonçalo do Abaeté",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162104,
+        "name_city": "São Gotardo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162609,
+        "name_city": "São João do Oriente",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162922,
+        "name_city": "São Joaquim de Bicas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163300,
+        "name_city": "São José do Divino",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163409,
+        "name_city": "São José do Goiabal",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163508,
+        "name_city": "São José do Jacuri",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163706,
+        "name_city": "São Lourenço",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164100,
+        "name_city": "São Pedro do Suaçuí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164506,
+        "name_city": "São Sebastião do Maranhão",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165404,
+        "name_city": "Sapucaí-Mirim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165800,
+        "name_city": "Senador José Bento",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166006,
+        "name_city": "Senhora de Oliveira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166204,
+        "name_city": "Senhora dos Remédios",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166402,
+        "name_city": "Seritinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161908,
+        "name_city": "São Gonçalo do Rio Abaixo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162005,
+        "name_city": "São Gonçalo do Sapucaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162252,
+        "name_city": "São João da Lagoa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162302,
+        "name_city": "São João da Mata",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162559,
+        "name_city": "São João do Manhuaçu",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162658,
+        "name_city": "São João do Pacuí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162807,
+        "name_city": "São João Evangelista",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163805,
+        "name_city": "São Miguel do Anta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164407,
+        "name_city": "São Sebastião da Bela Vista",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164472,
+        "name_city": "São Sebastião do Anta",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164803,
+        "name_city": "São Sebastião do Rio Preto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164902,
+        "name_city": "São Sebastião do Rio Verde",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165305,
+        "name_city": "São Vicente de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165503,
+        "name_city": "Sardoá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165537,
+        "name_city": "Sarzedo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166303,
+        "name_city": "Sericita",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161650,
+        "name_city": "São Geraldo do Baixio",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161809,
+        "name_city": "São Gonçalo do Pará",
+        "id_state": 31
+    },
+    {
+        "id_city": 3125507,
+        "name_city": "São Gonçalo do Rio Preto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162450,
+        "name_city": "São João das Missões",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162500,
+        "name_city": "São João del Rei",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162575,
+        "name_city": "São João do Manteninha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162708,
+        "name_city": "São João do Paraíso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162906,
+        "name_city": "São João Nepomuceno",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163102,
+        "name_city": "São José da Varginha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163201,
+        "name_city": "São José do Alegre",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163607,
+        "name_city": "São José do Mantimento",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164209,
+        "name_city": "São Romão",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164308,
+        "name_city": "São Roque de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164704,
+        "name_city": "São Sebastião do Paraíso",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165008,
+        "name_city": "São Tiago",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165206,
+        "name_city": "São Tomé das Letras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165602,
+        "name_city": "Senador Cortes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165701,
+        "name_city": "Senador Firmino",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166105,
+        "name_city": "Senhora do Porto",
+        "id_state": 31
+    },
+    {
+        "id_city": 3161601,
+        "name_city": "São Geraldo da Piedade",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162203,
+        "name_city": "São João Batista do Glória",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162401,
+        "name_city": "São João da Ponte",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162948,
+        "name_city": "São José da Barra",
+        "id_state": 31
+    },
+    {
+        "id_city": 3162955,
+        "name_city": "São José da Lapa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163003,
+        "name_city": "São José da Safira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3163904,
+        "name_city": "São Pedro da União",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164001,
+        "name_city": "São Pedro dos Ferros",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164431,
+        "name_city": "São Sebastião da Vargem Alegre",
+        "id_state": 31
+    },
+    {
+        "id_city": 3164605,
+        "name_city": "São Sebastião do Oeste",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165107,
+        "name_city": "São Tomás de Aquino",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165560,
+        "name_city": "Sem-Peixe",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165578,
+        "name_city": "Senador Amaral",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165909,
+        "name_city": "Senador Modestino Gonçalves",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166808,
+        "name_city": "Serra do Salitre",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166907,
+        "name_city": "Serrania",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167004,
+        "name_city": "Serranos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167103,
+        "name_city": "Serro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167202,
+        "name_city": "Sete Lagoas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167707,
+        "name_city": "Sobrália",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168606,
+        "name_city": "Teófilo Otoni",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169000,
+        "name_city": "Tocantins",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169059,
+        "name_city": "Tocos do Moji",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169109,
+        "name_city": "Toledo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169356,
+        "name_city": "Três Marias",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169703,
+        "name_city": "Turmalina",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170008,
+        "name_city": "Ubaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170602,
+        "name_city": "Vargem Bonita",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170651,
+        "name_city": "Vargem Grande do Rio Pardo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170800,
+        "name_city": "Várzea da Palma",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171154,
+        "name_city": "Vermelho Novo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171204,
+        "name_city": "Vespasiano",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166600,
+        "name_city": "Serra da Saudade",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166709,
+        "name_city": "Serra dos Aimorés",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166956,
+        "name_city": "Serranópolis de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167301,
+        "name_city": "Silveirânia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167509,
+        "name_city": "Simão Pereira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167608,
+        "name_city": "Simonésia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168002,
+        "name_city": "Taiobeiras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168051,
+        "name_city": "Taparuba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168903,
+        "name_city": "Tiros",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169307,
+        "name_city": "Três Corações",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169604,
+        "name_city": "Tupaciguara",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169901,
+        "name_city": "Ubá",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170404,
+        "name_city": "Unaí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170438,
+        "name_city": "União de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170578,
+        "name_city": "Vargem Alegre",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170701,
+        "name_city": "Varginha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170750,
+        "name_city": "Varjão de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170909,
+        "name_city": "Varzelândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171006,
+        "name_city": "Vazante",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171071,
+        "name_city": "Veredinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171105,
+        "name_city": "Veríssimo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3165552,
+        "name_city": "Setubinha",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167400,
+        "name_city": "Silvianópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168309,
+        "name_city": "Taquaraçu de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168507,
+        "name_city": "Teixeiras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168705,
+        "name_city": "Timóteo",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170057,
+        "name_city": "Ubaporanga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170206,
+        "name_city": "Uberlândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170305,
+        "name_city": "Umburatiba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170529,
+        "name_city": "Urucuia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3166501,
+        "name_city": "Serra Azul de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167806,
+        "name_city": "Soledade de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3167905,
+        "name_city": "Tabuleiro",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168101,
+        "name_city": "Tapira",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168200,
+        "name_city": "Tapiraí",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168408,
+        "name_city": "Tarumirim",
+        "id_state": 31
+    },
+    {
+        "id_city": 3168804,
+        "name_city": "Tiradentes",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169208,
+        "name_city": "Tombos",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169406,
+        "name_city": "Três Pontas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169505,
+        "name_city": "Tumiritinga",
+        "id_state": 31
+    },
+    {
+        "id_city": 3169802,
+        "name_city": "Turvolândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170107,
+        "name_city": "Uberaba",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170479,
+        "name_city": "Uruana de Minas",
+        "id_state": 31
+    },
+    {
+        "id_city": 3170503,
+        "name_city": "Urucânia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171030,
+        "name_city": "Verdelândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171303,
+        "name_city": "Viçosa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3172004,
+        "name_city": "Visconde do Rio Branco",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171600,
+        "name_city": "Virgem da Lapa",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171709,
+        "name_city": "Virgínia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171808,
+        "name_city": "Virginópolis",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171402,
+        "name_city": "Vieiras",
+        "id_state": 31
+    },
+    {
+        "id_city": 3171907,
+        "name_city": "Virgolândia",
+        "id_state": 31
+    },
+    {
+        "id_city": 3172202,
+        "name_city": "Wenceslau Braz",
+        "id_state": 31
+    },
+    {
+        "id_city": 3172103,
+        "name_city": "Volta Grande",
+        "id_state": 31
+    }
+]

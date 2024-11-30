@@ -1,0 +1,112 @@
+[
+    {
+        "id_city": 1200427,
+        "name_city": "Rodrigues Alves",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200500,
+        "name_city": "Sena Madureira",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200708,
+        "name_city": "Xapuri",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200013,
+        "name_city": "Acrelândia",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200138,
+        "name_city": "Bujari",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200203,
+        "name_city": "Cruzeiro do Sul",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200252,
+        "name_city": "Epitaciolândia",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200336,
+        "name_city": "Mâncio Lima",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200351,
+        "name_city": "Marechal Thaumaturgo",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200385,
+        "name_city": "Plácido de Castro",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200435,
+        "name_city": "Santa Rosa do Purus",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200450,
+        "name_city": "Senador Guiomard",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200104,
+        "name_city": "Brasiléia",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200179,
+        "name_city": "Capixaba",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200807,
+        "name_city": "Porto Acre",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200393,
+        "name_city": "Porto Walter",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200054,
+        "name_city": "Assis Brasil",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200302,
+        "name_city": "Feijó",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200328,
+        "name_city": "Jordão",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200344,
+        "name_city": "Manoel Urbano",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200401,
+        "name_city": "Rio Branco",
+        "id_state": 12
+    },
+    {
+        "id_city": 1200609,
+        "name_city": "Tarauacá",
+        "id_state": 12
+    }
+]

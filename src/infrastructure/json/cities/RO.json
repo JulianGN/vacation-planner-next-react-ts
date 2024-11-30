@@ -1,0 +1,262 @@
+[
+    {
+        "id_city": 1100379,
+        "name_city": "Alto Alegre dos Parecis",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100403,
+        "name_city": "Alto Paraíso",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100023,
+        "name_city": "Ariquemes",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100031,
+        "name_city": "Cabixi",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100908,
+        "name_city": "Castanheiras",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100080,
+        "name_city": "Costa Marques",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101104,
+        "name_city": "Itapuã do Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100114,
+        "name_city": "Jaru",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100122,
+        "name_city": "Ji-Paraná",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101203,
+        "name_city": "Ministro Andreazza",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101401,
+        "name_city": "Monte Negro",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101435,
+        "name_city": "Nova União",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101450,
+        "name_city": "Parecis",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101476,
+        "name_city": "Primavera de Rondônia",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100015,
+        "name_city": "Alta Floresta D'Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100924,
+        "name_city": "Chupinguaia",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100072,
+        "name_city": "Corumbiara",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100940,
+        "name_city": "Cujubim",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100098,
+        "name_city": "Espigão D'Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101005,
+        "name_city": "Governador Jorge Teixeira",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100130,
+        "name_city": "Machadinho D'Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100148,
+        "name_city": "Nova Brasilândia D'Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100338,
+        "name_city": "Nova Mamoré",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100155,
+        "name_city": "Ouro Preto do Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100189,
+        "name_city": "Pimenta Bueno",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100205,
+        "name_city": "Porto Velho",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100262,
+        "name_city": "Rio Crespo",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100452,
+        "name_city": "Buritis",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100700,
+        "name_city": "Campo Novo de Rondônia",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100064,
+        "name_city": "Colorado do Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100106,
+        "name_city": "Guajará-Mirim",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101302,
+        "name_city": "Mirante da Serra",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100502,
+        "name_city": "Novo Horizonte do Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101468,
+        "name_city": "Pimenteiras do Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100346,
+        "name_city": "Alvorada D'Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100601,
+        "name_city": "Cacaulândia",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100049,
+        "name_city": "Cacoal",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100809,
+        "name_city": "Candeias do Jamari",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100056,
+        "name_city": "Cerejeiras",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100254,
+        "name_city": "Presidente Médici",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100288,
+        "name_city": "Rolim de Moura",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101559,
+        "name_city": "Teixeirópolis",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101708,
+        "name_city": "Urupá",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100304,
+        "name_city": "Vilhena",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100296,
+        "name_city": "Santa Luzia D'Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101484,
+        "name_city": "São Felipe D'Oeste",
+        "id_state": 11
+    },
+    {
+        "id_city": 1100320,
+        "name_city": "São Miguel do Guaporé",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101609,
+        "name_city": "Theobroma",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101807,
+        "name_city": "Vale do Paraíso",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101492,
+        "name_city": "São Francisco do Guaporé",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101500,
+        "name_city": "Seringueiras",
+        "id_state": 11
+    },
+    {
+        "id_city": 1101757,
+        "name_city": "Vale do Anari",
+        "id_state": 11
+    }
+]

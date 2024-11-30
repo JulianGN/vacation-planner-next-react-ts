@@ -1,0 +1,512 @@
+[
+    {
+        "id_city": 2700102,
+        "name_city": "Água Branca",
+        "id_state": 27
+    },
+    {
+        "id_city": 2700201,
+        "name_city": "Anadia",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701001,
+        "name_city": "Boca da Mata",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701605,
+        "name_city": "Canapi",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701704,
+        "name_city": "Capela",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701803,
+        "name_city": "Carneiros",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703007,
+        "name_city": "Ibateguara",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703106,
+        "name_city": "Igaci",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703304,
+        "name_city": "Inhapi",
+        "id_state": 27
+    },
+    {
+        "id_city": 2700300,
+        "name_city": "Arapiraca",
+        "id_state": 27
+    },
+    {
+        "id_city": 2700409,
+        "name_city": "Atalaia",
+        "id_state": 27
+    },
+    {
+        "id_city": 2700508,
+        "name_city": "Barra de Santo Antônio",
+        "id_state": 27
+    },
+    {
+        "id_city": 2700805,
+        "name_city": "Belém",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701209,
+        "name_city": "Cacimbinhas",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701308,
+        "name_city": "Cajueiro",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701357,
+        "name_city": "Campestre",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701407,
+        "name_city": "Campo Alegre",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701902,
+        "name_city": "Chã Preta",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702108,
+        "name_city": "Colônia Leopoldina",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702207,
+        "name_city": "Coqueiro Seco",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702504,
+        "name_city": "Dois Riachos",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702603,
+        "name_city": "Feira Grande",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702801,
+        "name_city": "Flexeiras",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702900,
+        "name_city": "Girau do Ponciano",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703502,
+        "name_city": "Jacuípe",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703700,
+        "name_city": "Jaramataia",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701506,
+        "name_city": "Campo Grande",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702009,
+        "name_city": "Coité do Nóia",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702306,
+        "name_city": "Coruripe",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702405,
+        "name_city": "Delmiro Gouveia",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702553,
+        "name_city": "Estrela de Alagoas",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702702,
+        "name_city": "Feliz Deserto",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703403,
+        "name_city": "Jacaré dos Homens",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703601,
+        "name_city": "Japaratinga",
+        "id_state": 27
+    },
+    {
+        "id_city": 2700607,
+        "name_city": "Barra de São Miguel",
+        "id_state": 27
+    },
+    {
+        "id_city": 2700706,
+        "name_city": "Batalha",
+        "id_state": 27
+    },
+    {
+        "id_city": 2700904,
+        "name_city": "Belo Monte",
+        "id_state": 27
+    },
+    {
+        "id_city": 2701100,
+        "name_city": "Branquinha",
+        "id_state": 27
+    },
+    {
+        "id_city": 2702355,
+        "name_city": "Craíbas",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703205,
+        "name_city": "Igreja Nova",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703759,
+        "name_city": "Jequiá da Praia",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703809,
+        "name_city": "Joaquim Gomes",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704401,
+        "name_city": "Major Isidoro",
+        "id_state": 27
+    },
+    {
+        "id_city": 2703908,
+        "name_city": "Jundiá",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704500,
+        "name_city": "Maragogi",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705101,
+        "name_city": "Matriz de Camaragibe",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705408,
+        "name_city": "Monteirópolis",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705903,
+        "name_city": "Olho d'Água Grande",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706000,
+        "name_city": "Olivença",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706307,
+        "name_city": "Palmeira dos Índios",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706448,
+        "name_city": "Paripueira",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706505,
+        "name_city": "Passo de Camaragibe",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707008,
+        "name_city": "Pindoba",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707305,
+        "name_city": "Porto Calvo",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707701,
+        "name_city": "Rio Largo",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707800,
+        "name_city": "Roteiro",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707909,
+        "name_city": "Santa Luzia do Norte",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708006,
+        "name_city": "Santana do Ipanema",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708402,
+        "name_city": "São José da Tapera",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708600,
+        "name_city": "São Miguel dos Campos",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708907,
+        "name_city": "Satuba",
+        "id_state": 27
+    },
+    {
+        "id_city": 2709152,
+        "name_city": "Teotônio Vilela",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704906,
+        "name_city": "Mar Vermelho",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705002,
+        "name_city": "Mata Grande",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705606,
+        "name_city": "Novo Lino",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705804,
+        "name_city": "Olho d'Água do Casado",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707107,
+        "name_city": "Piranhas",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708204,
+        "name_city": "São Brás",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708501,
+        "name_city": "São Luís do Quitunde",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708709,
+        "name_city": "São Miguel dos Milagres",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708808,
+        "name_city": "São Sebastião",
+        "id_state": 27
+    },
+    {
+        "id_city": 2709004,
+        "name_city": "Tanque d'Arca",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704005,
+        "name_city": "Junqueiro",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704104,
+        "name_city": "Lagoa da Canoa",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704203,
+        "name_city": "Limoeiro de Anadia",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704302,
+        "name_city": "Maceió",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704807,
+        "name_city": "Maribondo",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705309,
+        "name_city": "Minador do Negrão",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705507,
+        "name_city": "Murici",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705705,
+        "name_city": "Olho d'Água das Flores",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706109,
+        "name_city": "Ouro Branco",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706604,
+        "name_city": "Paulo Jacinto",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706802,
+        "name_city": "Piaçabuçu",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706901,
+        "name_city": "Pilar",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707602,
+        "name_city": "Quebrangulo",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708956,
+        "name_city": "Senador Rui Palmeira",
+        "id_state": 27
+    },
+    {
+        "id_city": 2709103,
+        "name_city": "Taquarana",
+        "id_state": 27
+    },
+    {
+        "id_city": 2709202,
+        "name_city": "Traipu",
+        "id_state": 27
+    },
+    {
+        "id_city": 2709301,
+        "name_city": "União dos Palmares",
+        "id_state": 27
+    },
+    {
+        "id_city": 2709400,
+        "name_city": "Viçosa",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704609,
+        "name_city": "Maravilha",
+        "id_state": 27
+    },
+    {
+        "id_city": 2704708,
+        "name_city": "Marechal Deodoro",
+        "id_state": 27
+    },
+    {
+        "id_city": 2705200,
+        "name_city": "Messias",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706208,
+        "name_city": "Palestina",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706406,
+        "name_city": "Pão de Açúcar",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706422,
+        "name_city": "Pariconha",
+        "id_state": 27
+    },
+    {
+        "id_city": 2706703,
+        "name_city": "Penedo",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707206,
+        "name_city": "Poço das Trincheiras",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707404,
+        "name_city": "Porto de Pedras",
+        "id_state": 27
+    },
+    {
+        "id_city": 2707503,
+        "name_city": "Porto Real do Colégio",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708105,
+        "name_city": "Santana do Mundaú",
+        "id_state": 27
+    },
+    {
+        "id_city": 2708303,
+        "name_city": "São José da Laje",
+        "id_state": 27
+    }
+]

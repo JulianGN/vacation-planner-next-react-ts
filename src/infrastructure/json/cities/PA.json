@@ -1,0 +1,722 @@
+[
+    {
+        "id_city": 1501105,
+        "name_city": "Bagre",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501451,
+        "name_city": "Belterra",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501501,
+        "name_city": "Benevides",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501576,
+        "name_city": "Bom Jesus do Tocantins",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501600,
+        "name_city": "Bonito",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501709,
+        "name_city": "Bragança",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502152,
+        "name_city": "Canaã dos Carajás",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502608,
+        "name_city": "Colares",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502707,
+        "name_city": "Conceição do Araguaia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502764,
+        "name_city": "Cumaru do Norte",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502772,
+        "name_city": "Curionópolis",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502905,
+        "name_city": "Curuçá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503077,
+        "name_city": "Garrafão do Norte",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503093,
+        "name_city": "Goianésia do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503408,
+        "name_city": "Inhangapi",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503457,
+        "name_city": "Ipixuna do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503507,
+        "name_city": "Irituia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504059,
+        "name_city": "Mãe do Rio",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504109,
+        "name_city": "Magalhães Barata",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504307,
+        "name_city": "Maracanã",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504406,
+        "name_city": "Marapanim",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504604,
+        "name_city": "Mocajuba",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504752,
+        "name_city": "Mojuí dos Campos",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504802,
+        "name_city": "Monte Alegre",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504976,
+        "name_city": "Nova Ipixuna",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505601,
+        "name_city": "Peixe-Boi",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500347,
+        "name_city": "Água Azul do Norte",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500602,
+        "name_city": "Altamira",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500909,
+        "name_city": "Augusto Corrêa",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500958,
+        "name_city": "Aurora do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501204,
+        "name_city": "Baião",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502004,
+        "name_city": "Cachoeira do Arari",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501956,
+        "name_city": "Cachoeira do Piriá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502103,
+        "name_city": "Cametá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502855,
+        "name_city": "Curuá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502954,
+        "name_city": "Eldorado do Carajás",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503002,
+        "name_city": "Faro",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503101,
+        "name_city": "Gurupá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503200,
+        "name_city": "Igarapé-Açu",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503309,
+        "name_city": "Igarapé-Miri",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503705,
+        "name_city": "Itupiranga",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503754,
+        "name_city": "Jacareacanga",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504703,
+        "name_city": "Moju",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504901,
+        "name_city": "Muaná",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505007,
+        "name_city": "Nova Timboteua",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505031,
+        "name_city": "Novo Progresso",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505064,
+        "name_city": "Novo Repartimento",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505106,
+        "name_city": "Óbidos",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505403,
+        "name_city": "Ourém",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500107,
+        "name_city": "Abaetetuba",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500206,
+        "name_city": "Acará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500305,
+        "name_city": "Afuá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500503,
+        "name_city": "Almeirim",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500701,
+        "name_city": "Anajás",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500800,
+        "name_city": "Ananindeua",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501253,
+        "name_city": "Bannach",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501725,
+        "name_city": "Brasil Novo",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501808,
+        "name_city": "Breves",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501907,
+        "name_city": "Bujaru",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502509,
+        "name_city": "Chaves",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502806,
+        "name_city": "Curralinho",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503804,
+        "name_city": "Jacundá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503903,
+        "name_city": "Juruti",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504505,
+        "name_city": "Melgaço",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504950,
+        "name_city": "Nova Esperança do Piriá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500131,
+        "name_city": "Abel Figueiredo",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500404,
+        "name_city": "Alenquer",
+        "id_state": 15
+    },
+    {
+        "id_city": 1500859,
+        "name_city": "Anapu",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501006,
+        "name_city": "Aveiro",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501303,
+        "name_city": "Barcarena",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501402,
+        "name_city": "Belém",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501758,
+        "name_city": "Brejo Grande do Araguaia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1501782,
+        "name_city": "Breu Branco",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502202,
+        "name_city": "Capanema",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502301,
+        "name_city": "Capitão Poço",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502400,
+        "name_city": "Castanhal",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502756,
+        "name_city": "Concórdia do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1502939,
+        "name_city": "Dom Eliseu",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503044,
+        "name_city": "Floresta do Araguaia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1503606,
+        "name_city": "Itaituba",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504000,
+        "name_city": "Limoeiro do Ajuru",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504208,
+        "name_city": "Marabá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504422,
+        "name_city": "Marituba",
+        "id_state": 15
+    },
+    {
+        "id_city": 1504455,
+        "name_city": "Medicilândia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505205,
+        "name_city": "Oeiras do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505304,
+        "name_city": "Oriximiná",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505437,
+        "name_city": "Ourilândia do Norte",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505486,
+        "name_city": "Pacajá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505494,
+        "name_city": "Palestina do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505502,
+        "name_city": "Paragominas",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505536,
+        "name_city": "Parauapebas",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505551,
+        "name_city": "Pau D'Arco",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505700,
+        "name_city": "Ponta de Pedras",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506112,
+        "name_city": "Quatipuru",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506138,
+        "name_city": "Redenção",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507151,
+        "name_city": "São Domingos do Araguaia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507201,
+        "name_city": "São Domingos do Capim",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507508,
+        "name_city": "São João do Araguaia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507706,
+        "name_city": "São Sebastião da Boa Vista",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507755,
+        "name_city": "Sapucaia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508001,
+        "name_city": "Tomé-Açu",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508126,
+        "name_city": "Ulianópolis",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508407,
+        "name_city": "Xinguara",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506005,
+        "name_city": "Prainha",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506302,
+        "name_city": "Salvaterra",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506583,
+        "name_city": "Santa Maria das Barreiras",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506609,
+        "name_city": "Santa Maria do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506807,
+        "name_city": "Santarém",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507003,
+        "name_city": "Santo Antônio do Tauá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507102,
+        "name_city": "São Caetano de Odivelas",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507409,
+        "name_city": "São Francisco do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507953,
+        "name_city": "Tailândia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508050,
+        "name_city": "Trairão",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508084,
+        "name_city": "Tucumã",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508209,
+        "name_city": "Vigia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506104,
+        "name_city": "Primavera",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506187,
+        "name_city": "Rondon do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506195,
+        "name_city": "Rurópolis",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506203,
+        "name_city": "Salinópolis",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506708,
+        "name_city": "Santana do Araguaia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507300,
+        "name_city": "São Félix do Xingu",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507458,
+        "name_city": "São Geraldo do Araguaia",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507805,
+        "name_city": "Senador José Porfírio",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507904,
+        "name_city": "Soure",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507961,
+        "name_city": "Terra Alta",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507979,
+        "name_city": "Terra Santa",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508035,
+        "name_city": "Tracuateua",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508357,
+        "name_city": "Vitória do Xingu",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505635,
+        "name_city": "Piçarra",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505650,
+        "name_city": "Placas",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505809,
+        "name_city": "Portel",
+        "id_state": 15
+    },
+    {
+        "id_city": 1505908,
+        "name_city": "Porto de Moz",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506161,
+        "name_city": "Rio Maria",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506351,
+        "name_city": "Santa Bárbara do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506401,
+        "name_city": "Santa Cruz do Arari",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506500,
+        "name_city": "Santa Izabel do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506559,
+        "name_city": "Santa Luzia do Pará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1506906,
+        "name_city": "Santarém Novo",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507466,
+        "name_city": "São João da Ponta",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507474,
+        "name_city": "São João de Pirabas",
+        "id_state": 15
+    },
+    {
+        "id_city": 1507607,
+        "name_city": "São Miguel do Guamá",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508100,
+        "name_city": "Tucuruí",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508159,
+        "name_city": "Uruará",
+        "id_state": 15
+    },
+    {
+        "id_city": 1508308,
+        "name_city": "Viseu",
+        "id_state": 15
+    }
+]

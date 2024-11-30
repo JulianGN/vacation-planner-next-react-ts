@@ -1,0 +1,82 @@
+[
+    {
+        "id_city": 1600105,
+        "name_city": "Amapá",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600204,
+        "name_city": "Calçoene",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600253,
+        "name_city": "Itaubal",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600212,
+        "name_city": "Cutias",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600238,
+        "name_city": "Ferreira Gomes",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600279,
+        "name_city": "Laranjal do Jari",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600501,
+        "name_city": "Oiapoque",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600535,
+        "name_city": "Porto Grande",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600600,
+        "name_city": "Santana",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600808,
+        "name_city": "Vitória do Jari",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600303,
+        "name_city": "Macapá",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600402,
+        "name_city": "Mazagão",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600709,
+        "name_city": "Tartarugalzinho",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600154,
+        "name_city": "Pedra Branca do Amapari",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600550,
+        "name_city": "Pracuúba",
+        "id_state": 16
+    },
+    {
+        "id_city": 1600055,
+        "name_city": "Serra do Navio",
+        "id_state": 16
+    }
+]

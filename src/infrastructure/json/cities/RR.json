@@ -1,0 +1,77 @@
+[
+    {
+        "id_city": 1400050,
+        "name_city": "Alto Alegre",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400282,
+        "name_city": "Iracema",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400456,
+        "name_city": "Pacaraima",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400704,
+        "name_city": "Uiramutã",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400159,
+        "name_city": "Bonfim",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400175,
+        "name_city": "Cantá",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400209,
+        "name_city": "Caracaraí",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400472,
+        "name_city": "Rorainópolis",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400027,
+        "name_city": "Amajari",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400100,
+        "name_city": "Boa Vista",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400308,
+        "name_city": "Mucajaí",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400605,
+        "name_city": "São Luiz",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400233,
+        "name_city": "Caroebe",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400407,
+        "name_city": "Normandia",
+        "id_state": 14
+    },
+    {
+        "id_city": 1400506,
+        "name_city": "São João da Baliza",
+        "id_state": 14
+    }
+]

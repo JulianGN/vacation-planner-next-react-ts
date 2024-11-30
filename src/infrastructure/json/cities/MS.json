@@ -1,0 +1,397 @@
+[
+    {
+        "id_city": 5000203,
+        "name_city": "Água Clara",
+        "id_state": 50
+    },
+    {
+        "id_city": 5000807,
+        "name_city": "Anaurilândia",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002209,
+        "name_city": "Bonito",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002407,
+        "name_city": "Caarapó",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003157,
+        "name_city": "Coronel Sapucaia",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003256,
+        "name_city": "Costa Rica",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003488,
+        "name_city": "Dois Irmãos do Buriti",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003751,
+        "name_city": "Eldorado",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003801,
+        "name_city": "Fátima do Sul",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004106,
+        "name_city": "Guia Lopes da Laguna",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004809,
+        "name_city": "Japorã",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006002,
+        "name_city": "Nova Alvorada do Sul",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006200,
+        "name_city": "Nova Andradina",
+        "id_state": 50
+    },
+    {
+        "id_city": 5000856,
+        "name_city": "Angélica",
+        "id_state": 50
+    },
+    {
+        "id_city": 5000906,
+        "name_city": "Antônio João",
+        "id_state": 50
+    },
+    {
+        "id_city": 5001904,
+        "name_city": "Bataguassu",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002001,
+        "name_city": "Batayporã",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002159,
+        "name_city": "Bodoquena",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002308,
+        "name_city": "Brasilândia",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002605,
+        "name_city": "Camapuã",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002704,
+        "name_city": "Campo Grande",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002803,
+        "name_city": "Caracol",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004007,
+        "name_city": "Glória de Dourados",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004304,
+        "name_city": "Iguatemi",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004601,
+        "name_city": "Itaquiraí",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005103,
+        "name_city": "Jateí",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005152,
+        "name_city": "Juti",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005251,
+        "name_city": "Laguna Carapã",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005400,
+        "name_city": "Maracaju",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005608,
+        "name_city": "Miranda",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005681,
+        "name_city": "Mundo Novo",
+        "id_state": 50
+    },
+    {
+        "id_city": 5000252,
+        "name_city": "Alcinópolis",
+        "id_state": 50
+    },
+    {
+        "id_city": 5001003,
+        "name_city": "Aparecida do Taboado",
+        "id_state": 50
+    },
+    {
+        "id_city": 5001243,
+        "name_city": "Aral Moreira",
+        "id_state": 50
+    },
+    {
+        "id_city": 5001508,
+        "name_city": "Bandeirantes",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002100,
+        "name_city": "Bela Vista",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002902,
+        "name_city": "Cassilândia",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003108,
+        "name_city": "Corguinho",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003504,
+        "name_city": "Douradina",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004908,
+        "name_city": "Jaraguari",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005004,
+        "name_city": "Jardim",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005202,
+        "name_city": "Ladário",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005806,
+        "name_city": "Nioaque",
+        "id_state": 50
+    },
+    {
+        "id_city": 5000609,
+        "name_city": "Amambai",
+        "id_state": 50
+    },
+    {
+        "id_city": 5000708,
+        "name_city": "Anastácio",
+        "id_state": 50
+    },
+    {
+        "id_city": 5001102,
+        "name_city": "Aquidauana",
+        "id_state": 50
+    },
+    {
+        "id_city": 5002951,
+        "name_city": "Chapadão do Sul",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003207,
+        "name_city": "Corumbá",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003306,
+        "name_city": "Coxim",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003454,
+        "name_city": "Deodápolis",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003702,
+        "name_city": "Dourados",
+        "id_state": 50
+    },
+    {
+        "id_city": 5003900,
+        "name_city": "Figueirão",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004403,
+        "name_city": "Inocência",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004502,
+        "name_city": "Itaporã",
+        "id_state": 50
+    },
+    {
+        "id_city": 5004700,
+        "name_city": "Ivinhema",
+        "id_state": 50
+    },
+    {
+        "id_city": 5005707,
+        "name_city": "Naviraí",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007505,
+        "name_city": "Rochedo",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006358,
+        "name_city": "Paranhos",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007703,
+        "name_city": "Sete Quedas",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007901,
+        "name_city": "Sidrolândia",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007976,
+        "name_city": "Taquarussu",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006408,
+        "name_city": "Pedro Gomes",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007109,
+        "name_city": "Ribas do Rio Pardo",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007307,
+        "name_city": "Rio Negro",
+        "id_state": 50
+    },
+    {
+        "id_city": 5008008,
+        "name_city": "Terenos",
+        "id_state": 50
+    },
+    {
+        "id_city": 5008305,
+        "name_city": "Três Lagoas",
+        "id_state": 50
+    },
+    {
+        "id_city": 5008404,
+        "name_city": "Vicentina",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006606,
+        "name_city": "Ponta Porã",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007208,
+        "name_city": "Rio Brilhante",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007406,
+        "name_city": "Rio Verde de Mato Grosso",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007695,
+        "name_city": "São Gabriel do Oeste",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007802,
+        "name_city": "Selvíria",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006259,
+        "name_city": "Novo Horizonte do Sul",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006275,
+        "name_city": "Paraíso das Águas",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006309,
+        "name_city": "Paranaíba",
+        "id_state": 50
+    },
+    {
+        "id_city": 5006903,
+        "name_city": "Porto Murtinho",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007554,
+        "name_city": "Santa Rita do Pardo",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007935,
+        "name_city": "Sonora",
+        "id_state": 50
+    },
+    {
+        "id_city": 5007950,
+        "name_city": "Tacuru",
+        "id_state": 50
+    }
+]

@@ -1,0 +1,1232 @@
+[
+    {
+        "id_city": 5200050,
+        "name_city": "Abadia de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200100,
+        "name_city": "Abadiânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200134,
+        "name_city": "Acreúna",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200159,
+        "name_city": "Adelândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200175,
+        "name_city": "Água Fria de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200506,
+        "name_city": "Aloândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200605,
+        "name_city": "Alto Paraíso de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200829,
+        "name_city": "Amaralina",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200852,
+        "name_city": "Americano do Brasil",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200209,
+        "name_city": "Água Limpa",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200258,
+        "name_city": "Águas Lindas de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200308,
+        "name_city": "Alexânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200555,
+        "name_city": "Alto Horizonte",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200803,
+        "name_city": "Alvorada do Norte",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201207,
+        "name_city": "Anhanguera",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201405,
+        "name_city": "Aparecida de Goiânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201306,
+        "name_city": "Anicuns",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203104,
+        "name_city": "Baliza",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203203,
+        "name_city": "Barro Alto",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203559,
+        "name_city": "Bonfinópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203609,
+        "name_city": "Brazabrantes",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203906,
+        "name_city": "Buriti Alegre",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203962,
+        "name_city": "Buritinópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204508,
+        "name_city": "Caldas Novas",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204607,
+        "name_city": "Campestre de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204904,
+        "name_city": "Campos Belos",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205513,
+        "name_city": "Cocalzinho de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5206404,
+        "name_city": "Crixás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5206800,
+        "name_city": "Damolândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201454,
+        "name_city": "Aparecida do Rio Doce",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201801,
+        "name_city": "Aragoiânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203575,
+        "name_city": "Bonópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203939,
+        "name_city": "Buriti de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204300,
+        "name_city": "Caçu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204656,
+        "name_city": "Campinaçu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204854,
+        "name_city": "Campo Limpo de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205059,
+        "name_city": "Castelândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205307,
+        "name_city": "Cavalcante",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205406,
+        "name_city": "Ceres",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205703,
+        "name_city": "Córrego do Ouro",
+        "id_state": 52
+    },
+    {
+        "id_city": 5206503,
+        "name_city": "Cromínia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5206602,
+        "name_city": "Cumari",
+        "id_state": 52
+    },
+    {
+        "id_city": 5200902,
+        "name_city": "Amorinópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201603,
+        "name_city": "Araçu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5202155,
+        "name_city": "Araguapaz",
+        "id_state": 52
+    },
+    {
+        "id_city": 5202502,
+        "name_city": "Aruanã",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203302,
+        "name_city": "Bela Vista de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204003,
+        "name_city": "Cabeceiras",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204250,
+        "name_city": "Cachoeira Dourada",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204409,
+        "name_city": "Caiapônia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204557,
+        "name_city": "Caldazinha",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204805,
+        "name_city": "Campo Alegre de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204953,
+        "name_city": "Campos Verdes",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205000,
+        "name_city": "Carmo do Rio Verde",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205109,
+        "name_city": "Catalão",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205208,
+        "name_city": "Caturaí",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205471,
+        "name_city": "Chapadão do Céu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205497,
+        "name_city": "Cidade Ocidental",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205521,
+        "name_city": "Colinas do Sul",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205901,
+        "name_city": "Corumbaíba",
+        "id_state": 52
+    },
+    {
+        "id_city": 5206305,
+        "name_city": "Cristianópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5206909,
+        "name_city": "Davinópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201108,
+        "name_city": "Anápolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201504,
+        "name_city": "Aporé",
+        "id_state": 52
+    },
+    {
+        "id_city": 5201702,
+        "name_city": "Aragarças",
+        "id_state": 52
+    },
+    {
+        "id_city": 5202353,
+        "name_city": "Arenópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5202601,
+        "name_city": "Aurilândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5202809,
+        "name_city": "Avelinópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203401,
+        "name_city": "Bom Jardim de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203500,
+        "name_city": "Bom Jesus de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5203807,
+        "name_city": "Britânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204102,
+        "name_city": "Cachoeira Alta",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204201,
+        "name_city": "Cachoeira de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5204706,
+        "name_city": "Campinorte",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205455,
+        "name_city": "Cezarina",
+        "id_state": 52
+    },
+    {
+        "id_city": 5205802,
+        "name_city": "Corumbá de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5206206,
+        "name_city": "Cristalina",
+        "id_state": 52
+    },
+    {
+        "id_city": 5206701,
+        "name_city": "Damianópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207535,
+        "name_city": "Faina",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208301,
+        "name_city": "Divinópolis de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208806,
+        "name_city": "Goianira",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209200,
+        "name_city": "Guapó",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209457,
+        "name_city": "Guarinos",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209705,
+        "name_city": "Hidrolândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210208,
+        "name_city": "Iporá",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210406,
+        "name_city": "Itaberaí",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207907,
+        "name_city": "Flores de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208707,
+        "name_city": "Goiânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209101,
+        "name_city": "Goiatuba",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209291,
+        "name_city": "Guaraíta",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209903,
+        "name_city": "Iaciara",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209937,
+        "name_city": "Inaciolândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209952,
+        "name_city": "Indiara",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210158,
+        "name_city": "Ipiranga de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210307,
+        "name_city": "Israelândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210604,
+        "name_city": "Itaguaru",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207402,
+        "name_city": "Edéia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207501,
+        "name_city": "Estrela do Norte",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207808,
+        "name_city": "Firminópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208004,
+        "name_city": "Formosa",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208152,
+        "name_city": "Gameleira de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208509,
+        "name_city": "Goiandira",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208905,
+        "name_city": "Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209408,
+        "name_city": "Guarani de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209804,
+        "name_city": "Hidrolina",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210109,
+        "name_city": "Ipameri",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207105,
+        "name_city": "Diorama",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207253,
+        "name_city": "Doverlândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207352,
+        "name_city": "Edealina",
+        "id_state": 52
+    },
+    {
+        "id_city": 5207600,
+        "name_city": "Fazenda Nova",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208103,
+        "name_city": "Formoso",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208400,
+        "name_city": "Goianápolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5208608,
+        "name_city": "Goianésia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209150,
+        "name_city": "Gouvelândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5209606,
+        "name_city": "Heitoraí",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210000,
+        "name_city": "Inhumas",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210562,
+        "name_city": "Itaguari",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211008,
+        "name_city": "Itapirapuã",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210802,
+        "name_city": "Itajá",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211503,
+        "name_city": "Itumbiara",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211602,
+        "name_city": "Ivolândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211701,
+        "name_city": "Jandaia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212006,
+        "name_city": "Jaupaci",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212204,
+        "name_city": "Jussara",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213756,
+        "name_city": "Montividiu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213772,
+        "name_city": "Montividiu do Norte",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213806,
+        "name_city": "Morrinhos",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213855,
+        "name_city": "Morro Agudo de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214101,
+        "name_city": "Mutunópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214606,
+        "name_city": "Niquelândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215256,
+        "name_city": "Novo Planalto",
+        "id_state": 52
+    },
+    {
+        "id_city": 5216007,
+        "name_city": "Panamá",
+        "id_state": 52
+    },
+    {
+        "id_city": 5216452,
+        "name_city": "Perolândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5210901,
+        "name_city": "Itapaci",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211206,
+        "name_city": "Itapuranga",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211305,
+        "name_city": "Itarumã",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211404,
+        "name_city": "Itauçu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211909,
+        "name_city": "Jataí",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212303,
+        "name_city": "Leopoldo de Bulhões",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212600,
+        "name_city": "Mairipotaba",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213004,
+        "name_city": "Maurilândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213509,
+        "name_city": "Monte Alegre de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214002,
+        "name_city": "Mozarlândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214408,
+        "name_city": "Nazário",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214507,
+        "name_city": "Nerópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214838,
+        "name_city": "Nova Crixás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214903,
+        "name_city": "Nova Roma",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215009,
+        "name_city": "Nova Veneza",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215207,
+        "name_city": "Novo Brasil",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215405,
+        "name_city": "Ouro Verde de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215702,
+        "name_city": "Palmeiras de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215801,
+        "name_city": "Palmelo",
+        "id_state": 52
+    },
+    {
+        "id_city": 5211800,
+        "name_city": "Jaraguá",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212253,
+        "name_city": "Lagoa Santa",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212055,
+        "name_city": "Jesúpolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212105,
+        "name_city": "Joviânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212501,
+        "name_city": "Luziânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212709,
+        "name_city": "Mambaí",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212808,
+        "name_city": "Mara Rosa",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212907,
+        "name_city": "Marzagão",
+        "id_state": 52
+    },
+    {
+        "id_city": 5212956,
+        "name_city": "Matrinchã",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213087,
+        "name_city": "Minaçu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213400,
+        "name_city": "Moiporá",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213707,
+        "name_city": "Montes Claros de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214804,
+        "name_city": "Nova Aurora",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215231,
+        "name_city": "Novo Gama",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215504,
+        "name_city": "Ouvidor",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215603,
+        "name_city": "Padre Bernardo",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215900,
+        "name_city": "Palminópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5216809,
+        "name_city": "Petrolina de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213053,
+        "name_city": "Mimoso de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213103,
+        "name_city": "Mineiros",
+        "id_state": 52
+    },
+    {
+        "id_city": 5213905,
+        "name_city": "Mossâmedes",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214051,
+        "name_city": "Mundo Novo",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214705,
+        "name_city": "Nova América",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214861,
+        "name_city": "Nova Glória",
+        "id_state": 52
+    },
+    {
+        "id_city": 5214879,
+        "name_city": "Nova Iguaçu de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215306,
+        "name_city": "Orizona",
+        "id_state": 52
+    },
+    {
+        "id_city": 5215652,
+        "name_city": "Palestina de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5216304,
+        "name_city": "Paranaiguara",
+        "id_state": 52
+    },
+    {
+        "id_city": 5216403,
+        "name_city": "Paraúna",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218052,
+        "name_city": "Porteirão",
+        "id_state": 52
+    },
+    {
+        "id_city": 5217203,
+        "name_city": "Piranhas",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218102,
+        "name_city": "Portelândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218789,
+        "name_city": "Rio Quente",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218904,
+        "name_city": "Rubiataba",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219456,
+        "name_city": "Santa Rita do Novo Destino",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219738,
+        "name_city": "Santo Antônio de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220157,
+        "name_city": "São Luiz do Norte",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220264,
+        "name_city": "São Miguel do Passa Quatro",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220405,
+        "name_city": "São Simão",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220686,
+        "name_city": "Simolândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221007,
+        "name_city": "Taquaral de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221403,
+        "name_city": "Trindade",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221452,
+        "name_city": "Trombas",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221700,
+        "name_city": "Uruana",
+        "id_state": 52
+    },
+    {
+        "id_city": 5222203,
+        "name_city": "Vila Boa",
+        "id_state": 52
+    },
+    {
+        "id_city": 5217302,
+        "name_city": "Pirenópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218391,
+        "name_city": "Professor Jamil",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218508,
+        "name_city": "Quirinópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218706,
+        "name_city": "Rianápolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218805,
+        "name_city": "Rio Verde",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219209,
+        "name_city": "Santa Cruz de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219357,
+        "name_city": "Santa Isabel",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219407,
+        "name_city": "Santa Rita do Araguaia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219506,
+        "name_city": "Santa Rosa de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219704,
+        "name_city": "Santa Terezinha de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219753,
+        "name_city": "Santo Antônio do Descoberto",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220207,
+        "name_city": "São Miguel do Araguaia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220454,
+        "name_city": "Senador Canedo",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221080,
+        "name_city": "Teresina de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221197,
+        "name_city": "Terezópolis de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221502,
+        "name_city": "Turvânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221809,
+        "name_city": "Urutaí",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221858,
+        "name_city": "Valparaíso de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221908,
+        "name_city": "Varjão",
+        "id_state": 52
+    },
+    {
+        "id_city": 5216908,
+        "name_city": "Pilar de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5217708,
+        "name_city": "Pontalina",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218003,
+        "name_city": "Porangatu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218300,
+        "name_city": "Posse",
+        "id_state": 52
+    },
+    {
+        "id_city": 5218607,
+        "name_city": "Rialma",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219308,
+        "name_city": "Santa Helena de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219605,
+        "name_city": "Santa Tereza de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219902,
+        "name_city": "São Francisco de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220058,
+        "name_city": "São João da Paraúna",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220009,
+        "name_city": "São João d'Aliança",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220504,
+        "name_city": "Serranópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220603,
+        "name_city": "Silvânia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220702,
+        "name_city": "Sítio d'Abadia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221304,
+        "name_city": "Três Ranchos",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221551,
+        "name_city": "Turvelândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5222054,
+        "name_city": "Vicentinópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5217104,
+        "name_city": "Piracanjuba",
+        "id_state": 52
+    },
+    {
+        "id_city": 5217401,
+        "name_city": "Pires do Rio",
+        "id_state": 52
+    },
+    {
+        "id_city": 5217609,
+        "name_city": "Planaltina",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219001,
+        "name_city": "Sanclerlândia",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219100,
+        "name_city": "Santa Bárbara de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219258,
+        "name_city": "Santa Fé de Goiás",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219712,
+        "name_city": "Santo Antônio da Barra",
+        "id_state": 52
+    },
+    {
+        "id_city": 5219803,
+        "name_city": "São Domingos",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220108,
+        "name_city": "São Luís de Montes Belos",
+        "id_state": 52
+    },
+    {
+        "id_city": 5220280,
+        "name_city": "São Patrício",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221577,
+        "name_city": "Uirapuru",
+        "id_state": 52
+    },
+    {
+        "id_city": 5221601,
+        "name_city": "Uruaçu",
+        "id_state": 52
+    },
+    {
+        "id_city": 5222005,
+        "name_city": "Vianópolis",
+        "id_state": 52
+    },
+    {
+        "id_city": 5222302,
+        "name_city": "Vila Propício",
+        "id_state": 52
+    }
+]

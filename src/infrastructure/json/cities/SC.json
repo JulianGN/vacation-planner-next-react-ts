@@ -1,0 +1,1477 @@
+[
+    {
+        "id_city": 4200101,
+        "name_city": "Abelardo Luz",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200705,
+        "name_city": "Alfredo Wagner",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200309,
+        "name_city": "Agronômica",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200556,
+        "name_city": "Águas Frias",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200903,
+        "name_city": "Angelina",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201109,
+        "name_city": "Anitápolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201257,
+        "name_city": "Apiúna",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201273,
+        "name_city": "Arabutã",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201307,
+        "name_city": "Araquari",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201505,
+        "name_city": "Armazém",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201653,
+        "name_city": "Arvoredo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201802,
+        "name_city": "Atalanta",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201950,
+        "name_city": "Balneário Arroio do Silva",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200507,
+        "name_city": "Águas de Chapecó",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200754,
+        "name_city": "Alto Bela Vista",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201703,
+        "name_city": "Ascurra",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200051,
+        "name_city": "Abdon Batista",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200200,
+        "name_city": "Agrolândia",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200408,
+        "name_city": "Água Doce",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200606,
+        "name_city": "Águas Mornas",
+        "id_state": 42
+    },
+    {
+        "id_city": 4200804,
+        "name_city": "Anchieta",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201000,
+        "name_city": "Anita Garibaldi",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201208,
+        "name_city": "Antônio Carlos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201406,
+        "name_city": "Araranguá",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201604,
+        "name_city": "Arroio Trinta",
+        "id_state": 42
+    },
+    {
+        "id_city": 4201901,
+        "name_city": "Aurora",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202057,
+        "name_city": "Balneário Barra do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202008,
+        "name_city": "Balneário Camboriú",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212809,
+        "name_city": "Balneário Piçarras",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202503,
+        "name_city": "Bom Jardim da Serra",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202800,
+        "name_city": "Braço do Norte",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203105,
+        "name_city": "Caibi",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203303,
+        "name_city": "Campo Alegre",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203501,
+        "name_city": "Campo Erê",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203808,
+        "name_city": "Canoinhas",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204103,
+        "name_city": "Caxambu do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204194,
+        "name_city": "Chapadão do Lageado",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204301,
+        "name_city": "Concórdia",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205308,
+        "name_city": "Faxinal dos Guedes",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205407,
+        "name_city": "Florianópolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205431,
+        "name_city": "Formosa do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202107,
+        "name_city": "Barra Velha",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202156,
+        "name_city": "Belmonte",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202206,
+        "name_city": "Benedito Novo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202305,
+        "name_city": "Biguaçu",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202404,
+        "name_city": "Blumenau",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202537,
+        "name_city": "Bom Jesus",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202453,
+        "name_city": "Bombinhas",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202875,
+        "name_city": "Brunópolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202909,
+        "name_city": "Brusque",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203204,
+        "name_city": "Camboriú",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203402,
+        "name_city": "Campo Belo do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203600,
+        "name_city": "Campos Novos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203907,
+        "name_city": "Capinzal",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204004,
+        "name_city": "Catanduvas",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204152,
+        "name_city": "Celso Ramos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204178,
+        "name_city": "Cerro Negro",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204202,
+        "name_city": "Chapecó",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204350,
+        "name_city": "Cordilheira Alta",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204400,
+        "name_city": "Coronel Freitas",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204558,
+        "name_city": "Correia Pinto",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204509,
+        "name_city": "Corupá",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204905,
+        "name_city": "Descanso",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205100,
+        "name_city": "Dona Emma",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205191,
+        "name_city": "Ermo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202081,
+        "name_city": "Bandeirante",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202099,
+        "name_city": "Barra Bonita",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202131,
+        "name_city": "Bela Vista do Toldo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202578,
+        "name_city": "Bom Jesus do Oeste",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202859,
+        "name_city": "Braço do Trombudo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203709,
+        "name_city": "Canelinha",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204608,
+        "name_city": "Criciúma",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204707,
+        "name_city": "Cunha Porã",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204756,
+        "name_city": "Cunhataí",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205175,
+        "name_city": "Entre Rios",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205209,
+        "name_city": "Erval Velho",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205357,
+        "name_city": "Flor do Sertão",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202073,
+        "name_city": "Balneário Gaivota",
+        "id_state": 42
+    },
+    {
+        "id_city": 4220000,
+        "name_city": "Balneário Rincão",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202438,
+        "name_city": "Bocaina do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202602,
+        "name_city": "Bom Retiro",
+        "id_state": 42
+    },
+    {
+        "id_city": 4202701,
+        "name_city": "Botuverá",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203006,
+        "name_city": "Caçador",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203154,
+        "name_city": "Calmon",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203253,
+        "name_city": "Capão Alto",
+        "id_state": 42
+    },
+    {
+        "id_city": 4203956,
+        "name_city": "Capivari de Baixo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204251,
+        "name_city": "Cocal do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204459,
+        "name_city": "Coronel Martins",
+        "id_state": 42
+    },
+    {
+        "id_city": 4204806,
+        "name_city": "Curitibanos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205001,
+        "name_city": "Dionísio Cerqueira",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205159,
+        "name_city": "Doutor Pedrinho",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205456,
+        "name_city": "Forquilhinha",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206306,
+        "name_city": "Guabiruba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207403,
+        "name_city": "Imbuia",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207601,
+        "name_city": "Ipira",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207908,
+        "name_city": "Irineópolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208005,
+        "name_city": "Itá",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208401,
+        "name_city": "Itapiranga",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208450,
+        "name_city": "Itapoá",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208807,
+        "name_city": "Jaguaruna",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209003,
+        "name_city": "Joaçaba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209102,
+        "name_city": "Joinville",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209177,
+        "name_city": "Jupiá",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209706,
+        "name_city": "Lebon Régis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209904,
+        "name_city": "Lontras",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210001,
+        "name_city": "Luiz Alves",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210100,
+        "name_city": "Mafra",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205605,
+        "name_city": "Galvão",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205803,
+        "name_city": "Garuva",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206801,
+        "name_city": "Ibicaré",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206900,
+        "name_city": "Ibirama",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207007,
+        "name_city": "Içara",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207106,
+        "name_city": "Ilhota",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207502,
+        "name_city": "Indaial",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207577,
+        "name_city": "Iomerê",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207700,
+        "name_city": "Ipumirim",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207809,
+        "name_city": "Irani",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207858,
+        "name_city": "Irati",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208609,
+        "name_city": "Jaborá",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209201,
+        "name_city": "Lacerdópolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209300,
+        "name_city": "Lages",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209458,
+        "name_city": "Lajeado Grande",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209508,
+        "name_city": "Laurentino",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209607,
+        "name_city": "Lauro Müller",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210209,
+        "name_city": "Major Gercino",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205555,
+        "name_city": "Frei Rogério",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205506,
+        "name_city": "Fraiburgo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205704,
+        "name_city": "Garopaba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4205902,
+        "name_city": "Gaspar",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206405,
+        "name_city": "Guaraciaba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206603,
+        "name_city": "Guarujá do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206702,
+        "name_city": "Herval d'Oeste",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208500,
+        "name_city": "Ituporanga",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208955,
+        "name_city": "Jardinópolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209854,
+        "name_city": "Lindóia do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206009,
+        "name_city": "Governador Celso Ramos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206108,
+        "name_city": "Grão-Pará",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206207,
+        "name_city": "Gravatal",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206504,
+        "name_city": "Guaramirim",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206652,
+        "name_city": "Guatambú",
+        "id_state": 42
+    },
+    {
+        "id_city": 4206751,
+        "name_city": "Ibiam",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207205,
+        "name_city": "Imaruí",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207304,
+        "name_city": "Imbituba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207650,
+        "name_city": "Iporã do Oeste",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207684,
+        "name_city": "Ipuaçu",
+        "id_state": 42
+    },
+    {
+        "id_city": 4207759,
+        "name_city": "Iraceminha",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208104,
+        "name_city": "Itaiópolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208203,
+        "name_city": "Itajaí",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208302,
+        "name_city": "Itapema",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208708,
+        "name_city": "Jacinto Machado",
+        "id_state": 42
+    },
+    {
+        "id_city": 4208906,
+        "name_city": "Jaraguá do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209151,
+        "name_city": "José Boiteux",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209409,
+        "name_city": "Laguna",
+        "id_state": 42
+    },
+    {
+        "id_city": 4209805,
+        "name_city": "Leoberto Leal",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210035,
+        "name_city": "Luzerna",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210050,
+        "name_city": "Macieira",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210308,
+        "name_city": "Major Vieira",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210803,
+        "name_city": "Meleiro",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210407,
+        "name_city": "Maracajá",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210555,
+        "name_city": "Marema",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210704,
+        "name_city": "Matos Costa",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210902,
+        "name_city": "Modelo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211108,
+        "name_city": "Monte Castelo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211751,
+        "name_city": "Otacílio Costa",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212007,
+        "name_city": "Palma Sola",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212205,
+        "name_city": "Papanduva",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212304,
+        "name_city": "Paulo Lopes",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212403,
+        "name_city": "Pedras Grandes",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212502,
+        "name_city": "Penha",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212601,
+        "name_city": "Peritiba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212650,
+        "name_city": "Pescaria Brava",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213203,
+        "name_city": "Pomerode",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213500,
+        "name_city": "Porto Belo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213609,
+        "name_city": "Porto União",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213807,
+        "name_city": "Praia Grande",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214003,
+        "name_city": "Presidente Getúlio",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214102,
+        "name_city": "Presidente Nereu",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214151,
+        "name_city": "Princesa",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214409,
+        "name_city": "Rio das Antas",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211207,
+        "name_city": "Morro da Fumaça",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211652,
+        "name_city": "Novo Horizonte",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211801,
+        "name_city": "Ouro",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211892,
+        "name_city": "Painel",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211900,
+        "name_city": "Palhoça",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212056,
+        "name_city": "Palmeira",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212239,
+        "name_city": "Paraíso",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212700,
+        "name_city": "Petrolândia",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213351,
+        "name_city": "Ponte Alta do Norte",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213708,
+        "name_city": "Pouso Redondo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214300,
+        "name_city": "Rancho Queimado",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214508,
+        "name_city": "Rio do Campo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214607,
+        "name_city": "Rio do Oeste",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214706,
+        "name_city": "Rio dos Cedros",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210506,
+        "name_city": "Maravilha",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211009,
+        "name_city": "Mondaí",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211256,
+        "name_city": "Morro Grande",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211306,
+        "name_city": "Navegantes",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211405,
+        "name_city": "Nova Erechim",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211454,
+        "name_city": "Nova Itaberaba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211603,
+        "name_city": "Nova Veneza",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211702,
+        "name_city": "Orleans",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211850,
+        "name_city": "Ouro Verde",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211876,
+        "name_city": "Paial",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212254,
+        "name_city": "Passo de Torres",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212270,
+        "name_city": "Passos Maia",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213005,
+        "name_city": "Pinheiro Preto",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213104,
+        "name_city": "Piratuba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213302,
+        "name_city": "Ponte Alta",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213906,
+        "name_city": "Presidente Castello Branco",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214201,
+        "name_city": "Quilombo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210605,
+        "name_city": "Massaranduba",
+        "id_state": 42
+    },
+    {
+        "id_city": 4210852,
+        "name_city": "Mirim Doce",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211058,
+        "name_city": "Monte Carlo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4211504,
+        "name_city": "Nova Trento",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212106,
+        "name_city": "Palmitos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4212908,
+        "name_city": "Pinhalzinho",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213153,
+        "name_city": "Planalto Alegre",
+        "id_state": 42
+    },
+    {
+        "id_city": 4213401,
+        "name_city": "Ponte Serrada",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214805,
+        "name_city": "Rio do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4214904,
+        "name_city": "Rio Fortuna",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215075,
+        "name_city": "Riqueza",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215000,
+        "name_city": "Rio Negrinho",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215653,
+        "name_city": "Santa Rosa do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215679,
+        "name_city": "Santa Terezinha",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215802,
+        "name_city": "São Bento do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215752,
+        "name_city": "São Bernardino",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216107,
+        "name_city": "São Domingos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217303,
+        "name_city": "Saudades",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217501,
+        "name_city": "Seara",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218509,
+        "name_city": "Treze Tílias",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218855,
+        "name_city": "União do Oeste",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219002,
+        "name_city": "Urussanga",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215356,
+        "name_city": "Saltinho",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215505,
+        "name_city": "Santa Cecília",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215604,
+        "name_city": "Santa Rosa de Lima",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215695,
+        "name_city": "Santiago do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215703,
+        "name_city": "Santo Amaro da Imperatriz",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215901,
+        "name_city": "São Bonifácio",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216008,
+        "name_city": "São Carlos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216255,
+        "name_city": "São João do Oeste",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216404,
+        "name_city": "São João do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216503,
+        "name_city": "São Joaquim",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216800,
+        "name_city": "São José do Cerrito",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217600,
+        "name_city": "Siderópolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217808,
+        "name_city": "Taió",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217956,
+        "name_city": "Tigrinhos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218251,
+        "name_city": "Timbó Grande",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218301,
+        "name_city": "Três Barras",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218707,
+        "name_city": "Tubarão",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218954,
+        "name_city": "Urupema",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215059,
+        "name_city": "Rio Rufino",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215455,
+        "name_city": "Sangão",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215109,
+        "name_city": "Rodeio",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215208,
+        "name_city": "Romelândia",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215307,
+        "name_city": "Salete",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215406,
+        "name_city": "Salto Veloso",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215554,
+        "name_city": "Santa Helena",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216206,
+        "name_city": "São Francisco do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216701,
+        "name_city": "São José do Cedro",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217105,
+        "name_city": "São Martinho",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217402,
+        "name_city": "Schroeder",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217550,
+        "name_city": "Serra Alta",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217709,
+        "name_city": "Sombrio",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218004,
+        "name_city": "Tijucas",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218103,
+        "name_city": "Timbé do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218400,
+        "name_city": "Treze de Maio",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218806,
+        "name_city": "Turvo",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218905,
+        "name_city": "Urubici",
+        "id_state": 42
+    },
+    {
+        "id_city": 4215687,
+        "name_city": "Santa Terezinha do Progresso",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216057,
+        "name_city": "São Cristóvão do Sul",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216305,
+        "name_city": "São João Batista",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216354,
+        "name_city": "São João do Itaperiú",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216602,
+        "name_city": "São José",
+        "id_state": 42
+    },
+    {
+        "id_city": 4216909,
+        "name_city": "São Lourenço do Oeste",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217006,
+        "name_city": "São Ludgero",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217154,
+        "name_city": "São Miguel da Boa Vista",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217204,
+        "name_city": "São Miguel do Oeste",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217253,
+        "name_city": "São Pedro de Alcântara",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217758,
+        "name_city": "Sul Brasil",
+        "id_state": 42
+    },
+    {
+        "id_city": 4217907,
+        "name_city": "Tangará",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218202,
+        "name_city": "Timbó",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218350,
+        "name_city": "Treviso",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218608,
+        "name_city": "Trombudo Central",
+        "id_state": 42
+    },
+    {
+        "id_city": 4218756,
+        "name_city": "Tunápolis",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219408,
+        "name_city": "Witmarsum",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219101,
+        "name_city": "Vargeão",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219507,
+        "name_city": "Xanxerê",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219176,
+        "name_city": "Vargem Bonita",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219200,
+        "name_city": "Vidal Ramos",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219309,
+        "name_city": "Videira",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219358,
+        "name_city": "Vitor Meireles",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219853,
+        "name_city": "Zortéa",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219150,
+        "name_city": "Vargem",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219606,
+        "name_city": "Xavantina",
+        "id_state": 42
+    },
+    {
+        "id_city": 4219705,
+        "name_city": "Xaxim",
+        "id_state": 42
+    }
+]

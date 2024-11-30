@@ -1,0 +1,137 @@
+[
+  {
+    "id_state": 29,
+    "name_state": "Bahia",
+    "uf": "BA"
+  },
+  {
+    "id_state": 16,
+    "name_state": "Amapá",
+    "uf": "AP"
+  },
+  {
+    "id_state": 32,
+    "name_state": "Espírito Santo",
+    "uf": "ES"
+  },
+  {
+    "id_state": 22,
+    "name_state": "Piauí",
+    "uf": "PI"
+  },
+  {
+    "id_state": 41,
+    "name_state": "Paraná",
+    "uf": "PR"
+  },
+  {
+    "id_state": 14,
+    "name_state": "Roraima",
+    "uf": "RR"
+  },
+  {
+    "id_state": 43,
+    "name_state": "Rio Grande do Sul (*)",
+    "uf": "RS"
+  },
+  {
+    "id_state": 35,
+    "name_state": "São Paulo",
+    "uf": "SP"
+  },
+  {
+    "id_state": 23,
+    "name_state": "Ceará",
+    "uf": "CE"
+  },
+  {
+    "id_state": 25,
+    "name_state": "Paraíba",
+    "uf": "PB"
+  },
+  {
+    "id_state": 26,
+    "name_state": "Pernambuco",
+    "uf": "PE"
+  },
+  {
+    "id_state": 33,
+    "name_state": "Rio de Janeiro",
+    "uf": "RJ"
+  },
+  {
+    "id_state": 11,
+    "name_state": "Rondônia",
+    "uf": "RO"
+  },
+  {
+    "id_state": 42,
+    "name_state": "Santa Catarina",
+    "uf": "SC"
+  },
+  {
+    "id_state": 27,
+    "name_state": "Alagoas",
+    "uf": "AL"
+  },
+  {
+    "id_state": 12,
+    "name_state": "Acre",
+    "uf": "AC"
+  },
+  {
+    "id_state": 53,
+    "name_state": "Distrito Federal",
+    "uf": "DF"
+  },
+  {
+    "id_state": 52,
+    "name_state": "Goiás",
+    "uf": "GO"
+  },
+  {
+    "id_state": 21,
+    "name_state": "Maranhão",
+    "uf": "MA"
+  },
+  {
+    "id_state": 50,
+    "name_state": "Mato Grosso do Sul",
+    "uf": "MS"
+  },
+  {
+    "id_state": 15,
+    "name_state": "Pará",
+    "uf": "PA"
+  },
+  {
+    "id_state": 13,
+    "name_state": "Amazonas",
+    "uf": "AM"
+  },
+  {
+    "id_state": 31,
+    "name_state": "Minas Gerais",
+    "uf": "MG"
+  },
+  {
+    "id_state": 51,
+    "name_state": "Mato Grosso",
+    "uf": "MT"
+  },
+  {
+    "id_state": 24,
+    "name_state": "Rio Grande do Norte",
+    "uf": "RN"
+  },
+  {
+    "id_state": 28,
+    "name_state": "Sergipe",
+    "uf": "SE"
+  },
+  {
+    "id_state": 17,
+    "name_state": "Tocantins",
+    "uf": "TO"
+  }
+]

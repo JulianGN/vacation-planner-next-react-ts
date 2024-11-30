@@ -1,0 +1,312 @@
+[
+    {
+        "id_city": 1300029,
+        "name_city": "Alvarães",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300060,
+        "name_city": "Amaturá",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300086,
+        "name_city": "Anamã",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300102,
+        "name_city": "Anori",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300144,
+        "name_city": "Apuí",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300201,
+        "name_city": "Atalaia do Norte",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300300,
+        "name_city": "Autazes",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300508,
+        "name_city": "Barreirinha",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300706,
+        "name_city": "Boca do Acre",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301159,
+        "name_city": "Careiro da Várzea",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301803,
+        "name_city": "Ipixuna",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301902,
+        "name_city": "Itacoatiara",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301951,
+        "name_city": "Itamarati",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302207,
+        "name_city": "Juruá",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302504,
+        "name_city": "Manacapuru",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302603,
+        "name_city": "Manaus",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302801,
+        "name_city": "Maraã",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303205,
+        "name_city": "Novo Airão",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303304,
+        "name_city": "Novo Aripuanã",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303809,
+        "name_city": "São Gabriel da Cachoeira",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303957,
+        "name_city": "São Sebastião do Uatumã",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300805,
+        "name_city": "Borba",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300839,
+        "name_city": "Caapiranga",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301100,
+        "name_city": "Careiro",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301407,
+        "name_city": "Eirunepé",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301506,
+        "name_city": "Envira",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301704,
+        "name_city": "Humaitá",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301852,
+        "name_city": "Iranduba",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302108,
+        "name_city": "Japurá",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302306,
+        "name_city": "Jutaí",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303403,
+        "name_city": "Parintins",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303502,
+        "name_city": "Pauini",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303536,
+        "name_city": "Presidente Figueiredo",
+        "id_state": 13
+    },
+    {
+        "id_city": 1304104,
+        "name_city": "Tapauá",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300409,
+        "name_city": "Barcelos",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300607,
+        "name_city": "Benjamin Constant",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300631,
+        "name_city": "Beruri",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300680,
+        "name_city": "Boa Vista do Ramos",
+        "id_state": 13
+    },
+    {
+        "id_city": 1300904,
+        "name_city": "Canutama",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301001,
+        "name_city": "Carauari",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301308,
+        "name_city": "Codajás",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302009,
+        "name_city": "Itapiranga",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302405,
+        "name_city": "Lábrea",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303007,
+        "name_city": "Nhamundá",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303601,
+        "name_city": "Santa Isabel do Rio Negro",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303700,
+        "name_city": "Santo Antônio do Içá",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303908,
+        "name_city": "São Paulo de Olivença",
+        "id_state": 13
+    },
+    {
+        "id_city": 1304005,
+        "name_city": "Silves",
+        "id_state": 13
+    },
+    {
+        "id_city": 1304203,
+        "name_city": "Tefé",
+        "id_state": 13
+    },
+    {
+        "id_city": 1304302,
+        "name_city": "Urucará",
+        "id_state": 13
+    },
+    {
+        "id_city": 1304401,
+        "name_city": "Urucurituba",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301209,
+        "name_city": "Coari",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301605,
+        "name_city": "Fonte Boa",
+        "id_state": 13
+    },
+    {
+        "id_city": 1301654,
+        "name_city": "Guajará",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302553,
+        "name_city": "Manaquiri",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302702,
+        "name_city": "Manicoré",
+        "id_state": 13
+    },
+    {
+        "id_city": 1302900,
+        "name_city": "Maués",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303106,
+        "name_city": "Nova Olinda do Norte",
+        "id_state": 13
+    },
+    {
+        "id_city": 1303569,
+        "name_city": "Rio Preto da Eva",
+        "id_state": 13
+    },
+    {
+        "id_city": 1304062,
+        "name_city": "Tabatinga",
+        "id_state": 13
+    },
+    {
+        "id_city": 1304237,
+        "name_city": "Tonantins",
+        "id_state": 13
+    },
+    {
+        "id_city": 1304260,
+        "name_city": "Uarini",
+        "id_state": 13
+    }
+]

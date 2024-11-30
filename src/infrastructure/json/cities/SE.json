@@ -1,0 +1,377 @@
+[
+    {
+        "id_city": 2800100,
+        "name_city": "Amparo do São Francisco",
+        "id_state": 28
+    },
+    {
+        "id_city": 2800308,
+        "name_city": "Aracaju",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801009,
+        "name_city": "Campo do Brito",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801207,
+        "name_city": "Canindé de São Francisco",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802908,
+        "name_city": "Itabaiana",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803302,
+        "name_city": "Japaratuba",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803401,
+        "name_city": "Japoatã",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803609,
+        "name_city": "Laranjeiras",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803807,
+        "name_city": "Malhada dos Bois",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804201,
+        "name_city": "Monte Alegre de Sergipe",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804607,
+        "name_city": "Nossa Senhora das Dores",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805109,
+        "name_city": "Pedrinhas",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805208,
+        "name_city": "Pinhão",
+        "id_state": 28
+    },
+    {
+        "id_city": 2800407,
+        "name_city": "Arauá",
+        "id_state": 28
+    },
+    {
+        "id_city": 2800506,
+        "name_city": "Areia Branca",
+        "id_state": 28
+    },
+    {
+        "id_city": 2800704,
+        "name_city": "Brejo Grande",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801108,
+        "name_city": "Canhoba",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801306,
+        "name_city": "Capela",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801504,
+        "name_city": "Carmópolis",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802601,
+        "name_city": "Gracho Cardoso",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803005,
+        "name_city": "Itabaianinha",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803104,
+        "name_city": "Itabi",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804003,
+        "name_city": "Maruim",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804102,
+        "name_city": "Moita Bonita",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804508,
+        "name_city": "Nossa Senhora da Glória",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804805,
+        "name_city": "Nossa Senhora do Socorro",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804904,
+        "name_city": "Pacatuba",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805000,
+        "name_city": "Pedra Mole",
+        "id_state": 28
+    },
+    {
+        "id_city": 2800209,
+        "name_city": "Aquidabã",
+        "id_state": 28
+    },
+    {
+        "id_city": 2800605,
+        "name_city": "Barra dos Coqueiros",
+        "id_state": 28
+    },
+    {
+        "id_city": 2800670,
+        "name_city": "Boquim",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801603,
+        "name_city": "Cedro de São João",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801702,
+        "name_city": "Cristinápolis",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801900,
+        "name_city": "Cumbe",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802106,
+        "name_city": "Estância",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802403,
+        "name_city": "Gararu",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802502,
+        "name_city": "General Maynard",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802700,
+        "name_city": "Ilha das Flores",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802809,
+        "name_city": "Indiaroba",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803203,
+        "name_city": "Itaporanga d'Ajuda",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803500,
+        "name_city": "Lagarto",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803708,
+        "name_city": "Macambira",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804706,
+        "name_city": "Nossa Senhora de Lourdes",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805406,
+        "name_city": "Poço Redondo",
+        "id_state": 28
+    },
+    {
+        "id_city": 2801405,
+        "name_city": "Carira",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802007,
+        "name_city": "Divina Pastora",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802205,
+        "name_city": "Feira Nova",
+        "id_state": 28
+    },
+    {
+        "id_city": 2802304,
+        "name_city": "Frei Paulo",
+        "id_state": 28
+    },
+    {
+        "id_city": 2803906,
+        "name_city": "Malhador",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804300,
+        "name_city": "Muribeca",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804409,
+        "name_city": "Neópolis",
+        "id_state": 28
+    },
+    {
+        "id_city": 2804458,
+        "name_city": "Nossa Senhora Aparecida",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805307,
+        "name_city": "Pirambu",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806107,
+        "name_city": "Rosário do Catete",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805505,
+        "name_city": "Poço Verde",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806305,
+        "name_city": "Santa Luzia do Itanhy",
+        "id_state": 28
+    },
+    {
+        "id_city": 2807006,
+        "name_city": "São Miguel do Aleixo",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805703,
+        "name_city": "Propriá",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805901,
+        "name_city": "Riachuelo",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806008,
+        "name_city": "Ribeirópolis",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806800,
+        "name_city": "São Domingos",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806909,
+        "name_city": "São Francisco",
+        "id_state": 28
+    },
+    {
+        "id_city": 2807105,
+        "name_city": "Simão Dias",
+        "id_state": 28
+    },
+    {
+        "id_city": 2807204,
+        "name_city": "Siriri",
+        "id_state": 28
+    },
+    {
+        "id_city": 2807600,
+        "name_city": "Umbaúba",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805802,
+        "name_city": "Riachão do Dantas",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806206,
+        "name_city": "Salgado",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806404,
+        "name_city": "Santana do São Francisco",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806602,
+        "name_city": "Santo Amaro das Brotas",
+        "id_state": 28
+    },
+    {
+        "id_city": 2807303,
+        "name_city": "Telha",
+        "id_state": 28
+    },
+    {
+        "id_city": 2807402,
+        "name_city": "Tobias Barreto",
+        "id_state": 28
+    },
+    {
+        "id_city": 2807501,
+        "name_city": "Tomar do Geru",
+        "id_state": 28
+    },
+    {
+        "id_city": 2805604,
+        "name_city": "Porto da Folha",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806503,
+        "name_city": "Santa Rosa de Lima",
+        "id_state": 28
+    },
+    {
+        "id_city": 2806701,
+        "name_city": "São Cristóvão",
+        "id_state": 28
+    }
+]
