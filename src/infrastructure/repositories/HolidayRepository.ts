@@ -6,7 +6,7 @@ import {
   getEqByPropObjectId,
   geyEqByProp,
 } from "@/infrastructure/helpers/queryHelper";
-class StateRepository {
+class HolidayRepository {
   async getAll(
     idDbState?: string,
     idDbCity?: string
@@ -37,4 +37,4 @@ class StateRepository {
   }
 }
 
-export default StateRepository;
+export default HolidayRepository;

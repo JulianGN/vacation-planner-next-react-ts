@@ -27,7 +27,7 @@ export class CityService {
       id: idState,
       name: citiesFromDb[0].state.name_state,
       list: citiesFromDb.map((city) => ({
-        id: String(city._id),
+        id: city.id_city,
         name: city.name_city,
       })),
     };
@@ -37,11 +37,13 @@ export class CityService {
   }
 
   async getCityById(id: string): Promise<CityDocument> {
-    const cityFromDb = await cityRepository.findById(id);
+    // TODO
+    return {} as CityDocument;
+    // const cityFromDb = await cityRepository.findById(id);
 
-    if (!cityFromDb)
-      throw new createHttpError[404](`No state found for id: ${id}`);
+    // if (!cityFromDb)
+    //   throw new createHttpError[404](`No state found for id: ${id}`);
 
-    return cityFromDb;
+    // return cityFromDb;
   }
 }
