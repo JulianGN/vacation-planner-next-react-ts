@@ -5,24 +5,24 @@ import StateRepository from "./StateRepository";
 
 const stateRepository = new StateRepository();
 class CityRepository {
+  basePath = process.env.NEXT_PUBLIC_BASE_URL || "";
+
   async getCitiesByIdState(idState: number): Promise<CityDocument[]> {
     try {
       const state = await stateRepository.findById(idState);
       if (!state) return [];
 
-      const filePath = path.join(
-        process.cwd(),
-        "public",
-        "json",
-        "cities",
-        `${state.uf?.toUpperCase()}.json`
+      const response = await fetch(
+        `${this.basePath}/json/cities/${state.uf?.toUpperCase()}.json`
       );
+      if (!response.ok)
+        throw new Error(`Failed to fetch cities: ${response.statusText}`);
 
-      const fileContents = await fs.readFile(filePath, "utf-8");
-      const cities: CityDocument[] = JSON.parse(fileContents);
+      const cities: CityDocument[] = await response.json();
       const sortedCities = cities.sort((a, b) =>
         a.name_city.localeCompare(b.name_city)
       );
+
       return sortedCities.map((city) => ({
         ...city,
         state: {

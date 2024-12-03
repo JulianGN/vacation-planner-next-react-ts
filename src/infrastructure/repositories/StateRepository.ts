@@ -1,19 +1,15 @@
-import { promises as fs } from "fs";
-import path from "path";
 import { StateDocument } from "@/infrastructure/schemas/StateSchema";
 
 class StateRepository {
+  basePath = process.env.NEXT_PUBLIC_BASE_URL || "";
+
   async getAll(): Promise<StateDocument[]> {
     try {
-      const filePath = path.join(
-        process.cwd(),
-        "public",
-        "json",
-        "states.json"
-      );
-      const fileContents = await fs.readFile(filePath, "utf-8");
-      const states: StateDocument[] = JSON.parse(fileContents);
+      const response = await fetch(`${this.basePath}/json/states.json`);
+      if (!response.ok)
+        throw new Error(`Failed to fetch states: ${response.statusText}`);
 
+      const states: StateDocument[] = await response.json();
       return states.sort((a, b) => a.name_state.localeCompare(b.name_state));
     } catch (error) {
       console.error("Error retrieving states:", error);
@@ -29,16 +25,6 @@ class StateRepository {
       });
     } catch (error) {
       console.error(`Error retrieving state with idState ${id}:`, error);
-      return null;
-    }
-  }
-
-  async getUfByIdState(idState: number): Promise<string | null> {
-    try {
-      const state = await this.findById(idState);
-      return state?.uf || null;
-    } catch (error) {
-      console.error(`Error retrieving uf for idState ${idState}:`, error);
       return null;
     }
   }

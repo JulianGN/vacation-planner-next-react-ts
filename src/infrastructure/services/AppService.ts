@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 
 export class AppService {
   private isInitialized: boolean = false;
+  private isShuttingDown: boolean = false;
 
   async initialize() {
     if (!this.isInitialized) {
@@ -16,9 +17,11 @@ export class AppService {
   }
 
   private handleShutdown = async () => {
+    if (this.isShuttingDown) return;
+
+    this.isShuttingDown = true;
     console.log("Shutdown signal received: closing database connection");
     await this.shutdown();
-    // Allow process to exit naturally
   };
 
   async shutdown() {
