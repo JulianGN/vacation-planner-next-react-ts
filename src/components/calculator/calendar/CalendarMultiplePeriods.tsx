@@ -78,21 +78,50 @@ const CalendarMultiplePeriod: React.FC<CalendarMultiplePeriodProps> = ({
     );
   };
 
+  const CalendarLegend = () => (
+    <div className="flex flex-wrap justify-center gap-4 mb-4 p-3 bg-gray-50 rounded-lg">
+      <div className="flex items-center gap-2">
+        <div 
+          className="w-4 h-4 rounded-full border border-gray-300"
+          style={{ backgroundColor: 'var(--vc-primary-400)' }}
+        ></div>
+        <span className="text-sm text-gray-700">Final de semana / Ponte</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <div 
+          className="w-4 h-4 rounded-full border border-gray-300"
+          style={{ backgroundColor: 'var(--vc-primary-700)' }}
+        ></div>
+        <span className="text-sm text-gray-700">Período de férias oficial</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <div 
+          className="w-4 h-4 rounded-full border border-gray-300"
+          style={{ backgroundColor: 'var(--vc-primary-900)' }}
+        ></div>
+        <span className="text-sm text-gray-700">Feriado</span>
+      </div>
+    </div>
+  );
+
   return (
-    <TabView scrollable>
-      {scrollableTabs.map((tab) => {
-        return (
-          <TabPanel
-            key={tab.title}
-            header={tab.title}
-            headerTemplate={(options) =>
-              headerTemplate(options, tab.days, tab.title)
-            }>
-            {tab.content}
-          </TabPanel>
-        );
-      })}
-    </TabView>
+    <div>
+      <CalendarLegend />
+      <TabView scrollable>
+        {scrollableTabs.map((tab) => {
+          return (
+            <TabPanel
+              key={tab.title}
+              header={tab.title}
+              headerTemplate={(options) =>
+                headerTemplate(options, tab.days, tab.title)
+              }>
+              {tab.content}
+            </TabPanel>
+          );
+        })}
+      </TabView>
+    </div>
   );
 };
 

@@ -35,8 +35,12 @@ const CalculatorForm = () => {
   const stepFour = useRef<CalculatorFormStep>(null);
 
   const handleBack = () => {
-    const newStep = step > 0 ? step - 1 : 0;
-    setStep(newStep);
+    if (step === CalculatorFormStepIndex.stepFinish) {
+      setStep(CalculatorFormStepIndex.stepPlace);
+    } else {
+      const newStep = step > 0 ? step - 1 : 0;
+      setStep(newStep);
+    }
   };
 
   const validateStep = () => {
@@ -133,8 +137,7 @@ const CalculatorForm = () => {
           {step > CalculatorFormStepIndex.stepStart && (
             <Button
               outlined
-              // Label change: Allow going back from the results page
-              label={step === CalculatorFormStepIndex.stepFinish ? "Voltar" : "Voltar"}
+              label={step === CalculatorFormStepIndex.stepFinish ? "Reiniciar" : "Voltar"}
               onClick={handleBack}
             />
           )}
