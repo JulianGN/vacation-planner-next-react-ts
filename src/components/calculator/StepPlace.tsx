@@ -1,3 +1,4 @@
+"use client";
 import React, {
   useState,
   forwardRef,
@@ -9,11 +10,12 @@ import useCalculatorStore from "@/application/stores/useCalculatorStore";
 import { CalculatorFormStep } from "@/domain/models/CalculatorFormStep";
 import { InputSwitch } from "primereact/inputswitch";
 import TextTitleDescription from "@/components/shared/Text/TextTitleDescription";
-import { ApiCalculatorPeriodService } from "@/api/ApiCalculatorPeriodService";
 import DropdownSelect from "@/components/shared/Dropdown/DropdownSelect";
 import { DropdownChangeEvent } from "primereact/dropdown";
-
-const calculatorService = new ApiCalculatorPeriodService();
+import { fetchStates, fetchCitiesByState } from "@/app/actions"; // Import Server Actions
+import { toast } from "react-toastify";
+import { SelectListViewModel } from "@/domain/models/SelectListViewModel"; // Import type for checking
+import { SelectListGroupByIdViewModel } from "@/domain/models/SelectListGroupByIdViewModel"; // Import type for checking
 
 const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
   const { stepPlace, lists } = useCalculatorStore();
@@ -31,37 +33,67 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
 
   const handleChangeJustNational = () => {
     step.setJustNational(!step.justNational);
-
     if (!step.justNational) {
       step.setSelectedState(null);
       step.setSelectedCity(null);
     }
   };
 
-  const fetchStates = async () => {
+  const fetchStatesAction = async () => {
     if (lists.states.length) return;
-
     setLoadingStates(true);
-    const states = await calculatorService.getStates();
-    lists.setStates(states);
-    setLoadingStates(false);
+    try {
+      const result = await fetchStates();
+      // Type check: If result is an array, it's the data; otherwise, it's an error object.
+      if (Array.isArray(result)) {
+        lists.setStates(result);
+      } else {
+        // It's the error object
+        toast.error(`Erro ao buscar estados: ${result.error}`);
+        lists.setStates([]);
+      }
+    } catch (error) {
+      console.error("Failed to call fetchStates Server Action:", error);
+      toast.error("Erro inesperado ao buscar estados.");
+      lists.setStates([]);
+    } finally {
+      setLoadingStates(false);
+    }
   };
 
-  const fetchCitiesByStateId = async (idState: number) => {
+  const fetchCitiesByStateIdAction = async (idState: number) => {
     setLoadingCities(true);
-    const cities = await calculatorService.getCitiesByIdState(idState);
-    lists.setCities(cities);
-    setLoadingCities(false);
+    try {
+      const result = await fetchCitiesByState(idState);
+      // Type check: If result is an array, it's the data; otherwise, it's an error object.
+      if (Array.isArray(result)) {
+        // Extract cities from the grouped result structure
+        const cities = result.length > 0 ? result[0].list : [];
+        lists.setCities(cities);
+      } else {
+        // It's the error object
+        toast.error(`Erro ao buscar cidades: ${result.error}`);
+        lists.setCities([]);
+      }
+    } catch (error) {
+      console.error("Failed to call fetchCitiesByState Server Action:", error);
+      toast.error("Erro inesperado ao buscar cidades.");
+      lists.setCities([]);
+    } finally {
+      setLoadingCities(false);
+    }
   };
 
   const handleStateChange = (e: DropdownChangeEvent) => {
     step.setSelectedState(e.value);
     step.setSelectedCity(null);
-    fetchCitiesByStateId(e.value.id);
+    if (e.value?.id) {
+      fetchCitiesByStateIdAction(e.value.id);
+    }
   };
 
   const cities = useMemo(() => {
-    return step.selectedState ? lists.cities : [];
+    return step.selectedState && lists.cities ? lists.cities : [];
   }, [step.selectedState, lists.cities]);
 
   const placeholderState = useMemo(() => {
@@ -79,18 +111,25 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
 
   const validate = () => {
     if (step.justNational) return true;
-    if (step.selectedState && step.selectedCity) return true;
-
-    setValidState(false);
-    setValidCity(false);
-    return false;
+    const isStateSelected = !!step.selectedState;
+    const isCitySelected = !!step.selectedCity;
+    setValidState(isStateSelected);
+    setValidCity(isCitySelected);
+    return isStateSelected && isCitySelected;
   };
 
   useEffect(() => {
-    fetchStates();
-  });
+    if (!lists.states.length) {
+        fetchStatesAction();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  useEffect(setValidateTrue, [
+  useEffect(() => {
+    if (!step.justNational) {
+        setValidateTrue();
+    }
+  }, [
     step.justNational,
     step.selectedState,
     step.selectedCity,
@@ -126,12 +165,7 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         optionLabel="name"
         placeholder={placeholderState}
         filter
-        disabled={
-          !lists.states.length ||
-          step.justNational ||
-          loadingStates ||
-          loadingCities
-        }
+        disabled={step.justNational || loadingStates}
         loading={loadingStates}
         invalid={!step.justNational && !validState}
         onChange={handleStateChange}
@@ -143,12 +177,8 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
         optionLabel="name"
         placeholder={placeholderCity}
         filter
-        disabled={
-          step.justNational ||
-          !step.selectedState ||
-          !cities?.length ||
-          loadingCities
-        }
+        disabled={step.justNational || !step.selectedState || loadingCities}
+        loading={loadingCities}
         invalid={!step.justNational && !validCity}
         onChange={(e) => step.setSelectedCity(e.value)}
       />
@@ -158,3 +188,4 @@ const CalculatorFormStepTwo = forwardRef<CalculatorFormStep>((_, ref) => {
 
 CalculatorFormStepTwo.displayName = "CalculatorFormStepTwo";
 export default CalculatorFormStepTwo;
+

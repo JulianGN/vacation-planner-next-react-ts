@@ -9,9 +9,9 @@ export interface CalculatorFormStep {
 
 interface FormLists {
   states: SelectListViewModel[];
-  cities: SelectListGroupByIdViewModel[];
+  cities: SelectListViewModel[];
   setStates: (states: SelectListViewModel[]) => void;
-  setCities: (cities: SelectListGroupByIdViewModel[]) => void;
+  setCities: (cities: SelectListViewModel[]) => void;
 }
 
 interface StepPlace {

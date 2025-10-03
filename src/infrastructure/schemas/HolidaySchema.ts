@@ -2,7 +2,7 @@ import mongoose, { Schema, Document, Types } from "mongoose";
 import { ObjectId } from "mongodb";
 
 export interface HolidayDocument extends Document {
-  _id?: ObjectId;
+  _id: ObjectId;
   date: Date;
   name: string;
   type: "national" | "state" | "city";

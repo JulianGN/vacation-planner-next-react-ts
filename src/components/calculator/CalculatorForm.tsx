@@ -12,10 +12,9 @@ import { CalculatorFormStepIndex } from "@/domain/enums/CalculatorFormStepIndex"
 import { CalculatorPeriodDto } from "@/application/dtos/CalculatorPeriodDto";
 import useCalculatorStore from "@/application/stores/useCalculatorStore";
 import { Period } from "@/domain/models/CalculatorVacation";
-import { ApiCalculatorPeriodService } from "@/api/ApiCalculatorPeriodService";
 import useUiStore from "@/application/stores/useUiStore";
-
-const calculatorPeriodService = new ApiCalculatorPeriodService();
+import { getVacationOptions } from "@/app/actions"; // Import Server Action
+import { toast } from "react-toastify";
 
 const CalculatorForm = () => {
   const { setLoading } = useUiStore();
@@ -36,7 +35,7 @@ const CalculatorForm = () => {
   const stepFour = useRef<CalculatorFormStep>(null);
 
   const handleBack = () => {
-    const newStep = step + 1 < steps ? step - 1 : 0;
+    const newStep = step > 0 ? step - 1 : 0;
     setStep(newStep);
   };
 
@@ -53,21 +52,23 @@ const CalculatorForm = () => {
     }
   };
 
-  const getCalculatorPayload = () => {
+  const getCalculatorPayload = (): CalculatorPeriodDto => {
     const justNational = stepPlace.justNational;
-    const idState = justNational ? null : stepPlace.selectedState?.id;
-    const idCity = justNational ? null : stepPlace.selectedCity?.id;
+    const idState = justNational ? undefined : stepPlace.selectedState?.id;
+    const idCity = justNational ? undefined : stepPlace.selectedCity?.id;
+    
     const daysVacation = stepDaysVacations.daysVacation;
     const daysSplit = stepDaysVacations.daysSplit;
     const daysExtra = stepDaysVacations.daysExtra;
     const [start, end] = stepPeriodWorkDays.period ?? [];
+    // Ensure dates are correctly formatted if needed by the backend/action
     const period = { start, end } as Period;
     const workDays = stepPeriodWorkDays.workDays;
     const acceptJumpBridge = stepPeriodWorkDays.acceptJumpBridge;
 
     const payload = {
-      idState,
-      idCity,
+      idState: typeof idState === 'number' ? idState : undefined,
+      idCity: typeof idCity === 'string' || typeof idCity === 'number' ? String(idCity) : undefined,
       daysVacation,
       daysSplit,
       daysExtra,
@@ -79,23 +80,34 @@ const CalculatorForm = () => {
     return payload;
   };
 
-  const handleForward = () => {
+  const handleForward = async () => { // Make async for Server Action
     if (!validateStep()) return;
 
-    const newStep = step < steps ? step + 1 : step;
-    setStep(newStep);
+    const newStep = step + 1 < steps ? step + 1 : step;
 
     if (newStep === CalculatorFormStepIndex.stepFinish) {
       const payload = getCalculatorPayload();
-
       setLoading(true);
-      calculatorPeriodService
-        .getPeriodOptions(payload)
-        .then((response) => {
-          if (response) stepFinish.setPeriodOptions(response);
-        })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
+      try {
+        const result = await getVacationOptions(payload);
+        if (result.error) {
+          console.error("Error from Server Action:", result.error);
+          toast.error(`Erro ao calcular: ${result.error}`); // User feedback
+          // Optionally, prevent moving to the next step or handle the error state
+        } else if (result.periodOptions) {
+          stepFinish.setPeriodOptions(result.periodOptions);
+          setStep(newStep); // Move to next step only on success
+        } else {
+           toast.error("Resposta inesperada do servidor.");
+        }
+      } catch (error) {
+        console.error("Failed to call Server Action:", error);
+        toast.error("Ocorreu um erro inesperado. Tente novamente.");
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      setStep(newStep); // Move to next step for non-final steps
     }
   };
 
@@ -121,20 +133,21 @@ const CalculatorForm = () => {
           {step > CalculatorFormStepIndex.stepStart && (
             <Button
               outlined
-              label={step + 1 === steps ? "Preencher novamente" : "Voltar"}
+              // Label change: Allow going back from the results page
+              label={step === CalculatorFormStepIndex.stepFinish ? "Voltar" : "Voltar"}
               onClick={handleBack}
             />
           )}
-          {step + 1 < steps && (
+          {step < CalculatorFormStepIndex.stepFinish && ( // Ensure button doesn't show on final step
             <Button
               label={
-                step === 0
+                step === CalculatorFormStepIndex.stepStart
                   ? "Vamos lá!"
-                  : step === steps
-                  ? "Finalizar"
                   : "Avançar"
               }
               onClick={handleForward}
+              // Disable button while loading results
+              disabled={useUiStore.getState().loading}
             />
           )}
         </div>
@@ -144,3 +157,4 @@ const CalculatorForm = () => {
 };
 
 export default CalculatorForm;
+
